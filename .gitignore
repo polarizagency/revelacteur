@@ -23,6 +23,3 @@ debug.log
 /vendor/
 /composer.lock
 
-# Exclure les plugins et thèmes tiers (si vous les gérez avec un autre outil)
-# Si vous gérez TOUS les plugins et thèmes avec Git, vous pouvez commenter ou supprimer ces lignes.
-/wp-content/plugins/
