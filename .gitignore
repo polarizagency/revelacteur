@@ -1,0 +1,29 @@
+# Fichiers sensibles
+wp-config.php
+
+# Dossier UPLOADS (Médias)
+# **NE JAMAIS** versionner les uploads. Ils sont trop volumineux.
+/wp-content/uploads/
+
+# Fichiers de cache (selon les plugins)
+/wp-content/cache/
+/wp-content/blogs.dir/
+/wp-content/upgrade/
+
+# Fichiers de log et debug
+*.log
+debug.log
+
+# Fichiers de sauvegarde (Backup)
+*.bak
+*.old
+
+# Modules et dépendances
+/node_modules/
+/vendor/
+/composer.lock
+
+# Exclure les plugins et thèmes tiers (si vous les gérez avec un autre outil)
+# Si vous gérez TOUS les plugins et thèmes avec Git, vous pouvez commenter ou supprimer ces lignes.
+/wp-content/plugins/
+/wp-content/themes/
