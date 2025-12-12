@@ -199,7 +199,7 @@ function revelacteur_customizer_css() {
         .btn-secondary {
             background-color: {$secondary_color};
             border-color: {$secondary_color};
-            color: white;
+            color: {$main_color};
         }
 		/* COULEUR SECONDAIRE */
         .widget-title { color: {$secondary_color}; } /* Exemple pour les titres de widgets */
@@ -316,9 +316,125 @@ $wp_customize->add_control( 'social_twitch_url', array(
 ) );
 
 
+// -------------------------------------------------------------------------
+// 5. OPTIONS DU PIED DE PAGE (FOOTER) - CODE COMPLET
+// -------------------------------------------------------------------------
+
+/**
+ * Enregistre toutes les options modifiables pour le Footer dans "Apparence > Personnaliser".
+ */
+function revelacteur_footer_complete_register( $wp_customize ) {
+
+    // 1. Création de la Section "Pied de Page"
+    $wp_customize->add_section( 'revelacteur_footer_section', array(
+        'title'      => esc_html__( 'Options du Pied de Page', 'revelacteur' ),
+        'priority'   => 25, // Juste après l'en-tête
+    ) );
+
+    // =====================================================================
+    // A. BANDEAU VIOLET (HAUT DU FOOTER)
+    // =====================================================================
+
+    // Titre "Participez à l'aventure"
+    $wp_customize->add_setting( 'footer_adventure_title', array(
+        'default'           => 'Participez à l\'aventure !',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'footer_adventure_title', array(
+        'label'    => esc_html__( '[Bandeau Violet] Titre', 'revelacteur' ),
+        'section'  => 'revelacteur_footer_section',
+        'type'     => 'text',
+    ) );
+
+    // Texte de description
+    $wp_customize->add_setting( 'footer_adventure_text', array(
+        'default'           => 'Pour transformer ce rêve en réalité, nous avons besoin de soutiens financiers et humains.',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ) );
+    $wp_customize->add_control( 'footer_adventure_text', array(
+        'label'    => esc_html__( '[Bandeau Violet] Texte', 'revelacteur' ),
+        'section'  => 'revelacteur_footer_section',
+        'type'     => 'textarea',
+    ) );
+
+    // =====================================================================
+    // B. SECTION CONTACT (FOND BLANC)
+    // =====================================================================
+
+    // Titre "Envie de nous contacter ?"
+    $wp_customize->add_setting( 'footer_cta_title', array(
+        'default'           => 'Envie de nous Contacter ?',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'footer_cta_title', array(
+        'label'    => esc_html__( '[Section Blanche] Titre Contact', 'revelacteur' ),
+        'section'  => 'revelacteur_footer_section',
+        'type'     => 'text',
+    ) );
+
+    // Texte du bouton "Nous Contacter"
+    $wp_customize->add_setting( 'footer_contact_btn_text', array(
+        'default'           => 'Nous Contacter',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'footer_contact_btn_text', array(
+        'label'    => esc_html__( '[Section Blanche] Texte bouton Contact', 'revelacteur' ),
+        'section'  => 'revelacteur_footer_section',
+        'type'     => 'text',
+    ) );
+
+    // Lien du bouton "Nous Contacter"
+    $wp_customize->add_setting( 'footer_contact_btn_url', array(
+        'default'           => '#',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
+    $wp_customize->add_control( 'footer_contact_btn_url', array(
+        'label'    => esc_html__( '[Section Blanche] Lien bouton Contact', 'revelacteur' ),
+        'section'  => 'revelacteur_footer_section',
+        'type'     => 'url',
+    ) );
+
+    // =====================================================================
+    // C. BOUTON DONS (UTILISÉ EN HAUT ET EN BAS)
+    // =====================================================================
+
+    // Texte du bouton "Faire un don"
+    $wp_customize->add_setting( 'footer_donate_btn_text', array(
+        'default'           => 'Faire un don',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'footer_donate_btn_text', array(
+        'label'    => esc_html__( '[Bouton Don] Texte', 'revelacteur' ),
+        'section'  => 'revelacteur_footer_section',
+        'type'     => 'text',
+    ) );
+
+    // Lien du bouton "Faire un don"
+    $wp_customize->add_setting( 'footer_donate_btn_url', array(
+        'default'           => '#',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
+    $wp_customize->add_control( 'footer_donate_btn_url', array(
+        'label'    => esc_html__( '[Bouton Don] Lien', 'revelacteur' ),
+        'section'  => 'revelacteur_footer_section',
+        'type'     => 'url',
+    ) );
+
+    // Note : Le menu du footer se gère dans Apparence > Menus
+    // Note : Les liens réseaux sociaux se gèrent dans "Options de l'en-tête" (code précédent)
+}
+
+
 
 
 
 }
-add_action( 'customize_register', 'revelacteur_header_customize_register' );
+add_action( 'customize_register', 'revelacteur_header_customize_register' , 'revelacteur_footer_customize_register' );
 

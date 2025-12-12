@@ -189,7 +189,7 @@ h3 {
 
 .btn-secondary {
     /* Style basé sur l'image fournie (Box Model) */
-    padding: 16px 8px;
+    padding: 16px 32px;
     /* Marge intérieure: 16px H/B, 8px G/D */
     border-width: 1px;
     border-style: solid;
@@ -199,10 +199,171 @@ h3 {
     display: inline-block;
     text-decoration: none;
     cursor: pointer;
-    border-radius: 30px;
+    border-radius: 10px;
     /* Coins arrondis très prononcés */
     font-weight: 700;
     /* Assurez-vous que le texte du bouton est en gras */
     transition: all 0.3s ease;
     /* Ajoute une transition douce */
+}
+
+
+/* =========================================
+   5. NOUVEAU FOOTER (STYLE FINAL)
+   ========================================= */
+
+/* Conteneur global centré */
+.site-footer-wrapper .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+/* --- 1. BANDEAU VIOLET (Aventure) --- */
+.footer-adventure-section {
+    background-color: var(--color-primary); /* VIOLET */
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.adventure-title {
+    font-family: 'RedsAglonema', cursive;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: var(--color-secondary); /* Titre en vert fluo sur fond violet */
+}
+
+.adventure-text {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    font-weight: 500;
+}
+
+/* --- 2. SECTION CONTACT (BLANC) --- */
+.footer-contact-section {
+    background-color: #ffffff;
+    padding: 60px 0;
+    /* Pour la spirale jaune en fond, tu peux ajouter: 
+       background-image: url('chemin/vers/image.png');
+       background-position: right center; background-repeat: no-repeat; */
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contact-title {
+    font-family: 'RedsAglonema', cursive;
+    color: var(--color-primary); /* Violet */
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.contact-right {
+    display: flex;
+    align-items: center;
+}
+
+/* FORCE LES ICONES EN VIOLET */
+.social-icons.purple-icons a {
+    color: var(--color-primary) !important; 
+    margin-left: 15px;
+}
+.social-icons.purple-icons .dashicons {
+    font-size: 40px !important; /* Icones plus grosses dans le footer */
+    width: 40px !important;
+    height: 40px !important;
+}
+
+/* --- 3. SECTION BASSE (VERT) --- */
+.footer-main-section {
+    background-color: var(--color-secondary); /* VERT FLUO */
+    padding: 30px 0 10px 0;
+}
+
+.footer-row-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+/* LOGO */
+.footer-logo img {
+    max-height: 60px;
+    width: auto;
+}
+
+/* MENU HORIZONTAL */
+.footer-nav-horizontal {
+    flex-grow: 1; /* Prend l'espace central */
+    margin: 0 40px; 
+}
+
+.menu-horizontal-list {
+    display: flex !important; /* Force l'affichage en ligne */
+    flex-direction: row !important;
+    justify-content: center; /* Centre les éléments */
+    gap: 50px; /* Espace entre les liens */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu-horizontal-list li {
+    display: inline-block;
+}
+
+.menu-horizontal-list a {
+    color: var(--color-primary); /* Texte Violet */
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.menu-horizontal-list a:hover {
+    opacity: 0.7;
+}
+
+/* Ligne de séparation */
+.footer-divider {
+    border: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    opacity: 0.5;
+    margin: 20px 0;
+}
+
+/* Copyright */
+.footer-copyright p {
+    color: var(--color-primary);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .flex-container, .footer-row-top {
+        flex-direction: column;
+        text-align: center;
+    }
+    .contact-right {
+        margin-top: 30px;
+        justify-content: center;
+    }
+    .menu-horizontal-list {
+        flex-direction: column !important; /* Menu vertical sur mobile */
+        gap: 15px;
+        margin: 20px 0;
+    }
+    .footer-nav-horizontal { margin: 0; }
 }
