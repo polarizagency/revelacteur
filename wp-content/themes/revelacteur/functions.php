@@ -238,7 +238,7 @@ function revelacteur_header_customize_register( $wp_customize ) {
     ) );
 
  $wp_customize->add_setting( 'header_cta_text', array(
-    'default'   => esc_html__( 'Contactez-nous', 'revelacteur' ),
+    'default'   => esc_html__( 'Faire un don', 'revelacteur' ),
     'transport' => 'refresh',
     'sanitize_callback' => 'sanitize_text_field',
 ) );
