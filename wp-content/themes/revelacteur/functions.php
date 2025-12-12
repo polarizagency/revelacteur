@@ -210,9 +210,15 @@ function revelacteur_customizer_css() {
             font-family: 'Montserrat', sans-serif; /* POLICE DE BASE */
         }
         
-        h1, h2, h3, h4, h5, h6, .site-title {
+        h1, h2, h3, h4, h5, h6, .site-title, .banner p{
             font-family: 'RedsAglonema', cursive; /* POLICE DES TITRES */
         }
+
+    /* Banner -  */    
+        .banner{
+            background-color: {$main_color};   
+            
+}
     ";
 
 	
