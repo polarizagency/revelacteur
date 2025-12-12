@@ -9,9 +9,10 @@ get_header(); ?>
     <main id="main" class="site-main">
 
         <div class="container" ">
-            <div style="height:45vh ; background-color:var(--color-primary) ;align-items: center; ; display:flex;">
+            <div style="height:45vh ; background-color:var(--color-primary) ;align-items: center; ; display:flex; position: relative;">
             <h1 class="page-title" style="text-align:left; margin:0 ; margin-left: 10vw ; font-family: 'RedsAglonema', cursive; color:var(--color-secondary)  ; font-size: 6rem;">Nos Projets</h1>
-</div>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/forme_verte.svg" alt="" class="decoration-verte" style=" position: absolute; right: 3px; bottom : -2px; transform: rotate(-180deg);" />
+            </div>
             <div class="projects-grid" style="padding: 5vw  5vw;">
                 
                 <?php
