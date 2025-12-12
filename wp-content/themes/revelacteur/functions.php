@@ -470,9 +470,7 @@ function revelacteur_banner_customize_register( $wp_customize ) {
     
     
 }
-// -------------------------------------------------------------------------
-// HOOKS D'ACTION CORRECTS POUR LE CUSTOMIZER
-// -------------------------------------------------------------------------
+
 
 add_action( 'customize_register', 'revelacteur_couleurs_customize_register' );
 add_action( 'customize_register', 'revelacteur_header_customize_register' );

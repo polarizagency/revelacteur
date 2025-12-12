@@ -103,7 +103,15 @@ $cta_text = get_theme_mod( 'header_cta_text', 'Contactez-nous' );
             </a>
         </div>
         
-        </header>
-        
-        
+        </header><?php 
+// Ceci permet à get_the_title() et is_singular() de fonctionner correctement
+// sur les pages simples et les articles.
+if ( have_posts() ) : the_post(); 
+    // NE PAS inclure the_content() ici !
+endif;
+?>
+
+<main id="primary" class="site-main">
+
+  
         <div id="content" class="site-content">
