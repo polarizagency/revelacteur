@@ -173,7 +173,7 @@ add_action( 'customize_register', 'revelacteur_couleurs_customize_register' );
 function revelacteur_customizer_css() {
     
     // Récupère la valeur stockée dans la base de données
-    $main_color = get_theme_mod( 'revelacteur_couleur_principale', '#0073AA' );
+    $main_color = get_theme_mod( 'revelacteur_couleur_principale', '#9168F3' );
 	$secondary_color = get_theme_mod( 'revelacteur_couleur_secondaire', '#BDFF5F' ); 
 	
     // Construit le bloc de style CSS
