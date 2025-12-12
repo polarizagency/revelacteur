@@ -421,6 +421,128 @@ h3 {
     margin: 0;
 }
 
+/* =========================================
+   6. GRILLE DES PROJETS (CARDS)
+   ========================================= */
+
+/* Configuration de la grille (Grid Layout) */
+.projects-grid {
+    display: grid;
+    /* Crée des colonnes automatiques de minimum 300px */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+    gap: 30px; /* Espace entre les cartes */
+    margin: 0 auto;
+}
+
+/* --- Style de la Carte --- */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    border-radius: 0; /* Pas d'arrondi sur la maquette */
+    overflow: hidden;
+    position: relative;
+    /* Ombre légère pour détacher du fond (optionnel) */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Monte un peu au survol */
+}
+
+/* 1. L'image (Moitié Haute) */
+.card-image {
+    height: 250px; /* Hauteur fixe pour l'image */
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* L'image remplit la zone sans être déformée */
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .card-image img {
+    transform: scale(1.05); /* Zoom léger au survol */
+}
+
+/* 2. Le Contenu (Moitié Basse - Bleu Foncé) */
+.card-content {
+    background-color: #2F3642; /* COULEUR BLEU NUIT (identique capture) */
+    color: #ffffff;
+    padding: 30px 30px 60px 30px; /* Padding bottom grand pour laisser place au bouton */
+    flex-grow: 1; /* S'assure que toutes les boîtes ont la même hauteur */
+    position: relative; /* Pour positionner le bouton en absolu */
+}
+
+/* Titre du projet */
+.card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400; /* Regular */
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    margin: 0 0 15px 0;
+    line-height: 1.3;
+}
+
+.card-title a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Résumé (Excerpt) */
+.card-excerpt {
+    font-size: 0.9rem;
+    color: #d1d5db; /* Blanc gris très clair */
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+.card-excerpt p {
+    margin-bottom: 0;
+}
+
+/* 3. Le Bouton Flèche (Rond Violet) */
+.card-btn-arrow {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    
+    background-color: var(--color-primary); /* VIOLET */
+    color: #ffffff;
+    
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Cercle parfait */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card-btn-arrow .dashicons {
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.card-btn-arrow:hover {
+    background-color: #ffffff;
+    color: var(--color-primary); /* Inverse les couleurs au survol */
+    transform: scale(1.1);
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+        padding: 0 20px;
+    }
+}
+
 /* ---------------------------------------------------------
    D. RESPONSIVE (Mobile)
 --------------------------------------------------------- */
