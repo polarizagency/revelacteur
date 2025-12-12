@@ -17,7 +17,20 @@
             <div class="contactfooterp">
                 <p>revelacteur@gmail.com</p>
                 <p>07 65 45 25 12</p>
-                <p> France</p>
+                <p> France<br>
+                    lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
             </div>
         </div>
     </div>

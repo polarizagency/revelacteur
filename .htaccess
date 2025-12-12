@@ -6,11 +6,19 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+<<<<<<< HEAD
 RewriteBase /Revelacteur/revelacteur/
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /Revelacteur/revelacteur/index.php [L]
+=======
+RewriteBase /revelacteur/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /revelacteur/index.php [L]
+>>>>>>> 8eefe46ce617eb70b7d1c9c2f4c000d1fb486125
 </IfModule>
 
 # END WordPress

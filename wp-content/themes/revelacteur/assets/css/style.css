@@ -1,14 +1,208 @@
 /*
-Theme Name: Nom de Mon Super Thème
-Theme URI: https://mon-site-web.com
-Author: Polariz web agency
-Author URI: https://polariz-agency.fr
-Description: Thème WordPress personnalisé pour l'association Revel'Acteur.
-Version: 1.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: custom-theme, responsive, light
-Text Domain: monsupertheme
-*/
+ * Theme Name: Nom de Mon Super Thème
+ * Theme URI: https://mon-site-web.com
+ * Author: Polariz web agency
+ * Description: Thème WordPress personnalisé pour l'association Revel'Acteur.
+ * Version: 1.0
+ *
+ * Ceci est le fichier CSS principal chargé via wp_enqueue_style.
+ */
 
-/* Ajoutez ici vos styles CSS généraux */
+/* ------------------------------------------------------------- */
+/* 1. DÉCLARATION DE LA POLICE LOCALE (REDS AGLONEMA)             */
+/* (Nécessite que les fichiers .woff/.woff2 soient dans /assets/fonts/)
+/* ------------------------------------------------------------- */
+
+@font-face {
+    font-family: 'RedsAglonema';
+    /* Nom utilisé dans functions.php */
+    /* Assurez-vous que le chemin est correct par rapport à ce fichier CSS (../fonts/) */
+    src: url('../fonts/Reds-Aglonema.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ------------------------------------------------------------- */
+/* 2. RÉINITIALISATION DE BASE ET STYLES GÉNÉRAUX                */
+/* ------------------------------------------------------------- */
+
+body {
+    /* Les polices Montserrat et Reds Aglonema sont appliquées dynamiquement */
+
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Styles des titres pour assurer la bonne taille et la bonne police */
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+/* ------------------------------------------------------------- */
+/* 3. STYLES DE L'EN-TÊTE (HEADER) ET DU MENU                    */
+/* ------------------------------------------------------------- */
+
+.site-header {
+    display: flex;
+    /* Utilise Flexbox pour aligner Logo, Menu et CTA */
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 40px;
+    background-color: var(--color-secondary);
+}
+
+/* Aligner le logo et le titre du site */
+.site-branding {
+    display: flex;
+    align-items: center;
+}
+
+/* Pour le logo personnalisé (image) */
+.custom-logo-link img {
+    max-height: 60px;
+    /* Taille maximale du logo */
+    width: auto;
+}
+
+/* Conteneur du menu */
+.main-navigation {
+    flex-grow: 1;
+    /* Permet au menu de prendre de la place */
+    text-align: center;
+}
+
+/* Liste des liens de navigation */
+.main-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-right: 30%;
+}
+
+.main-navigation li {
+    padding: 0 15px;
+}
+
+.main-navigation a {
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+}
+
+.social-icons a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    /* Définissez la taille de base ici, mais la règle suivante est plus prioritaire */
+    font-size: 24px;
+}
+
+/* CIBLAGE DIRECT DES DASHICONS POUR FORCER LA TAILLE */
+.social-icons a .dashicons {
+    /* Utilisez !important pour forcer la surcharge des styles WordPress par défaut */
+    font-size: 32px !important;
+    /* <--- Augmente la taille de l'icône */
+
+    /* Assure que la boîte de l'icône suit sa taille */
+    width: 32px !important;
+    height: 32px !important;
+    line-height: 32px !important;
+
+    vertical-align: middle;
+}
+
+/* Gérer l'espace entre les icônes */
+.social-icons li {
+    padding: 0 8px;
+}
+
+/* ------------------------------------------------------------- */
+/* 4. STYLES DU BOUTON CTA (.btn-primary)                        */
+/* ------------------------------------------------------------- */
+
+.header-cta {
+    /* Pour s'assurer qu'il est bien aligné */
+    margin-left: 20px;
+}
+
+.btn-primary {
+    /* Style basé sur l'image fournie (Box Model) */
+    padding: 16px 16px;
+    /* Marge intérieure: 16px H/B, 8px G/D */
+    border-width: 1px;
+    border-style: solid;
+    margin: 16px;
+    /* Marge extérieure: 16px tout autour */
+
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 15px;
+    /* Coins arrondis très prononcés */
+    font-weight: 700;
+    /* Assurez-vous que le texte du bouton est en gras */
+    transition: all 0.3s ease;
+    /* Ajoute une transition douce */
+}
+
+.btn-primary:hover {
+    opacity: 0.85;
+    /* Légère transparence au survol */
+    transform: translateY(-2px);
+    /* Léger mouvement vers le haut */
+}
+
+/* Les couleurs de fond et de bordure de .btn-primary seront ajoutées par functions.php */
+
+
+/* ------------------------------------------------------------- */
+/* 4. STYLES DU BOUTON CTA (.btn-secondary)                        */
+/* ------------------------------------------------------------- */
+
+.btn-secondary {
+    /* Style basé sur l'image fournie (Box Model) */
+    padding: 16px 8px;
+    /* Marge intérieure: 16px H/B, 8px G/D */
+    border-width: 1px;
+    border-style: solid;
+    margin: 16px;
+    /* Marge extérieure: 16px tout autour */
+
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 30px;
+    /* Coins arrondis très prononcés */
+    font-weight: 700;
+    /* Assurez-vous que le texte du bouton est en gras */
+    transition: all 0.3s ease;
+    /* Ajoute une transition douce */
+}
