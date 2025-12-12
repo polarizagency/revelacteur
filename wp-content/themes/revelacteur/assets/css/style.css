@@ -214,7 +214,7 @@ h3 {
 .banner {
     background-color: var(--color-primary);
     color: #ffffff;
-    text-align: center;
+    text-align: left;
     font-size: 5em;
     padding: 60px 20px;
 }

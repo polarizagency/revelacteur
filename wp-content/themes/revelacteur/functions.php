@@ -217,6 +217,7 @@ function revelacteur_customizer_css() {
     /* Banner -  */    
         .banner{
             background-color: {$main_color};   
+            color: {$secondary_color};
             
 }
     ";
@@ -320,7 +321,7 @@ $wp_customize->add_control( 'social_twitch_url', array(
     'section'  => 'revelacteur_header_options_section',
     'type'     => 'url', 
 ) );
-
+}
 
 // -------------------------------------------------------------------------
 // 5. OPTIONS DU PIED DE PAGE (FOOTER) - CODE COMPLET
@@ -439,8 +440,41 @@ function revelacteur_footer_complete_register( $wp_customize ) {
 
 
 
+// -------------------------------------------------------------------------
+// 6. OPTIONS DE LA BANNER  - 
+// -------------------------------------------------------------------------
 
+function revelacteur_banner_customize_register( $wp_customize ) {
 
+    // 1. AJOUTER UNE NOUVELLE SECTION pour organiser les options
+    $wp_customize->add_section( 'revelacteur_banner_section', array(
+        'title'      => esc_html__( 'Options de la Bannière', 'revelacteur' ),
+        'priority'   => 35, // Position dans le menu du Personnalisateur
+    ) );
+
+    // =====================================================================
+    // NOUVEAU : CHAMP DE TITRE MODIFIABLE
+    // =====================================================================
+    $wp_customize->add_setting( 'banner_main_title', array(
+        'default'   => esc_html__( 'Bienvenue sur notre site !', 'revelacteur' ),
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field', // Sécurise la saisie
+    ) );
+    
+    $wp_customize->add_control( 'banner_main_title', array(
+        'label'    => esc_html__( 'Titre Principal de la Bannière', 'revelacteur' ),
+        'section'  => 'revelacteur_banner_section',
+        'type'     => 'text',
+    ) );
+    
+    
+    
 }
-add_action( 'customize_register', 'revelacteur_header_customize_register' , 'revelacteur_footer_customize_register' );
+// -------------------------------------------------------------------------
+// HOOKS D'ACTION CORRECTS POUR LE CUSTOMIZER
+// -------------------------------------------------------------------------
 
+add_action( 'customize_register', 'revelacteur_couleurs_customize_register' );
+add_action( 'customize_register', 'revelacteur_header_customize_register' );
+add_action( 'customize_register', 'revelacteur_footer_complete_register' );
+add_action( 'customize_register', 'revelacteur_banner_customize_register' );
