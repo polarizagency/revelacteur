@@ -1,6 +1,9 @@
 # Fichiers sensibles
 wp-config.php
 
+
+.htaccess
+
 # Dossier UPLOADS (Médias)
 # **NE JAMAIS** versionner les uploads. Ils sont trop volumineux.
 /wp-content/uploads/
@@ -23,4 +26,3 @@ debug.log
 /vendor/
 /composer.lock
 
-.htaccess
