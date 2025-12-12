@@ -5,13 +5,14 @@ Template Name: Page Nos Projets
 
 get_header(); ?>
 
-<div id="primary" class="content-area" style="padding: 60px 20px;">
+<div id="primary" class="content-area" >
     <main id="main" class="site-main">
 
-        <div class="container">
-            <h1 class="page-title" style="text-align:center; margin-bottom: 50px; font-family: 'RedsAglonema', cursive; color: var(--color-primary);">Nos Projets</h1>
-
-            <div class="projects-grid">
+        <div class="container" ">
+            <div style="height:45vh ; background-color:var(--color-primary) ;align-items: center; ; display:flex;">
+            <h1 class="page-title" style="text-align:left; margin:0 ; margin-left: 10vw ; font-family: 'RedsAglonema', cursive; color:var(--color-secondary)  ; font-size: 6rem;">Nos Projets</h1>
+</div>
+            <div class="projects-grid" style="padding: 5vw  5vw;">
                 
                 <?php
                 // 1. On configure la requête pour récupérer les articles
