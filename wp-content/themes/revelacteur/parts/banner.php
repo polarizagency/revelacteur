@@ -1,24 +1,20 @@
 <?php
 /**
  * Composant : Bannière Hero
- *
- * Paramètres (variables) attendus :
- * - $title (string) : Titre principal de la bannière.
- * - $subtitle (string) : Sous-titre.
  */
-$customizer_title = get_theme_mod( 'banner_main_title', get_bloginfo('name') );
-$args = $args ?? [];
-
-
-$final_title = $args['title'] ?? $customizer_title;
-
+$banner_p1 = get_theme_mod( 'banner_text_1', 'Révél\'acteur donne aux jeunes' );
+$banner_p2 = get_theme_mod( 'banner_text_2', 'Le pouvoir d\'agir et de créer' );
 ?>
 
 <div class="banner">
     <div class="container">
-        
-        <p><?php echo esc_html($final_title); ?></p> 
-        
-        
+        <?php if ( $banner_p1 ) : ?>
+            <p class="accueil-p-1"><?php echo esc_html( $banner_p1 ); ?></p>
+             <?php endif; ?>
+
+        <?php if ( $banner_p2 ) : ?>
+            <p class="accueil-p-2"><?php echo esc_html( $banner_p2 ); ?></p>
+        <?php endif; ?>
     </div>
+
 </div>

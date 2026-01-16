@@ -23,6 +23,13 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'TT Rounds Neue';
+    /* Simplifie le nom ici */
+    src: url('../fonts/TT\ Rounds\ Neue\ Trial\ Condensed\ Black.ttf') format('truetype');
+    font-weight: 700;
+}
+
 /* ------------------------------------------------------------- */
 /* 2. RÉINITIALISATION DE BASE ET STYLES GÉNÉRAUX                */
 /* ------------------------------------------------------------- */
@@ -194,9 +201,16 @@ h3 {
     background-color: var(--color-primary);
     color: #ffffff;
     text-align: left;
-    font-size: 5em;
-    padding: 60px 20px;
+    font-size: 4rem;
+    padding: 60px 40px;
+    font-family: 'TT Rounds Neue Trl Cnd', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+
 }
+
+
+
 
 /* =========================================
    5. NOUVEAU FOOTER (STYLE COMPLET & CORRIGÉ)

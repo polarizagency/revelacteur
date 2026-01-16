@@ -175,7 +175,7 @@ function revelacteur_customizer_css() {
     // Récupère la valeur stockée dans la base de données
     $main_color = get_theme_mod( 'revelacteur_couleur_principale', '#9168F3' );
 	$secondary_color = get_theme_mod( 'revelacteur_couleur_secondaire', '#BDFF5F' ); 
-	
+	$banner_bg = get_theme_mod( 'banner_background_image' );
     // Construit le bloc de style CSS
     $css = "
         :root {
@@ -210,17 +210,44 @@ function revelacteur_customizer_css() {
             font-family: 'Montserrat', sans-serif; /* POLICE DE BASE */
         }
         
-        h1, h2, h3, h4, h5, h6, .site-title, .banner p{
+        h1, h2, h3, h4, h5, h6, .site-title,{
             font-family: 'RedsAglonema', cursive; /* POLICE DES TITRES */
         }
-
-    /* Banner -  */    
-        .banner{
-            background-color: {$main_color};   
-            color: {$secondary_color};
-            
+            .banner, .banner p {
+    font-family: 'TT Rounds Neue', sans-serif !important;
 }
-    ";
+
+            /* Banner -  */   
+           
+            
+            .accueil-p-1 {
+            color: {$main_color};
+            background-color: white;
+            padding:4px 8px 4px 8px
+
+        }
+
+        .accueil-p-2 {  
+            color: white;
+            background-color: {$main_color};
+            margin-top:10px;
+            padding: 4px 8px 4px 8px
+
+        }
+     .banner {
+            color: {$secondary_color};
+            background-color: {$main_color}; /* Couleur de secours si pas d'image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: calc(100vh - 100px);
+            display: flex;
+            align-items: center;
+        ";
+        // Si une image est sélectionnée, on l'ajoute au CSS
+    if ( ! empty( $banner_bg ) ) {
+        $css .= "background-image: url('" . esc_url( $banner_bg ) . "');";
+    }
 
 	
     
@@ -455,18 +482,45 @@ function revelacteur_banner_customize_register( $wp_customize ) {
     // =====================================================================
     // NOUVEAU : CHAMP DE TITRE MODIFIABLE
     // =====================================================================
-    $wp_customize->add_setting( 'banner_main_title', array(
-        'default'   => esc_html__( 'Bienvenue sur notre site !', 'revelacteur' ),
-        'transport' => 'refresh',
-        'sanitize_callback' => 'sanitize_text_field', // Sécurise la saisie
+   
+    $wp_customize->add_setting( 'banner_background_image', array(
+        'default'           => '', // Vide par défaut ou mettez une URL d'image par défaut
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'esc_url_raw',
     ) );
-    
-    $wp_customize->add_control( 'banner_main_title', array(
-        'label'    => esc_html__( 'Titre Principal de la Bannière', 'revelacteur' ),
+
+    // 2. Contrôle d'upload d'image
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'banner_background_image', array(
+        'label'    => esc_html__( 'Image de fond de la bannière', 'revelacteur' ),
+        'section'  => 'revelacteur_banner_section',
+        'settings' => 'banner_background_image',
+    ) ) );
+
+    $wp_customize->add_setting( 'banner_text_1', array(
+        'default'           => 'Révél\'acteur donne aux jeunes',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+
+    $wp_customize->add_control( 'banner_text_1', array(
+        'label'    => esc_html__( 'Texte de bannière ligne 1', 'revelacteur' ),
         'section'  => 'revelacteur_banner_section',
         'type'     => 'text',
     ) );
-    
+
+    // Réglage pour le second paragraphe
+    $wp_customize->add_setting( 'banner_text_2', array(
+        'default'           => 'Le pouvoir d\'agir et de créer',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+
+    $wp_customize->add_control( 'banner_text_2', array(
+        'label'    => esc_html__( 'Texte de bannière ligne 2', 'revelacteur' ),
+        'section'  => 'revelacteur_banner_section',
+        'type'     => 'text',
+    ) );
+
     
     
 }
