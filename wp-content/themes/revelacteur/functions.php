@@ -274,6 +274,55 @@ function revelacteur_customizer_css() {
             }
         }
 
+        @media (max-width: 1024px) {
+            .banner {
+                padding: 48px 32px;
+                font-size: 3rem;
+                min-height: auto;
+            }
+
+            .banner .container {
+                gap: 8px;
+            }
+
+            .banner .btn-primary {
+                margin-top: 18px;
+            }
+
+            .accueil-p-3 {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .banner {
+                padding: 36px 24px;
+                font-size: 2.4rem;
+                text-align: center;
+            }
+
+            .banner .container {
+                align-items: center;
+                gap: 10px;
+            }
+
+            .accueil-p-1,
+            .accueil-p-2,
+            .accueil-p-3 {
+                text-align: center;
+            }
+
+            .accueil-p-3 {
+                font-size: 1.3rem;
+            }
+
+            .banner .btn-primary {
+                width: auto;
+                padding: 12px 20px;
+                margin-top: 16px;
+            }
+        }
+
                    .banner, .banner p-1, .banner p-2, {
     font-family: 'TT Rounds Neue', sans-serif !important;
 }
