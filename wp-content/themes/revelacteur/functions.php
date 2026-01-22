@@ -213,7 +213,7 @@ function revelacteur_customizer_css() {
         h1, h2, h3, h4, h5, h6, .site-title,{
             font-family: 'RedsAglonema', cursive; /* POLICE DES TITRES */
         }
-            .banner, .banner p {
+            .banner, .banner p-1, .banner p-2, {
     font-family: 'TT Rounds Neue', sans-serif !important;
 }
 
@@ -223,17 +223,60 @@ function revelacteur_customizer_css() {
             .accueil-p-1 {
             color: {$main_color};
             background-color: white;
-            padding:4px 8px 4px 8px
+            padding: 4px 8px 4px 8px;
+            text-transform: uppercase;
+            display: inline-block;
+            width: fit-content;
+            font-family: 'TT Rounds Neue', sans-serif;
+            margin-bottom: 20px;
 
         }
 
         .accueil-p-2 {  
             color: white;
             background-color: {$main_color};
-            margin-top:10px;
-            padding: 4px 8px 4px 8px
+            margin-top: 4px;
+            
+            padding: 4px 8px 4px 8px;
+            text-transform: uppercase;
+            display: inline-block;
+            width: fit-content;
+            font-family: 'TT Rounds Neue', sans-serif;
+            margin-bottom:45px;
 
         }
+
+        .accueil-p-3 {
+            color: white;
+            background-color: transparent;
+            margin-top: 20px;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.7rem;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .banner .btn-primary {
+            font-size: 1rem;
+            padding: 12px 30px;
+            font-weight: 700;
+            margin-top: 24px;
+            display: inline-block;
+        }
+
+        @media (min-width: 769px) {
+            .banner .container {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+            }
+        }
+
+                   .banner, .banner p-1, .banner p-2, {
+    font-family: 'TT Rounds Neue', sans-serif !important;
+}
      .banner {
             color: {$secondary_color};
             background-color: {$main_color}; /* Couleur de secours si pas d'image */
@@ -521,6 +564,18 @@ function revelacteur_banner_customize_register( $wp_customize ) {
         'type'     => 'text',
     ) );
 
+    // Réglage pour le troisième paragraphe
+    $wp_customize->add_setting( 'banner_text_3', array(
+        'default'           => 'Une association engagée à Beuvry depuis 2006 pour<br>la jeunesse, la culture et la transmission.',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'wp_kses_post',
+    ) );
+
+    $wp_customize->add_control( 'banner_text_3', array(
+        'label'    => esc_html__( 'Texte de bannière ligne 3', 'revelacteur' ),
+        'section'  => 'revelacteur_banner_section',
+        'type'     => 'text',
+    ) );
     
     
 }
