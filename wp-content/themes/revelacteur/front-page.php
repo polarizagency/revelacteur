@@ -16,6 +16,9 @@ get_header(); // Inclut le contenu de header.php
 get_template_part( 'parts/banner', 'hero', [
     
 ] );
+get_template_part( 'parts/section-home-1', '', [
+    
+] );
 ?>
 
 </main><?php
