@@ -628,6 +628,8 @@ function revelacteur_banner_customize_register( $wp_customize ) {
     
     
 }
+
+
 // -------------------------------------------------------------------------
 // HOOKS D'ACTION CORRECTS POUR LE CUSTOMIZER
 // -------------------------------------------------------------------------

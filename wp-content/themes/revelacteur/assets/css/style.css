@@ -754,6 +754,122 @@ h3 {
     transform: rotate(120deg);
 }
 
+/* ------------------------------------------------------------- */
+/* 6ter. BANNIÈRE HERO (Toutes les pages sauf Home)            */
+/* ------------------------------------------------------------- */
+
+.page-hero {
+    height: 45vh;
+    background-color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-hero__title {
+    margin: 0;
+    margin-left: 10vw;
+    text-align: left;
+    font-family: 'RedsAglonema', cursive;
+    color: var(--color-secondary);
+    font-size: 6rem;
+    z-index: 10;
+    position: relative;
+}
+
+.page-hero__shape {
+    position: absolute;
+    right: 0;
+    top: 10%;
+    transform: translateY(-50%) rotate(-180deg);
+    height: 200%;
+    width: auto;
+    pointer-events: none;
+}
+
+.association-content {
+    padding: 5vw 5vw;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.association-intro {
+    display: flex;
+    gap: 40px;
+    font-size: larger;
+    margin-bottom: 20px;
+}
+
+.association-section-lead {
+    margin-top: 30px;
+    font-size: larger;
+}
+
+@media (max-width: 1024px) {
+    .page-hero {
+        height: 40vh;
+    }
+
+    .page-hero__title {
+        margin-left: 5vw;
+        font-size: 4.5rem;
+    }
+
+    .page-hero__shape {
+        height: 180%;
+    }
+
+    .association-content {
+        padding: 4vw 4vw;
+    }
+
+    .association-intro {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-hero {
+        height: 20vh;
+    }
+
+    .page-hero__title {
+        margin-left: 5vw;
+        margin-right: 5vw;
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .page-hero__shape {
+        display: none;
+    }
+
+    .association-content {
+        padding: 8vw 5vw;
+    }
+
+    .association-intro {
+        flex-direction: column;
+        gap: 20px;
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .association-intro img {
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .association-section-lead {
+        margin-top: 20px;
+        font-size: 1rem;
+    }
+}
+
 @media (max-width: 1024px) {
     .home-asso {
         padding: 64px 24px;

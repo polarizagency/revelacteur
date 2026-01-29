@@ -8,27 +8,31 @@ get_header(); ?>
 <div id="primary" class="content-area" >
     <main id="main" class="site-main">
 
-        <div class="container" ">
+        <div>
             
-             <div style="height: 45vh;   background-color: var(--color-primary);  display: flex;   align-items: center;  position: relative;  overflow: hidden; /* Important : Coupe l'image si elle dépasse */">
-            <h1 class="page-title" style="margin: 0;  margin-left: 10vw;   text-align: left;    font-family: 'RedsAglonema', cursive;  color: var(--color-secondary); font-size: 6rem;z-index: 10; /* Important : Assure que le texte passe AU-DESSUS de l'image */position: relative; ">Qui sommes nous ?</h1>
+            <div class="page-hero">
+                <h1 class="page-title page-hero__title">Qui sommes nous ?</h1>
 
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/forme_verte.svg" alt="" class="decoration-verte" style="position: absolute; right: 0; top: 10%; /* Centre l'origine de l'image verticalement */transform: translateY(-50%) rotate(-180deg); /* Centre parfaitement + ta rotation */ height: 200%; /* Ajuste la taille de la forme (essaie 80% à 100%) */width: auto; pointer-events: none; /* Empêche de cliquer sur l'image par erreur */" />
-        </div>
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/forme_verte.svg" alt="" class="decoration-verte page-hero__shape" />
+            </div>
 
-            <div class="association-content" style="padding: 5vw 5vw; max-width: 900px; margin: 0 auto;">
-                
-                <?php 
-                // La boucle standard de WordPress pour afficher le contenu que vous écrirez dans l'éditeur de la page
-                if ( have_posts() ) :
-                    while ( have_posts() ) : the_post();
-                        the_content();
-                    endwhile;
-                else : ?>
-                    <p><?php esc_html_e( 'Veuillez ajouter le contenu décrivant votre association (mission, histoire, équipe, etc.) dans l\'éditeur WordPress.', 'revelacteur' ); ?></p>
-                <?php endif; ?>
+            <div class="association-content">
+                <div class="association-intro">
+                    <div>
+                        <p>Fondée en <strong>2006</strong> à Beuvry (Pas-de-Calais), Révél'Acteur est bien plus qu'une association : c'est un <strong>moteur d'engagement local.</strong></p>
+                        <p>Notre mission est claire : <strong>accompagner les jeunes </strong> à chaque étape de leur vie en leur offrant des  <strong>opportunités de création et d'expression </strong>, tout en tissant des liens forts avec les adultes et les habitants du territoire.</p>
+                        <p>Portée par son fondateur <strong>Arnaud Andreotti et une équipe passionnée</strong> , notre action repose sur <strong>4 piliers fondamentaux :</strong></p>
+
+                    </div>
+                    <div>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/association-image.png" alt="Image de l'association" />
+                    </div>
+                    
                 
                 </div>
+                
+
+            </div>
             
         </div>
 
