@@ -929,6 +929,231 @@ h3 {
 }
 
 
+/* ------------------------------------------------------------- */
+/* 6quater. SECTION BLOCS EXPLICATION ASSOCIATION                */
+/* ------------------------------------------------------------- */
+
+.association-section-bloc-explication {
+    background-color: var(--color-secondary);
+    padding: 60px 5vw;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    position: relative;
+    box-sizing: border-box;
+    margin-top: 50px;
+}
+
+.association-blocs-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.association-section-bloc {
+    background-color: var(--color-primary);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.association-section-bloc:hover {
+    transform: translateY(-5px);
+}
+
+.association-section-bloc__title {
+    font-family: 'RedsAglonema', cursive;
+    color: var(--color-secondary);
+    font-size: 2rem;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+}
+
+.association-section-bloc__text {
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .association-section-bloc-explication {
+        margin-top: 40px;
+        padding: 50px 4vw;
+    }
+
+    .association-blocs-grid {
+        gap: 20px;
+    }
+
+    .association-section-bloc {
+        padding: 30px 25px;
+    }
+
+    .association-section-bloc__title {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .association-section-bloc-explication {
+        margin-top: 30px;
+        padding: 40px 5vw;
+    }
+
+    .association-blocs-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .association-section-bloc {
+        padding: 30px 20px;
+    }
+
+    .association-section-bloc__title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .association-section-bloc__text {
+        font-size: 0.95rem;
+    }
+}
+
+/* ------------------------------------------------------------- */
+/* 6quinquies. SECTION AVENTURE RÉSEAUX                          */
+/* ------------------------------------------------------------- */
+
+.association-section-aventure-réseaux {
+    background-color: var(--color-secondary);
+    padding: 60px 30px;
+    border-radius: 20px;
+    max-width: 1200px;
+    margin: 50px auto 0;
+    text-align: center;
+}
+
+.association-section-aventure-réseaux>p {
+    font-family: 'RedsAglonema', cursive;
+    color: var(--color-primary);
+    font-size: 2.5rem;
+    margin: 0 0 40px 0;
+    line-height: 1.2;
+}
+
+.social-networks-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 30px;
+    align-items: center;
+    justify-items: center;
+}
+
+.social-network-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+
+.social-network-item a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-network-item a:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.social-network-item a .dashicons {
+    font-size: 40px !important;
+    width: 40px !important;
+    height: 40px !important;
+    line-height: 40px !important;
+    color: var(--color-tertiary);
+}
+
+.social-network-item p {
+    color: var(--color-tertiary);
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .association-section-aventure-réseaux {
+        padding: 50px 4vw;
+        margin-top: 40px;
+    }
+
+    .association-section-aventure-réseaux>p {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .social-networks-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .social-network-item a {
+        width: 70px;
+        height: 70px;
+    }
+
+    .social-network-item a .dashicons {
+        font-size: 35px !important;
+        width: 35px !important;
+        height: 35px !important;
+        line-height: 35px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .association-section-aventure-réseaux {
+        padding: 40px 5vw;
+        margin-top: 30px;
+    }
+
+    .association-section-aventure-réseaux>p {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+
+    .social-networks-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .social-network-item a {
+        width: 65px;
+        height: 65px;
+    }
+
+    .social-network-item a .dashicons {
+        font-size: 32px !important;
+        width: 32px !important;
+        height: 32px !important;
+        line-height: 32px !important;
+    }
+
+    .social-network-item p {
+        font-size: 0.9rem;
+    }
+}
+
 /* =========================================
    5. NOUVEAU FOOTER (STYLE COMPLET & CORRIGÉ)
    ========================================= */
