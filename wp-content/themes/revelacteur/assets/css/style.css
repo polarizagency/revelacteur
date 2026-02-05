@@ -236,6 +236,7 @@ h3 {
 .social-icons a .dashicons {
     /* Utilisez !important pour forcer la surcharge des styles WordPress par défaut */
     font-size: 32px !important;
+    color: var(--color-primary);
     /* <--- Augmente la taille de l'icône */
 
     /* Assure que la boîte de l'icône suit sa taille */
@@ -249,6 +250,165 @@ h3 {
 /* Gérer l'espace entre les icônes */
 .social-icons li {
     padding: 0 8px;
+}
+
+.menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 10001;
+}
+
+.menu-toggle .dashicons {
+    font-size: 32px !important;
+    width: 32px !important;
+    height: 32px !important;
+    line-height: 32px !important;
+    color: var(--color-primary);
+}
+
+/* --- État par défaut (Menu fermé) --- */
+.menu-toggle .icon-close {
+    display: none !important;
+}
+
+.menu-toggle .icon-burger {
+    display: inline-block;
+}
+
+/* --- État Ouvert (grâce à .is-active ajouté par le JS) --- */
+.menu-toggle.is-active .icon-burger {
+    display: none !important;
+}
+
+.menu-toggle.is-active .icon-close {
+    display: inline-block !important;
+    color: var(--color-primary, #9168f3);
+    position: relative;
+    z-index: 10001;
+}
+
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: #ffffff;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10000;
+}
+
+.menu-overlay__inner {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding: 80px 24px 40px;
+    text-align: center;
+}
+
+.menu-overlay__nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.menu-overlay__nav a {
+    font-family: 'RedsAglonema', cursive;
+    font-size: clamp(1.8rem, 6vw, 3.2rem);
+    font-weight: 700;
+}
+
+.menu-overlay__social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.menu-overlay__social .dashicons {
+    font-size: 32px !important;
+    color: var(--color-primary);
+    width: 32px !important;
+    height: 32px !important;
+    line-height: 32px !important;
+}
+
+.menu-overlay__cta {
+    margin-top: 8px;
+}
+
+.menu-overlay--open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1300;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 10px 16px;
+    }
+
+    .site-branding {
+        flex: 0 0 auto;
+        margin: 0;
+        order: 1;
+    }
+
+    .menu-toggle {
+        display: flex !important;
+        order: 2;
+    }
+
+    body.menu-open .menu-toggle {
+        position: fixed !important;
+        top: 14px;
+        right: 16px;
+        z-index: 10001 !important;
+    }
+
+    .site-description {
+        display: none;
+    }
+
+    .main-navigation,
+    .social-icons,
+    .header-cta {
+        display: none !important;
+    }
+
+    body {
+        padding-top: 72px;
+    }
+}
+
+@media (min-width: 769px) {
+    .menu-overlay {
+        display: none;
+    }
 }
 
 /* ------------------------------------------------------------- */
@@ -2755,4 +2915,112 @@ h3 {
     .mecenat-avantage-item-text {
         font-size: 0.85rem;
     }
+}
+
+/* ============================================================= */
+/* HEADER BANDEAU FIXE + MENU DESKTOP + MENU OVERLAY RESPONSIVE   */
+/* ============================================================= */
+
+/* --- HEADER BANDEAU --- */
+.site-header {
+    position: relative;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--color-secondary, #fff);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+}
+
+.site-branding {
+    flex-shrink: 0;
+    z-index: 1001;
+}
+
+.custom-logo-link img {
+    max-height: 50px;
+    width: auto;
+}
+
+/* Pas de compensation car header non-fixe */
+.site-content {
+    padding-top: 0;
+}
+
+/* --- MENU DESKTOP --- */
+.desktop-navigation {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.desktop-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.desktop-navigation li {
+    margin: 0;
+}
+
+.desktop-navigation a {
+    display: block;
+    padding: 10px 15px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-primary, #9168f3);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.desktop-navigation a:hover {
+    opacity: 0.7;
+}
+
+/* --- ICÔNES SOCIALES DESKTOP --- */
+.desktop-social-icons {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.desktop-social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.desktop-social-icons .dashicons {
+    font-size: 24px !important;
+    width: 24px !important;
+    height: 24px !important;
+    color: var(--color-primary, #9168f3);
+}
+
+.desktop-social-icons a:hover .dashicons {
+    opacity: 0.7;
+}
+
+/* --- CTA DESKTOP --- */
+.desktop-cta {
+    flex-shrink: 0;
+}
+
+.desktop-cta .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
 }
