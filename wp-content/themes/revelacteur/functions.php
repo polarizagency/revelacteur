@@ -638,6 +638,44 @@ function revelacteur_banner_customize_register($wp_customize)
 
 }
 
+// -------------------------------------------------------------------------
+// 6. Formulaire de ocntact  
+// -------------------------------------------------------------------------
+
+
+add_action('admin_post_nopriv_submit_association_contact', 'handle_asso_contact');
+add_action('admin_post_submit_association_contact', 'handle_asso_contact');
+
+function handle_asso_contact()
+{
+    // 1. Vérification de sécurité
+    if (!isset($_POST['asso_contact_nonce']) || !wp_verify_nonce($_POST['asso_contact_nonce'], 'asso_contact_nonce')) {
+        wp_die('Action non autorisée');
+    }
+
+    // 2. Nettoyage des données
+    $name = sanitize_text_field($_POST['user_name']);
+    $email = sanitize_email($_POST['user_email']);
+    $message = sanitize_textarea_field($_POST['user_message']);
+    $admin_email = get_option('admin_email');
+
+    // 3. Envoi à l'association
+    $subject_asso = "Nouveau message de : $name";
+    $headers_asso = ['Content-Type: text/html; charset=UTF-8', 'Reply-To: ' . $email];
+    $body_asso = "<h3>Nouveau message reçu</h3><p><strong>Nom:</strong> $name</p><p><strong>Message:</strong><br>$message</p>";
+
+    wp_mail($admin_email, $subject_asso, $body_asso, $headers_asso);
+
+    // 4. Envoi de la confirmation à l'utilisateur
+    $subject_confirm = "Confirmation de réception - " . get_bloginfo('name');
+    $body_confirm = "Bonjour $name,<br><br>Nous avons bien reçu votre message et nous reviendrons vers vous rapidement.<br><br>L'équipe de l'association.";
+
+    wp_mail($email, $subject_confirm, $body_confirm, ['Content-Type: text/html; charset=UTF-8']);
+
+    // 5. Redirection après envoi
+    wp_redirect(home_url('/merci/'));
+    exit;
+}
 
 // -------------------------------------------------------------------------
 // HOOKS D'ACTION CORRECTS POUR LE CUSTOMIZER
