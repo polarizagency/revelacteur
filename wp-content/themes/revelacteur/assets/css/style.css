@@ -291,7 +291,10 @@ h3 {
     display: inline-block !important;
     color: var(--color-primary, #9168f3);
     position: relative;
-    z-index: 10001;
+    z-index: 10002 !important;
+    font-size: 46px !important;
+    width: 88px !important;
+    height: 17px !important;
 }
 
 .menu-overlay {
@@ -302,7 +305,7 @@ h3 {
     visibility: hidden;
     pointer-events: none;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 10000;
+    z-index: 5;
 }
 
 .menu-overlay__inner {
@@ -381,13 +384,18 @@ body.menu-open {
     .menu-toggle {
         display: flex !important;
         order: 2;
+        position: relative;
+        z-index: 10005;
     }
 
     body.menu-open .menu-toggle {
         position: fixed !important;
         top: 14px;
-        right: 16px;
-        z-index: 10001 !important;
+        right: 32px;
+        z-index: 10005 !important;
+
+        border-radius: 8px;
+        padding: 8px;
     }
 
     .site-description {
