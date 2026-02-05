@@ -1167,61 +1167,6 @@ h3 {
 }
 
 /* ---------------------------------------------------------
-   A. BANDEAU VIOLET (Participez à l'aventure)
---------------------------------------------------------- */
-.footer-adventure-section {
-    background-color: var(--color-primary);
-    /* VIOLET */
-    color: white;
-    text-align: center;
-    padding: 80px 20px;
-}
-
-@media (max-width: 1024px) {
-    .footer-adventure-section {
-        padding: 60px 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .footer-adventure-section {
-        padding: 40px 16px;
-    }
-}
-
-.adventure-title {
-    font-family: 'RedsAglonema', cursive;
-    font-size: 4rem;
-    margin-bottom: 20px;
-    color: var(--color-secondary);
-    /* VERT FLUO */
-    line-height: 1.2;
-}
-
-@media (max-width: 1024px) {
-    .adventure-title {
-        font-size: 3.2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .adventure-title {
-        font-size: 2.2rem;
-    }
-
-    .adventure-text {
-        font-size: 0.95rem;
-    }
-}
-
-.adventure-text {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto 40px auto;
-    font-weight: 500;
-}
-
-/* ---------------------------------------------------------
    B. SECTION CONTACT (Fond Blanc + Forme Jaune)
 --------------------------------------------------------- */
 .footer-contact-section {
@@ -1712,61 +1657,6 @@ h3 {
 }
 
 /* ---------------------------------------------------------
-   A. BANDEAU VIOLET (Participez à l'aventure)
---------------------------------------------------------- */
-.footer-adventure-section {
-    background-color: var(--color-primary);
-    /* VIOLET */
-    color: white;
-    text-align: center;
-    padding: 80px 20px;
-}
-
-@media (max-width: 1024px) {
-    .footer-adventure-section {
-        padding: 60px 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .footer-adventure-section {
-        padding: 40px 16px;
-    }
-}
-
-.adventure-title {
-    font-family: 'RedsAglonema', cursive;
-    font-size: 4rem;
-    margin-bottom: 20px;
-    color: var(--color-secondary);
-    /* VERT FLUO */
-    line-height: 1.2;
-}
-
-@media (max-width: 1024px) {
-    .adventure-title {
-        font-size: 3.2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .adventure-title {
-        font-size: 2.2rem;
-    }
-
-    .adventure-text {
-        font-size: 0.95rem;
-    }
-}
-
-.adventure-text {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto 40px auto;
-    font-weight: 500;
-}
-
-/* ---------------------------------------------------------
    B. SECTION CONTACT (Fond Blanc + Forme Jaune)
 --------------------------------------------------------- */
 .footer-contact-section {
@@ -1887,7 +1777,7 @@ h3 {
 .decoration-jaune {
     position: absolute;
     /* Position : Coin Haut Droit */
-    top: -450px;
+    top: -350px;
     right: -200px;
 
     /* Taille imposante */

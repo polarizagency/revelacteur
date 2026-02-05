@@ -1,38 +1,17 @@
 <?php
 /**
- * Footer template : Bandeau Violet + Contact Blanc + Infos Vertes
+ * Footer template : Footer
  */
 ?>
 
 </main>
 <footer class="site-footer-wrapper">
 
-    <section class="footer-adventure-section">
-        <div class="container">
-            <?php
-            $adv_title = get_theme_mod('footer_adventure_title', 'Participez à l\'aventure !');
-            $adv_text = get_theme_mod('footer_adventure_text', 'Pour transformer ce rêve en réalité, nous avons besoin de soutiens financiers et humains.');
-            // On réutilise le lien "Faire un don" défini précédemment ou on en crée un
-            $donate_text = get_theme_mod('footer_donate_btn_text', 'Faire un don');
-            $donate_url = get_theme_mod('footer_donate_btn_url', '#');
-            ?>
-
-            <h2 class="adventure-title">
-                <?php echo esc_html($adv_title); ?>
-            </h2>
-            <p class="adventure-text">
-                <?php echo nl2br(esc_html($adv_text)); ?>
-            </p>
-
-            <div class="adventure-cta">
-                <a href="<?php echo esc_url($donate_url); ?>" class="btn btn-secondary">
-                    <?php echo esc_html($donate_text); ?>
-                </a>
-            </div>
-        </div>
-    </section>
-
     <section class="footer-contact-section">
+        <?php
+        $donate_text = get_theme_mod('footer_donate_btn_text', 'Faire un don');
+        $donate_url = get_theme_mod('footer_donate_btn_url', '#');
+        ?>
 
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/forme_jaune.svg" alt=""
             class="decoration-jaune">

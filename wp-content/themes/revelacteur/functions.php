@@ -466,34 +466,6 @@ function revelacteur_footer_complete_register($wp_customize)
     ));
 
     // =====================================================================
-    // A. BANDEAU VIOLET (HAUT DU FOOTER)
-    // =====================================================================
-
-    // Titre "Participez à l'aventure"
-    $wp_customize->add_setting('footer_adventure_title', array(
-        'default' => 'Participez à l\'aventure !',
-        'transport' => 'refresh',
-        'sanitize_callback' => 'sanitize_text_field',
-    ));
-    $wp_customize->add_control('footer_adventure_title', array(
-        'label' => esc_html__('[Bandeau Violet] Titre', 'revelacteur'),
-        'section' => 'revelacteur_footer_section',
-        'type' => 'text',
-    ));
-
-    // Texte de description
-    $wp_customize->add_setting('footer_adventure_text', array(
-        'default' => 'Pour transformer ce rêve en réalité, nous avons besoin de soutiens financiers et humains.',
-        'transport' => 'refresh',
-        'sanitize_callback' => 'sanitize_textarea_field',
-    ));
-    $wp_customize->add_control('footer_adventure_text', array(
-        'label' => esc_html__('[Bandeau Violet] Texte', 'revelacteur'),
-        'section' => 'revelacteur_footer_section',
-        'type' => 'textarea',
-    ));
-
-    // =====================================================================
     // B. SECTION CONTACT (FOND BLANC)
     // =====================================================================
 
