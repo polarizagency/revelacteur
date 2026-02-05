@@ -10,7 +10,7 @@ get_header(); ?>
 
         <div>
             <div class="page-hero">
-                <h1 class="page-title page-hero__title">Mécénat & Partenariat</h1>
+                <h1 class="page-title page-hero__title">Nous soutenir</h1>
 
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/forme_verte.svg" alt=""
                     class="decoration-verte page-hero__shape" />
