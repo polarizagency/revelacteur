@@ -3062,56 +3062,15 @@ h3 {
     box-shadow: 0 4px 12px rgba(145, 104, 243, 0.3);
 }
 
-/* ========================================
-   Section Introduction Projets
-======================================== */
-.projects-intro {
-    position: relative;
-    background-image: url('../img/background-projets.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 80px 0;
-    margin: 0;
-}
-
-.projects-intro::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 1;
-}
-
-.projects-intro__content {
-    position: relative;
-    z-index: 2;
-    color: var(--color-secondary, #BDFF5F);
-}
-
-.projects-intro__title {
-    font-family: 'RedsAglonema', sans-serif;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-.projects-intro__text {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    line-height: 1.6;
-    max-width: 800px;
-    color: #ffffff;
-}
 
 /* ========================================
    Bandeau Filtres Projets
 ======================================== */
 .projects-filters {
-    background-color: var(--color-primary, #9168F3);
+
     padding: 30px 0;
+
+    
 }
 
 .filters-list {
@@ -3127,8 +3086,8 @@ h3 {
     font-size: 1rem;
     padding: 12px 24px;
     background-color: transparent;
-    color: #ffffff;
-    border: 2px solid #ffffff;
+    color: var(--color-primary, #9168F3);
+    border: 2px solid var(--color-primary, #9168F3);
     border-radius: 6px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -3136,9 +3095,9 @@ h3 {
 
 .filter-btn:hover,
 .filter-btn.active {
-    background-color: var(--color-secondary, #BDFF5F);
-    color: var(--color-primary, #9168F3);
-    border-color: var(--color-secondary, #BDFF5F);
+    background-color: var(--color-primary, #9168F3);
+    color: var(--color-secondary, #BDFF5F);
+    border-color: var(--color-primary, #9168F3);
 }
 
 @media (max-width: 768px) {

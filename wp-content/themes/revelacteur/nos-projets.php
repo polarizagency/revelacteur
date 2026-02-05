@@ -15,17 +15,6 @@ get_header(); ?>
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/forme_verte.svg" alt="" class="decoration-verte page-hero__shape" />
             </div>
 
-            <!-- Section avec image de fond et texte -->
-            <section class="projects-intro">
-                <div class="container">
-                    <div class="projects-intro__content">
-                        <h2 class="projects-intro__title">Nos Projets : Révéler les talents, Bâtir l'avenir</h2>
-                        <p class="projects-intro__text">
-                            Chez Révêl'Acteur, nous ne nous contentons pas de rénover des pierres : nous construisons des ponts entre les générations. Découvrez nos actions phares pour la jeunesse, le patrimoine et la culture à Beuvry.
-                        </p>
-                    </div>
-                </div>
-            </section>
 
             <!-- Bandeau des catégories/filtres -->
             <section class="projects-filters">
