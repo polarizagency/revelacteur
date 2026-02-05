@@ -76,13 +76,6 @@ function revelacteur_scripts()
         $theme_version
     );
 
-    wp_enqueue_style(
-        'revelacteur-project-cards',
-        get_template_directory_uri() . '/assets/css/project-cards-new.css',
-        array('revelacteur-style'),
-        $theme_version
-    );
-
     wp_enqueue_style('dashicons');
 
 
