@@ -25,7 +25,6 @@
                 
                 ?>
                 
-           
                 
                 <?php $description = get_bloginfo( 'description', 'display' ); ?>
                 <?php if ( $description || is_customize_preview() ) : ?>
