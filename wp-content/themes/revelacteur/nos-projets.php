@@ -17,7 +17,7 @@ get_header(); ?>
             <div class="projects-grid" style="padding: 5vw 5vw;">
                 
                 <?php
-                // 1. On configure la requête pour récupérer les articles
+                // Configuration de la requête pour récupérer les articles
                 $args = array(
                     'post_type'      => 'post',      // Type de contenu : Articles
                     'posts_per_page' => 9,           // Nombre d'articles à afficher
@@ -28,37 +28,10 @@ get_header(); ?>
                 $projets_query = new WP_Query( $args );
 
                 if ( $projets_query->have_posts() ) :
-                    while ( $projets_query->have_posts() ) : $projets_query->the_post(); ?>
-
-                        <article class="project-card">
-                            
-                            <div class="card-image">
-                                <?php if ( has_post_thumbnail() ) : ?>
-                                    <a href="<?php the_permalink(); ?>">
-                                        <?php the_post_thumbnail('large'); // Affiche l'image ?>
-                                    </a>
-                                <?php else : ?>
-                                    <div class="no-image"></div> 
-                                <?php endif; ?>
-                            </div>
-
-                            <div class="card-content">
-                                <h3 class="card-title">
-                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                </h3>
-                                
-                                <div class="card-excerpt">
-                                    <?php the_excerpt(); // Affiche le résumé ?>
-                                </div>
-
-                                <a href="<?php the_permalink(); ?>" class="card-btn-arrow" aria-label="Lire la suite">
-                                    <span class="dashicons dashicons-arrow-right-alt2"></span>
-                                </a>
-                            </div>
-
-                        </article>
-
-                    <?php endwhile;
+                    while ( $projets_query->have_posts() ) : $projets_query->the_post();
+                        // Utilise le composant réutilisable
+                        get_template_part( 'parts/content-project-card' );
+                    endwhile;
                     wp_reset_postdata(); // Important : réinitialise les données après la boucle
                 else : ?>
                     <p><?php esc_html_e( 'Aucun projet trouvé pour le moment.', 'revelacteur' ); ?></p>
