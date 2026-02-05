@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Page Mécénat & Partenariat
+Template Name: Page Nous Soutenir
 */
 
 get_header(); ?>
