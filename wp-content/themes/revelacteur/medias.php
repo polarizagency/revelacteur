@@ -9,7 +9,7 @@ get_header(); ?>
     <main id="main" class="site-main">
 
         <div>
-            <div class="page-hero">
+            <div class="page-hero  mbottom-banniere ">
                 <h1 class="page-title page-hero__title">Nos lives Twitch</h1>
 
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/forme_verte.svg" alt=""
@@ -21,7 +21,7 @@ get_header(); ?>
                     height="480" width="720" allowfullscreen>
                 </iframe>
             </div>
-            <div class="page-hero">
+            <div class="page-hero  m-banniere">
                 <h1 class="page-title page-hero__title">Nos podcasts</h1>
 
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/forme_verte.svg" alt=""

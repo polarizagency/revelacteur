@@ -2756,3 +2756,30 @@ h3 {
         font-size: 0.85rem;
     }
 }
+
+
+/* ------------------------------------------------------------- */
+/* 9. SECTION Médias - VOS AVANTAGES                           */
+/* ------------------------------------------------------------- */
+
+.mbottom-banniere {
+    margin-bottom: 40px;
+}
+
+.m-banniere {
+    margin: 40px 0;
+}
+
+.twitch-embed-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 16px;
+}
+
+.twitch-embed-container iframe {
+    width: min(100%, 720px);
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: 0;
+}
