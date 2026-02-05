@@ -649,20 +649,32 @@ add_action('admin_post_submit_association_contact', 'handle_asso_contact');
 function handle_asso_contact()
 {
     // 1. Vérification de sécurité
-    if (!isset($_POST['asso_contact_nonce']) || !wp_verify_nonce($_POST['asso_contact_nonce'], 'asso_contact_nonce')) {
+    if (!isset($_POST['asso_contact_nonce']) || !wp_verify_nonce($_POST['asso_contact_nonce'], 'asso_contact_form')) {
         wp_die('Action non autorisée');
     }
 
     // 2. Nettoyage des données
-    $name = sanitize_text_field($_POST['user_name']);
-    $email = sanitize_email($_POST['user_email']);
-    $message = sanitize_textarea_field($_POST['user_message']);
+    $first_name = isset($_POST['user_first_name']) ? sanitize_text_field($_POST['user_first_name']) : '';
+    $last_name = isset($_POST['user_last_name']) ? sanitize_text_field($_POST['user_last_name']) : '';
+    $name = trim($first_name . ' ' . $last_name);
+    $phone = isset($_POST['user_phone']) ? sanitize_text_field($_POST['user_phone']) : '';
+    $email = isset($_POST['user_email']) ? sanitize_email($_POST['user_email']) : '';
+    $email_confirm = isset($_POST['user_email_confirm']) ? sanitize_email($_POST['user_email_confirm']) : '';
+    $message = isset($_POST['user_message']) ? sanitize_textarea_field($_POST['user_message']) : '';
     $admin_email = get_option('admin_email');
+
+    if (empty($email) || $email !== $email_confirm) {
+        wp_die('Les emails ne correspondent pas.');
+    }
 
     // 3. Envoi à l'association
     $subject_asso = "Nouveau message de : $name";
     $headers_asso = ['Content-Type: text/html; charset=UTF-8', 'Reply-To: ' . $email];
-    $body_asso = "<h3>Nouveau message reçu</h3><p><strong>Nom:</strong> $name</p><p><strong>Message:</strong><br>$message</p>";
+    $body_asso = "<h3>Nouveau message reçu</h3>"
+        . "<p><strong>Nom:</strong> $name</p>"
+        . "<p><strong>Téléphone:</strong> $phone</p>"
+        . "<p><strong>Email:</strong> $email</p>"
+        . "<p><strong>Message:</strong><br>$message</p>";
 
     wp_mail($admin_email, $subject_asso, $body_asso, $headers_asso);
 
