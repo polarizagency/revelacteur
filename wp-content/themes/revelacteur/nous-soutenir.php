@@ -16,6 +16,12 @@ get_header(); ?>
                     class="decoration-verte page-hero__shape" />
             </div>
 
+            <div class="mecenat-intro"> 
+                <h1 class="mecenat-intro-title">Soutenez une association qui agit concrètement pour la jeunesse et le territoire !</h1> 
+                <p class="mecenat-intro-text">Votre soutien permet <strong>d’éduquer</strong>, de <strong>préserver le patrimoine</strong>
+                    <strong></strong>et de <strong>dynamiser l’économie locale.</strong></p>
+            </div>
+
             <div class="mecenat-content">
                 <h2 class="mecenat-title">Pourquoi rejoindre l'aventure ?</h2>
                 <div class="mecenat-cards-grid">
