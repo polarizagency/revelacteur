@@ -13,8 +13,7 @@
         $donate_url = get_theme_mod('footer_donate_btn_url', '#');
         ?>
 
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/forme_jaune.svg" alt=""
-            class="decoration-jaune">
+  
 
         <div class="container flex-container">
 

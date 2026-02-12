@@ -2331,7 +2331,7 @@ h3 {
 .mecenat-intro-title {
     font-family: 'RedsAglonema', cursive;
     color: #9168f3;
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(2rem, 5vw, 4.5rem);
     margin: 0 0 30px 0;
     line-height: 1.2;
 }
@@ -2348,17 +2348,25 @@ h3 {
 
 /* Section Contenu Mécénat */
 .mecenat-content {
-    padding: 60px 5vw;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 90px 5vw;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    box-sizing: border-box;
+    background-image: url('../img/bg_mecenat.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
 }
 
 .mecenat-title {
     font-family: 'RedsAglonema', cursive;
-    color: var(--color-primary);
+    color: var(--color-secondary);
     font-size: 4.5rem;
-    text-align: left;
-    margin: 0 0 50px 0;
+    text-align: center;
+    margin: 0 auto 50px auto;
+    max-width: 1200px;
     line-height: 1.2;
 }
 
@@ -2384,11 +2392,12 @@ h3 {
 }
 
 .mecenat-card__title {
-    /* font-family: 'RedsAglonema', cursive; */
+     font-family: 'RedsAglonema', cursive;
     color: var(--color-secondary);
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: 0 0 20px 0;
     line-height: 1.3;
+    text-align: center;
 }
 
 .mecenat-card__text {
@@ -2396,6 +2405,7 @@ h3 {
     font-size: 1rem;
     line-height: 1.6;
     margin: 0;
+    text-align: center;
 }
 
 @media (max-width: 1200px) {
@@ -2404,11 +2414,11 @@ h3 {
     }
 
     .mecenat-content {
-        padding: 50px 4vw;
+        padding: 70px 4vw;
     }
 
     .mecenat-title {
-        font-size: 2.2rem;
+        font-size: 3rem;
         margin-bottom: 40px;
     }
 
@@ -2423,11 +2433,11 @@ h3 {
     }
 
     .mecenat-content {
-        padding: 40px 3vw;
+        padding: 60px 3vw;
     }
 
     .mecenat-title {
-        font-size: 2rem;
+        font-size: 2.5rem;
         margin-bottom: 35px;
     }
 
@@ -2458,11 +2468,11 @@ h3 {
     }
 
     .mecenat-content {
-        padding: 30px 5vw;
+        padding: 50px 5vw;
     }
 
     .mecenat-title {
-        font-size: 1.5rem;
+        font-size: 2rem;
         margin-bottom: 30px;
     }
 
@@ -2486,11 +2496,11 @@ h3 {
 
 @media (max-width: 480px) {
     .mecenat-content {
-        padding: 25px 3vw;
+        padding: 40px 3vw;
     }
 
     .mecenat-title {
-        font-size: 1.3rem;
+        font-size: 1.75rem;
         margin-bottom: 25px;
     }
 
@@ -2514,358 +2524,261 @@ h3 {
 }
 
 /* ------------------------------------------------------------- */
-/* 8. SECTION M�C�NAT - COMMENT NOUS SOUTENIR                    */
+/* 8. SECTION MÉCÉNAT - COMMENT NOUS SOUTENIR                    */
 /* ------------------------------------------------------------- */
 
 .mecenat-soutien-section {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
+    max-width: 1200px;
+    width: min(1200px, calc(100% - 10vw));
+    margin: clamp(32px, 6vw, 80px) auto;
     box-sizing: border-box;
-    background-image: url('../img/bg_mecenat.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: var(--color-primary);
     position: relative;
     z-index: 1;
-    padding: 20vh 0;
+    padding-top: clamp(20px, 3vw, 32px);
+    border-radius: 20px;
 }
 
 .mecenat-soutien-content {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 60px 5vw;
+    padding: 0 clamp(16px, 4vw, 40px) clamp(32px, 6vw, 60px);
 }
 
 .mecenat-soutien-title {
     font-family: 'RedsAglonema', cursive;
     color: var(--color-secondary);
-    font-size: 4.5rem;
-    text-align: left;
+    font-size: clamp(2rem, 5vw, 4rem);
+    text-align: center;
     margin: 0 0 50px 0;
     line-height: 1.2;
 }
 
 .mecenat-soutien-cards-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .mecenat-soutien-card {
-    background-color: var(--color-primary);
+    background-color: #ffffff;
     border-radius: 20px;
     padding: 40px 30px;
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
 }
 
 .mecenat-soutien-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.mecenat-soutien-card__title {
-    font-family: 'RedsAglonema', cursive;
-    color: var(--color-secondary);
-    font-size: 1.5rem;
-    margin: 0 0 20px 0;
-    line-height: 1.3;
-}
-
-.mecenat-soutien-card__text {
-    color: #ffffff;
-    font-size: 1rem;
-    line-height: 1.6;
-    margin: 0;
-}
-
-@media (max-width: 1200px) {
-    .mecenat-soutien-content {
-        padding: 50px 4vw;
-    }
-
-    .mecenat-soutien-title {
-        font-size: 2.2rem;
-        margin-bottom: 40px;
-    }
-
-    .mecenat-soutien-cards-grid {
-        gap: 25px;
-    }
-}
-
-@media (max-width: 1024px) {
-    .mecenat-soutien-content {
-        padding: 40px 3vw;
-    }
-
-    .mecenat-soutien-title {
-        font-size: 2rem;
-        margin-bottom: 35px;
-    }
-
-    .mecenat-soutien-cards-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    .mecenat-soutien-card {
-        padding: 35px 25px;
-    }
-
-    .mecenat-soutien-card__title {
-        font-size: 1.4rem;
-        margin-bottom: 18px;
-    }
-
-    .mecenat-soutien-card__text {
-        font-size: 0.95rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .mecenat-soutien-content {
-        padding: 30px 5vw;
-    }
-
-    .mecenat-soutien-title {
-        font-size: 1.5rem;
-        margin-bottom: 30px;
-    }
-
-    .mecenat-soutien-cards-grid {
-        gap: 20px;
-    }
-
-    .mecenat-soutien-card {
-        padding: 30px 20px;
-    }
-
-    .mecenat-soutien-card__title {
-        font-size: 1.3rem;
-        margin-bottom: 15px;
-    }
-
-    .mecenat-soutien-card__text {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .mecenat-soutien-content {
-        padding: 25px 3vw;
-    }
-
-    .mecenat-soutien-title {
-        font-size: 1.3rem;
-        margin-bottom: 25px;
-    }
-
-    .mecenat-soutien-cards-grid {
-        gap: 15px;
-    }
-
-    .mecenat-soutien-card {
-        padding: 25px 15px;
-    }
-
-    .mecenat-soutien-card__title {
-        font-size: 1.2rem;
-        margin-bottom: 12px;
-    }
-
-    .mecenat-soutien-card__text {
-        font-size: 0.85rem;
-        line-height: 1.5;
-    }
-}
-
-/* ------------------------------------------------------------- */
-/* 9. SECTION M�C�NAT - VOS AVANTAGES                           */
-/* ------------------------------------------------------------- */
-
-.mecenat-avantage-section {
-    padding: 60px 5vw;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.mecenat-avantage-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.mecenat-avantage-title {
-    font-family: 'RedsAglonema', cursive;
-    color: var(--color-primary);
-    font-size: 3rem;
-    text-align: center;
-    margin: 0 0 60px 0;
-    line-height: 1.2;
-}
-
-.mecenat-avantage-items {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.mecenat-avantage-item {
-    display: flex;
-    gap: 30px;
-    align-items: flex-start;
-    background-color: var(--color-primary);
-    padding: 30px;
-    border-radius: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.mecenat-avantage-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.mecenat-avantage-icon {
+.mecenat-soutien-card-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #9168f3;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80px;
-    height: 80px;
-    min-width: 80px;
-    background-color: var(--color-secondary);
-    border-radius: 50%;
+    color: #ffffff;
     flex-shrink: 0;
 }
 
-.mecenat-avantage-icon .dashicons {
-    font-size: 40px !important;
-    width: 40px !important;
-    height: 40px !important;
-    line-height: 40px !important;
-    color: var(--color-primary);
+.mecenat-soutien-card-icon svg {
+    width: 40px;
+    height: 40px;
 }
 
-.mecenat-avantage-text {
+.mecenat-soutien-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     flex: 1;
 }
 
-.mecenat-avantage-item-title {
+.mecenat-soutien-card-title {
     font-family: 'RedsAglonema', cursive;
-    color: var(--color-secondary);
-    font-size: 1.8rem;
-    margin: 0 0 15px 0;
+    color: #9168f3;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin: 0;
     line-height: 1.2;
 }
 
-.mecenat-avantage-item-text {
-    color: #ffffff;
+.mecenat-soutien-card-text {
+    color: #666666;
     font-size: 1rem;
     line-height: 1.6;
     margin: 0;
 }
 
-@media (max-width: 1200px) {
-    .mecenat-avantage-section {
-        padding: 50px 4vw;
-    }
+.mecenat-soutien-btn {
+    display: inline-block;
+    background-color: #9168f3;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+}
 
-    .mecenat-avantage-title {
-        font-size: 2.5rem;
-        margin-bottom: 50px;
-    }
+.mecenat-soutien-btn:hover {
+    background-color: #7a52d9;
+}
 
-    .mecenat-avantage-item {
-        padding: 25px;
-        gap: 25px;
-    }
+.mecenat-soutien-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
 
-    .mecenat-avantage-icon {
-        width: 70px;
-        height: 70px;
-    }
+.mecenat-tag {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 2px solid #9168f3;
+    border-radius: 20px;
+    color: #9168f3;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
 
-    .mecenat-avantage-icon .dashicons {
-        font-size: 35px !important;
-        width: 35px !important;
-        height: 35px !important;
-        line-height: 35px !important;
-    }
+.mecenat-tag:hover {
+    background-color: #9168f3;
+    color: #ffffff;
+}
 
-    .mecenat-avantage-item-title {
-        font-size: 1.5rem;
+/* Section Partager notre mission */
+.mecenat-partager-section {
+    max-width: 1200px;
+    width: min(1200px, calc(100% - 10vw));
+    margin: clamp(12px, 2.5vw, 20px) auto 0;
+    box-sizing: border-box;
+    background-color: var(--color-secondary);
+    position: relative;
+    z-index: 1;
+    padding: clamp(20px, 4vw, 40px) clamp(16px, 4vw, 40px);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.mecenat-partager-title {
+    font-family: 'RedsAglonema', cursive;
+    color: #9168f3;
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+}
+
+.mecenat-partager-text {
+    color: #9168f3;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .mecenat-soutien-cards-grid {
+        gap: 20px;
     }
 }
 
 @media (max-width: 768px) {
-    .mecenat-avantage-section {
-        padding: 30px 5vw;
-    }
-
-    .mecenat-avantage-title {
-        font-size: 2rem;
-        margin-bottom: 40px;
-    }
-
-    .mecenat-avantage-item {
-        padding: 20px;
+    .mecenat-soutien-card {
+        padding: 30px 25px;
+        flex-direction: column;
+        align-items: flex-start;
         gap: 20px;
     }
 
-    .mecenat-avantage-icon {
+    .mecenat-soutien-card-icon {
         width: 60px;
         height: 60px;
     }
 
-    .mecenat-avantage-icon .dashicons {
-        font-size: 30px !important;
-        width: 30px !important;
-        height: 30px !important;
-        line-height: 30px !important;
-    }
-
-    .mecenat-avantage-item-title {
-        font-size: 1.3rem;
-    }
-
-    .mecenat-avantage-item-text {
-        font-size: 0.9rem;
+    .mecenat-soutien-card-icon svg {
+        width: 32px;
+        height: 32px;
     }
 }
 
 @media (max-width: 480px) {
-    .mecenat-avantage-section {
-        padding: 25px 3vw;
-    }
-
-    .mecenat-avantage-title {
-        font-size: 1.5rem;
-        margin-bottom: 30px;
-    }
-
-    .mecenat-avantage-item {
-        padding: 15px;
+    .mecenat-soutien-card {
+        padding: 25px 20px;
         gap: 15px;
     }
 
-    .mecenat-avantage-icon {
-        width: 50px;
-        height: 50px;
+    .mecenat-soutien-card-content {
+        gap: 12px;
     }
 
-    .mecenat-avantage-icon .dashicons {
-        font-size: 25px !important;
-        width: 25px !important;
-        height: 25px !important;
-        line-height: 25px !important;
+    .mecenat-soutien-card-text {
+        font-size: 0.95rem;
     }
 
-    .mecenat-avantage-item-title {
-        font-size: 1.1rem;
-        margin-bottom: 10px;
-    }
-
-    .mecenat-avantage-item-text {
+    .mecenat-tag {
         font-size: 0.85rem;
+        padding: 6px 12px;
+    }
+}
+
+/* ------------------------------------------------------------- */
+/* 9. SECTION MECENAT - CONFIANCE & TRANSPARENCE               */
+/* ------------------------------------------------------------- */
+
+.mecenat-confiance-section {
+    padding: clamp(40px, 6vw, 70px) clamp(16px, 4vw, 40px);
+    max-width: 1200px;
+    width: min(1200px, calc(100% - 10vw));
+    margin: clamp(32px, 6vw, 80px) auto 0;
+    text-align: center;
+}
+
+.mecenat-confiance-title {
+    font-family: 'RedsAglonema', cursive;
+    color: var(--color-primary);
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin: 0 0 clamp(20px, 4vw, 40px) 0;
+    line-height: 1.2;
+}
+
+.mecenat-confiance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(16px, 3vw, 28px);
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.mecenat-confiance-pill {
+    background-color: #9168f3;
+    color: var(--color-secondary);
+    font-family: 'RedsAglonema', cursive;
+    font-size: clamp(1.1rem, 2.4vw, 1.75rem);
+    padding: clamp(14px, 2.5vw, 22px) clamp(18px, 3vw, 30px);
+    border-radius: 14px;
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .mecenat-confiance-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .mecenat-confiance-grid {
+        grid-template-columns: 1fr;
     }
 }
 

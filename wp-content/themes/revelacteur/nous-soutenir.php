@@ -23,24 +23,19 @@ get_header(); ?>
             </div>
 
             <div class="mecenat-content">
-                <h2 class="mecenat-title">Pourquoi rejoindre l'aventure ?</h2>
+                <h2 class="mecenat-title">Pourquoi nous soutenir?</h2>
                 <div class="mecenat-cards-grid">
                     <div class="mecenat-card">
-                        <h3 class="mecenat-card__title">Pour la Jeunesse et l'Éducation Populaire</h3>
-                        <p class="mecenat-card__text">Contribuez à créer un espace où les jeunes peuvent s'exprimer,
-                            apprendre et développer leur citoyenneté à travers des ateliers pédagogiques et artistiques.
-                        </p>
+                        <h3 class="mecenat-card__title">Impact social</h3>
+                        <p class="mecenat-card__text">Éducation populaire, transmission et accès à la culture pour les jeunes.</p>
                     </div>
                     <div class="mecenat-card">
-                        <h3 class="mecenat-card__title">Pour la Sauvegarde du Patrimoine</h3>
-                        <p class="mecenat-card__text">Participez à la restauration d'un lieu historique datant de 1525.
-                            Plus qu'un bâtiment, le Manoir de l'Estracelles deviendra un outil de transmission entre les
-                            générations.</p>
+                        <h3 class="mecenat-card__title">Impact patrimonial</h3>
+                        <p class="mecenat-card__text">Sauvegarde et réhabilitation du Manoir de l’Escrime, lieu de transmission intergénérationnelle.</p>
                     </div>
                     <div class="mecenat-card">
-                        <h3 class="mecenat-card__title">Pour le Dynamisme du Territoire</h3>
-                        <p class="mecenat-card__text">Soutenez une initiative locale qui renforce le lien social à
-                            Beuvry et dans l'agglomération, en favorisant l'économie sociale et solidaire (ESS).</p>
+                        <h3 class="mecenat-card__title">Impact territorial</h3>
+                        <p class="mecenat-card__text">Soutien à l’économie locale, ESS et dynamique rurale.</p>
                     </div>
                 </div>
 
@@ -50,67 +45,73 @@ get_header(); ?>
                 <div class="mecenat-soutien-content">
                     <h2 class="mecenat-soutien-title">Comment nous soutenir ?</h2>
                     <div class="mecenat-soutien-cards-grid">
+                        <!-- Carte 1: Faire un don -->
                         <div class="mecenat-soutien-card">
-                            <h3 class="mecenat-soutien-card__title">Mécénat Financier</h3>
-                            <p class="mecenat-soutien-card__text">Aidez-nous à financer les travaux de rénovation
-                                (toiture,
-                                aménagements intérieurs) et l'achat de matériel pédagogique pour les ateliers.</p>
+                            <div class="mecenat-soutien-card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                            </div>
+                            <div class="mecenat-soutien-card-content">
+                                <h3 class="mecenat-soutien-card-title">Faire un don</h3>
+                                <p class="mecenat-soutien-card-text">Don ponctuel ou régulier, 100 % dédié aux projets terrain. Simple, rapide et direct.</p>
+                                <a href="#" class="mecenat-soutien-btn">Faire un don</a>
+                            </div>
                         </div>
+
+                        <!-- Carte 2: Devenir mécène -->
                         <div class="mecenat-soutien-card">
-                            <h3 class="mecenat-soutien-card__title">Mécénat en Nature</h3>
-                            <p class="mecenat-soutien-card__text">Vous êtes une entreprise du bâtiment ou un fournisseur
-                                ?
-                                Vos dons de matériaux (bois, peinture, outillage) sont précieux pour la réhabilitation
-                                du
-                                manoir.</p>
+                            <div class="mecenat-soutien-card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 7h-3a2 2 0 0 1-2-2V2"></path>
+                                    <path d="M9 18a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h7l4 4v10a2 2 0 0 1-2 2Z"></path>
+                                    <path d="M3 7.6v12.8A1.6 1.6 0 0 0 4.6 22h9.8"></path>
+                                </svg>
+                            </div>
+                            <div class="mecenat-soutien-card-content">
+                                <h3 class="mecenat-soutien-card-title">Devenir mécène</h3>
+                                <div class="mecenat-soutien-tags">
+                                    <span class="mecenat-tag">Financier</span>
+                                    <span class="mecenat-tag">Nature</span>
+                                    <span class="mecenat-tag">Compétences</span>
+                                </div>
+                            </div>
                         </div>
+
+                        <!-- Carte 3: Devenir bénévole -->
                         <div class="mecenat-soutien-card">
-                            <h3 class="mecenat-soutien-card__title">Mécénat de Compétences</h3>
-                            <p class="mecenat-soutien-card__text">Mettez l'expertise de vos collaborateurs au service du
-                                projet (juridique, communication, artisanat, gestion de projet).</p>
+                            <div class="mecenat-soutien-card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 7h-3a2 2 0 0 1-2-2V2"></path>
+                                    <path d="M9 18a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h7l4 4v10a2 2 0 0 1-2 2Z"></path>
+                                    <path d="M3 7.6v12.8A1.6 1.6 0 0 0 4.6 22h9.8"></path>
+                                </svg>
+                            </div>
+                            <div class="mecenat-soutien-card-content">
+                                <h3 class="mecenat-soutien-card-title">Devenir bénévole</h3>
+                                <div class="mecenat-soutien-tags">
+                                    <span class="mecenat-tag">Soutien</span>
+                                    <span class="mecenat-tag">Nature</span>
+                                    <span class="mecenat-tag">Compétences</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="mecenat-avantage-section">
-                <div class="mecenat-avantage-content">
-                    <h2 class="mecenat-avantage-title">Vos Avantages</h2>
-                    <div class="mecenat-avantage-items">
-                        <div class="mecenat-avantage-item">
-                            <div class="mecenat-avantage-icon">
-                                <span class="dashicons dashicons-awards"></span>
-                            </div>
-                            <div class="mecenat-avantage-text">
-                                <h3 class="mecenat-avantage-item-title">Réduction fiscale</h3>
-                                <p class="mecenat-avantage-item-text">Bénéficiez d'une réduction d'impôt jusqu'à 60% du
-                                    montant de votre don, dans la limite de 5‰ du chiffre d'affaires annuel HT.</p>
-                            </div>
-                        </div>
+             <!-- Section Partager -->
+                <div class="mecenat-partager-section">
+                    <h2 class="mecenat-partager-title">Partager notre mission</h2>
+                    <p class="mecenat-partager-text">Parlez de nous autour de vous et sur les réseaux sociaux pour élargir notre impact.</p>
+                </div>
 
-                        <div class="mecenat-avantage-item">
-                            <div class="mecenat-avantage-icon">
-                                <span class="dashicons dashicons-chart-bar"></span>
-                            </div>
-                            <div class="mecenat-avantage-text">
-                                <h3 class="mecenat-avantage-item-title">Visibilité accrue</h3>
-                                <p class="mecenat-avantage-item-text">Augmentez votre visibilité grâce à notre réseau,
-                                    nos événements et notre communication régulière auprès de nos partenaires prenantes.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="mecenat-avantage-item">
-                            <div class="mecenat-avantage-icon">
-                                <span class="dashicons dashicons-megaphone"></span>
-                            </div>
-                            <div class="mecenat-avantage-text">
-                                <h3 class="mecenat-avantage-item-title">Bénéfice RSE</h3>
-                                <p class="mecenat-avantage-item-text">Valorisez votre engagement sociétal et renforcez
-                                    votre image de marque auprès de vos clients, collaborateurs et partenaires.</p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="mecenat-confiance-section">
+                <h2 class="mecenat-confiance-title">Confiance & transparence</h2>
+                <div class="mecenat-confiance-grid">
+                    <div class="mecenat-confiance-pill">100 % des dons utilises pour nos actions</div>
+                    <div class="mecenat-confiance-pill">Transparence totale des financements</div>
+                    <div class="mecenat-confiance-pill">Recu fiscal selon la legislation en vigueur</div>
                 </div>
             </div>
 
