@@ -284,7 +284,8 @@ function revelacteur_customizer_css()
             .banner {
                 padding: 48px 32px;
                 font-size: 3rem;
-                min-height: auto;
+                min-height: clamp(360px, 55vh, 620px);
+                background-position: center top;
             }
 
             .banner .container {
@@ -305,6 +306,8 @@ function revelacteur_customizer_css()
                 padding: 36px 24px;
                 font-size: 2.4rem;
                 text-align: center;
+                min-height: clamp(300px, 45vh, 520px);
+                background-position: center top;
             }
 
             .banner .container {
@@ -329,16 +332,19 @@ function revelacteur_customizer_css()
             }
         }
 
-                   .banner, .banner p-1, .banner p-2, {
-    font-family: 'TT Rounds Neue', sans-serif !important;
-}
-     .banner {
+        .banner,
+        .accueil-p-1,
+        .accueil-p-2 {
+            font-family: 'TT Rounds Neue', sans-serif !important;
+        }
+
+        .banner {
             color: {$secondary_color};
             background-color: {$main_color}; /* Couleur de secours si pas d'image */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            min-height: calc(100vh - 100px);
+            min-height: clamp(420px, 70vh, 760px);
             display: flex;
             align-items: center;
         ";
