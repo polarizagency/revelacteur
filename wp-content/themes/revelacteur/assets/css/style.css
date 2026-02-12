@@ -2322,9 +2322,9 @@ h3 {
 
 /* Section Intro Mécénat */
 .mecenat-intro {
-    padding: 60px 5vw;
+    padding: 90px 5vw;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: clamp(40px, 6vw, 80px) auto;
     text-align: left;
 }
 
@@ -2410,7 +2410,7 @@ h3 {
 
 @media (max-width: 1200px) {
     .mecenat-intro {
-        padding: 50px 4vw;
+        padding: 75px 4vw;
     }
 
     .mecenat-content {
@@ -2429,7 +2429,7 @@ h3 {
 
 @media (max-width: 1024px) {
     .mecenat-intro {
-        padding: 40px 3vw;
+        padding: 60px 3vw;
     }
 
     .mecenat-content {
@@ -2463,7 +2463,7 @@ h3 {
 
 @media (max-width: 768px) {
     .mecenat-intro {
-        padding: 30px 5vw;
+        padding: 45px 5vw;
         text-align: center;
     }
 
