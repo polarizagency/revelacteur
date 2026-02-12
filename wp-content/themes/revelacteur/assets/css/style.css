@@ -305,7 +305,7 @@ h3 {
     visibility: hidden;
     pointer-events: none;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 5;
+    z-index: 20;
 }
 
 .menu-overlay__inner {
@@ -665,6 +665,20 @@ h3 {
     font-weight: 700;
     font-size: 0.95rem;
     white-space: nowrap;
+}
+
+
+.hover-up {
+    display: inline-block;
+    /* Nécessaire pour que la transformation s'applique correctement */
+    transition: transform 0.3s ease;
+    /* Définit la durée et la fluidité */
+    cursor: pointer;
+}
+
+.hover-up:hover {
+    transform: translateY(-5px);
+    /* Déplace l'élément de 5 pixels vers le haut */
 }
 
 @media (max-width: 1024px) {

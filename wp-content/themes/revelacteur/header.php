@@ -38,7 +38,7 @@
                 <span class="dashicons dashicons-no icon-close" aria-hidden="true"></span>
             </button>
 
-            <nav id="site-navigation" class="main-navigation">
+            <nav id="site-navigation" class="  main-navigation">
                 <?php
                 // Affiche le menu assigné à l'emplacement 'primary' (défini dans functions.php)
                 wp_nav_menu(array(
@@ -61,7 +61,7 @@
 
             <ul class="social-icons">
                 <?php if ($instagram_url): ?>
-                    <li>
+                    <li class="hover-up">
                         <a href="<?php echo esc_url($instagram_url); ?>" target="_blank" aria-label="Instagram">
                             <span class="dashicons dashicons-instagram"></span>
                         </a>
@@ -69,21 +69,21 @@
                     </li>
                 <?php endif; ?>
                 <?php if ($linkedin_url): ?>
-                    <li>
+                    <li class="hover-up">
                         <a href="<?php echo esc_url($linkedin_url); ?>" target="_blank" aria-label="LinkedIn">
                             <span class="dashicons dashicons-linkedin"></span>
                         </a>
                     </li>
                 <?php endif; ?>
                 <?php if ($facebook_url): ?>
-                    <li>
+                    <li class="hover-up">
                         <a href="<?php echo esc_url($facebook_url); ?>" target="_blank" aria-label="Facebook">
                             <span class="dashicons dashicons-facebook"></span>
                         </a>
                     </li>
                 <?php endif; ?>
                 <?php if ($youtube_url): ?>
-                    <li>
+                    <li class="hover-up">
                         <a href="<?php echo esc_url($youtube_url); ?>" target="_blank" aria-label="YouTube">
                             <span class="dashicons dashicons-youtube"></span>
                         </a>
@@ -91,7 +91,7 @@
                 <?php endif; ?>
 
                 <?php if ($twitch_url): ?>
-                    <li>
+                    <li class="hover-up">
                         <a href="<?php echo esc_url($twitch_url); ?>" target="_blank" aria-label="Twitch">
                             <span class="dashicons dashicons-twitch"></span>
                         </a>
