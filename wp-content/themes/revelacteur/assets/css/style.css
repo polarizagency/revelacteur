@@ -3398,12 +3398,6 @@ body.page .projects-grid {
 
 /*Project Single Page Styles */
 
-/* --- Global & Container --- */
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
 
 /* --- Hero Image (Celle qui était pixelisée) --- */
 .project-hero {
@@ -3520,10 +3514,7 @@ body.page .projects-grid {
     margin-top: 40px;
 }
 
-.project-nav-bottom .container {
-    display: flex;
-    justify-content: space-between;
-}
+
 
 .page-hero-projet {
 
