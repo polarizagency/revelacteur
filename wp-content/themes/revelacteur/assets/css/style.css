@@ -2392,7 +2392,7 @@ h3 {
 }
 
 .mecenat-card__title {
-     font-family: 'RedsAglonema', cursive;
+    font-family: 'RedsAglonema', cursive;
     color: var(--color-secondary);
     font-size: 2rem;
     margin: 0 0 20px 0;
@@ -2939,6 +2939,8 @@ h3 {
 .card-image {
     height: 280px;
     overflow: hidden;
+    position: relative;
+    /* Pour positionner le badge de statut */
 }
 
 @media (max-width: 768px) {
@@ -3392,4 +3394,200 @@ body.page .projects-grid {
 .desktop-cta .btn {
     padding: 10px 20px;
     font-size: 0.9rem;
+}
+
+/*Project Single Page Styles */
+
+/* --- Global & Container --- */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Hero Image (Celle qui était pixelisée) --- */
+.project-hero {
+    position: relative;
+    /* Pour positionner le badge de statut */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.project-hero img {
+    width: 100%;
+    height: 60vh;
+    /* Ajuste la hauteur selon tes besoins */
+    object-fit: cover;
+    /* Garde les proportions sans déformer */
+    display: block;
+}
+
+/* --- Bandeau Titre Violet --- */
+.project-header-purple {
+    background-color: var(--color-primary, #9168f3);
+    /* Violet de la maquette */
+    color: #ffffff;
+    padding: 40px 0;
+    margin-bottom: 50px;
+}
+
+.project-title {
+    font-family: 'Fredoka One', cursive;
+    /* Ou une police arrondie similaire */
+    font-size: 3.5rem;
+    margin: 0 0 15px 0;
+}
+
+.project-meta {
+    display: flex;
+    gap: 20px;
+}
+
+.meta-item {
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* --- Titres de Sections --- */
+.section-title {
+    color: var(--color-primary, #9168f3);
+    font-family: 'Fredoka One', cursive;
+    font-size: 2.2rem;
+    margin: 40px 0 20px 0;
+}
+
+/* --- Bloc Conclusion --- */
+.project-conclusion-card {
+    margin: 60px 0;
+}
+
+.conclusion-inner {
+    background-color: var(--color-primary, #9168f3);
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.conclusion-inner h3 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* --- CTA Contact --- */
+.project-contact-footer {
+    text-align: center;
+    padding: 80px 0;
+}
+
+.cta-title {
+    font-family: 'Fredoka One', cursive;
+    font-size: 3.5rem;
+    color: var(--color-primary, #9168f3);
+    line-height: 1.1;
+}
+
+.cta-title .highlight {
+    color: var(--color-primary, #9168f3);
+    /* Tu peux changer si besoin */
+}
+
+.btn-contact {
+    display: inline-block;
+    background-color: var(--color-primary, #9168f3);
+    color: white;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 25px;
+    transition: transform 0.3s ease;
+}
+
+.btn-contact:hover {
+    transform: scale(1.05);
+}
+
+/* --- Navigation --- */
+.project-nav-bottom {
+    border-top: 1px solid #eee;
+    padding: 30px 0;
+    margin-top: 40px;
+}
+
+.project-nav-bottom .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.page-hero-projet {
+
+    background-color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-hero-projet__title {
+    margin: 0;
+    margin-left: 10vw;
+    text-align: left;
+    font-family: 'RedsAglonema', cursive;
+    color: var(--color-secondary);
+    font-size: 6rem;
+    z-index: 10;
+    position: relative;
+}
+
+/* =========================================
+   VIGNETTES DE STATUT DES PROJETS
+========================================= */
+
+/* Badge de statut sur les cartes projet */
+.project-status-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: white;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background-color: var(--color-primary, #9168f3);
+}
+
+
+/* Badge dans la page single projet (sur l'image hero) */
+.project-hero .project-status-badge {
+    top: 30px;
+    right: 30px;
+    padding: 12px 24px;
+    font-size: 1rem;
+}
+
+/* Responsive pour les badges */
+@media (max-width: 768px) {
+    .project-status-badge {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+        top: 10px;
+        right: 10px;
+    }
+
+    .project-hero .project-status-badge {
+        top: 20px;
+        right: 20px;
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
 }

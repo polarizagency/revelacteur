@@ -2,114 +2,82 @@
 /*
 Template Name: Page Nos Projets
 */
-
 get_header(); ?>
 
-<div id="primary" class="content-area" >
+<div id="primary" class="content-area">
     <main id="main" class="site-main">
+        <div class="page-hero">
+            <h1 class="page-title page-hero__title">Nos Projets </h1>
 
-        <div >
-            <div class="page-hero">
-                <h1 class="page-title page-hero__title">Nos Projets</h1>
-
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/forme_verte.svg" alt="" class="decoration-verte page-hero__shape" />
-            </div>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/forme_verte.svg" alt=""
+                class="decoration-verte page-hero__shape" />
+        </div>
 
 
-            <!-- Bandeau des catégories/filtres -->
-            <section class="projects-filters">
-                <div class="container">
-                    <div class="filters-list">
-                        <?php
-                        // Récupère toutes les catégories
-                        $categories = get_categories(array(
-                            'orderby' => 'name',
-                            'order'   => 'ASC',
-                            'hide_empty' => true
-                        ));
-                        
-                        // Affiche un bouton "Tous"
-                        echo '<button class="filter-btn active" data-category="all">Tous les projets</button>';
-                        
-                        // Affiche chaque catégorie
-                        foreach($categories as $category) {
-                            echo '<button class="filter-btn" data-category="' . esc_attr($category->slug) . '">' . esc_html($category->name) . '</button>';
-                        }
-                        ?>
-                    </div>
-                </div>
-            </section>
-
+        <section class="projects-filters">
             <div class="container">
-                <div class="projects-grid">
-                    
+                <div class="filters-list">
                     <?php
-                // Configuration de la requête pour récupérer les articles
+                    // RÉCUPÈRE LES TERMES DE TA TAXONOMIE PERSONNALISÉE
+                    $terms = get_terms(array(
+                        'taxonomy' => 'categorie_projet',
+                        'hide_empty' => true,
+                    ));
+
+                    echo '<button class="filter-btn active" data-category="all">Tous les projets</button>';
+
+                    if (!empty($terms) && !is_wp_error($terms)) {
+                        foreach ($terms as $term) {
+                            echo '<button class="filter-btn" data-category="' . esc_attr($term->slug) . '">' . esc_html($term->name) . '</button>';
+                        }
+                    }
+                    ?>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="projects-grid">
+                <?php
                 $args = array(
-                    'post_type'      => 'post',      // Type de contenu : Articles
-                    'posts_per_page' => 9,           // Nombre d'articles à afficher
-                    'orderby'        => 'date',      // Trier par date
-                    'order'          => 'DESC'       // Du plus récent au plus vieux
+                    'post_type' => 'projet', // TON NOUVEAU CPT
+                    'posts_per_page' => 9,
+                    'orderby' => 'date',
+                    'order' => 'DESC'
                 );
 
-                $projets_query = new WP_Query( $args );
+                $projets_query = new WP_Query($args);
 
-                if ( $projets_query->have_posts() ) :
-                    while ( $projets_query->have_posts() ) : $projets_query->the_post();
-                        // Récupère les catégories de l'article
-                        $post_categories = get_the_category();
-                        $category_slugs = array();
-                        foreach($post_categories as $cat) {
-                            $category_slugs[] = $cat->slug;
+                if ($projets_query->have_posts()):
+                    while ($projets_query->have_posts()):
+                        $projets_query->the_post();
+
+                        // RÉCUPÈRE LES TERMES POUR LE FILTRE JS
+                        $project_terms = get_the_terms(get_the_ID(), 'categorie_projet');
+                        $term_slugs = array();
+                        if ($project_terms) {
+                            foreach ($project_terms as $t) {
+                                $term_slugs[] = $t->slug;
+                            }
                         }
-                        $data_categories = implode(' ', $category_slugs);
+                        $data_categories = implode(' ', $term_slugs);
                         ?>
                         <div class="project-card-wrapper" data-categories="<?php echo esc_attr($data_categories); ?>">
-                            <?php get_template_part( 'parts/content-project-card' ); ?>
+                            <?php get_template_part('parts/content-project-card'); ?>
                         </div>
                         <?php
                     endwhile;
-                    wp_reset_postdata(); // Important : réinitialise les données après la boucle
-                else : ?>
-                    <p><?php esc_html_e( 'Aucun projet trouvé pour le moment.', 'revelacteur' ); ?></p>
+                    wp_reset_postdata();
+                else: ?>
+                    <p>Aucun projet trouvé pour le moment.</p>
                 <?php endif; ?>
-
-                </div>
             </div>
         </div>
-
     </main>
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card-wrapper');
-    
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            // Retire la classe active de tous les boutons
-            filterBtns.forEach(b => b.classList.remove('active'));
-            // Ajoute la classe active au bouton cliqué
-            this.classList.add('active');
-            
-            const category = this.getAttribute('data-category');
-            
-            projectCards.forEach(card => {
-                if (category === 'all') {
-                    card.style.display = 'block';
-                } else {
-                    const categories = card.getAttribute('data-categories');
-                    if (categories && categories.includes(category)) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                }
-            });
-        });
-    });
-});
+    // ... Ton script actuel ...
 </script>
 
 <?php get_footer(); ?>

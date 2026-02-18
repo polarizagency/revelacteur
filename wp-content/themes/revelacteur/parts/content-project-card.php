@@ -9,17 +9,32 @@
 // Récupère la première catégorie du post
 $categories = get_the_category();
 $category_name = $categories ? $categories[0]->name : '';
+
+// Récupère le statut du projet
+$project_status = get_post_meta(get_the_ID(), '_project_status', true);
+$status_labels = array(
+    'en-cours' => 'En cours',
+    'termine' => 'Terminé',
+    'en-pause' => 'En pause',
+    'a-venir' => 'À venir'
+);
 ?>
 
 <article class="project-card">
-    
+
     <div class="card-image">
-        <?php if ( has_post_thumbnail() ) : ?>
+        <?php if (has_post_thumbnail()): ?>
             <a href="<?php the_permalink(); ?>" class="card-image__link">
-                <?php the_post_thumbnail( 'large' ); ?>
+                <?php the_post_thumbnail('large'); ?>
             </a>
-        <?php else : ?>
-            <div class="card-image__placeholder"></div> 
+        <?php else: ?>
+            <div class="card-image__placeholder"></div>
+        <?php endif; ?>
+
+        <?php if ($project_status && isset($status_labels[$project_status])): ?>
+            <span class="project-status-badge status-<?php echo esc_attr($project_status); ?>">
+                <?php echo esc_html($status_labels[$project_status]); ?>
+            </span>
         <?php endif; ?>
     </div>
 
@@ -30,19 +45,19 @@ $category_name = $categories ? $categories[0]->name : '';
             <h3 class="card-title">
                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
             </h3>
-            
+
             <p class="card-description">
-                <?php 
+                <?php
                 // Affiche le résumé ou les 20 premiers mots du contenu
                 $excerpt = get_the_excerpt();
-                echo wp_trim_words( $excerpt, 30, '...' );
+                echo wp_trim_words($excerpt, 30, '...');
                 ?>
             </p>
         </div>
 
         <div class="card-footer">
-            <?php if ( $category_name ) : ?>
-                <span class="card-badge"><?php echo esc_html( $category_name ); ?></span>
+            <?php if ($category_name): ?>
+                <span class="card-badge"><?php echo esc_html($category_name); ?></span>
             <?php endif; ?>
 
             <a href="<?php the_permalink(); ?>" class="card-arrow-btn" aria-label="Lire la suite">

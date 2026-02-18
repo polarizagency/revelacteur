@@ -67,24 +67,31 @@ function revelacteur_scripts()
 {
     $theme_version = wp_get_theme()->get('Version');
 
+    // Polices
     wp_enqueue_style('google-fonts-montserrat', '//fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap', array(), null);
 
+    // Styles
     wp_enqueue_style(
         'revelacteur-style',
         get_template_directory_uri() . '/assets/css/style.css',
-        array('google-fonts-montserrat'), // Dépendance ajoutée pour s'assurer que Montserrat est chargée en premier
+        array('google-fonts-montserrat'),
         $theme_version
     );
 
     wp_enqueue_style('dashicons');
 
-
-    // Inclure un script JavaScript principal
-    wp_enqueue_script('revelacteur-script', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), $theme_version, true);
-    // Le 'true' à la fin indique que le script doit être chargé dans le footer (meilleure performance)          
+    // SCRIPTS
+    // On retire 'jquery' des dépendances car ton main.js est en JS pur.
+    // On utilise time() au lieu de $theme_version temporairement pour forcer le navigateur à voir tes modifs JS
+    wp_enqueue_script(
+        'revelacteur-script',
+        get_template_directory_uri() . '/assets/js/main.js',
+        array(),
+        time(),
+        true
+    );
 }
 add_action('wp_enqueue_scripts', 'revelacteur_scripts');
-
 
 // -------------------------------------------------------------------------
 // 3. ENREGISTREMENT DES ZONES DE WIDGETS (Sidebars)
