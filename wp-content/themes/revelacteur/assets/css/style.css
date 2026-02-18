@@ -13,15 +13,16 @@
 /* (Nécessite que les fichiers .woff/.woff2 soient dans /assets/fonts/)
 /* ------------------------------------------------------------- */
 
+
+
 @font-face {
-    font-family: 'RedsAglonema';
-    /* Nom utilisé dans functions.php */
-    /* Assurez-vous que le chemin est correct par rapport à ce fichier CSS (../fonts/) */
-    src: url('../fonts/Reds-Aglonema.ttf') format('truetype');
+    font-family: 'Willond';
+    src: url("../fonts/Willond.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
+
 
 @font-face {
     font-family: 'TT Rounds Neue';
@@ -30,72 +31,6 @@
     font-weight: 700;
 }
 
-/* ------------------------------------------------------------- */
-/* 2. RÉINITIALISATION DE BASE ET STYLES GÉNÉRAUX                */
-/* ------------------------------------------------------------- */
-
-body {
-    /* Les polices Montserrat et Reds Aglonema sont appliquées dynamiquement */
-
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-
-}
-
-ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-/* Styles des titres pour assurer la bonne taille et la bonne police */
-h1 {
-    font-size: 3em;
-}
-
-h2 {
-    font-size: 2.5em;
-}
-
-h3 {
-    font-size: 2em;
-}
-
-/* Container générique */
-.container {
-    max-width: 1200px;
-    padding: 0 32px;
-}
-
-@media (max-width: 1024px) {
-    .container {
-        padding: 0 24px;
-    }
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: 0 16px;
-    }
-
-    h1 {
-        font-size: 2.2em;
-    }
-
-    h2 {
-        font-size: 1.8em;
-    }
-
-    h3 {
-        font-size: 1.4em;
-    }
-}
 
 /* ------------------------------------------------------------- */
 /* 3. STYLES DE L'EN-TÊTE (HEADER) ET DU MENU                    */
@@ -326,7 +261,7 @@ h3 {
 }
 
 .menu-overlay__nav a {
-    font-family: 'RedsAglonema', cursive;
+    font-family: 'Willond', cursive;
     font-size: clamp(1.8rem, 6vw, 3.2rem);
     font-weight: 700;
 }
@@ -511,43 +446,6 @@ body.menu-open {
     }
 }
 
-
-/*
- * Theme Name: Nom de Mon Super Thème
- * Theme URI: https://mon-site-web.com
- * Author: Polariz web agency
- * Description: Thème WordPress personnalisé pour l'association Revel'Acteur.
- * Version: 1.0
- *
- * Ceci est le fichier CSS principal chargé via wp_enqueue_style.
- */
-
-/* ------------------------------------------------------------- */
-/* 1. DÉCLARATION DE LA POLICE LOCALE (REDS AGLONEMA)             */
-/* (Nécessite que les fichiers .woff/.woff2 soient dans /assets/fonts/)
-/* ------------------------------------------------------------- */
-
-@font-face {
-    font-family: 'RedsAglonema';
-    /* Nom utilisé dans functions.php */
-    /* Assurez-vous que le chemin est correct par rapport à ce fichier CSS (../fonts/) */
-    src: url('../fonts/Reds-Aglonema.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'TT Rounds Neue';
-    /* Simplifie le nom ici */
-    src: url('../fonts/TT\ Rounds\ Neue\ Trial\ Condensed\ Black.ttf') format('truetype');
-    font-weight: 700;
-}
-
-/* ------------------------------------------------------------- */
-/* 2. RÉINITIALISATION DE BASE ET STYLES GÉNÉRAUX                */
-/* ------------------------------------------------------------- */
-
 body {
     /* Les polices Montserrat et Reds Aglonema sont appliquées dynamiquement */
 
@@ -611,63 +509,6 @@ h3 {
     }
 }
 
-/* ------------------------------------------------------------- */
-/* 3. STYLES DE L'EN-TÊTE (HEADER) ET DU MENU                    */
-/* ------------------------------------------------------------- */
-.site-header {
-    display: flex;
-    /* Utilise Flexbox pour aligner Logo, Menu et CTA */
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 40px;
-    background-color: var(--color-secondary);
-    flex-wrap: wrap;
-}
-
-/* Aligner le logo et le titre du site */
-.site-branding {
-    display: flex;
-    align-items: center;
-}
-
-/* Pour le logo personnalisé (image) */
-.custom-logo-link img {
-    max-height: 60px;
-    /* Taille maximale du logo */
-    width: auto;
-}
-
-/* Conteneur du menu */
-.main-navigation {
-    flex-grow: 1;
-    /* Permet au menu de prendre de la place */
-    text-align: center;
-}
-
-/* Liste des liens de navigation */
-.main-navigation ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    margin-right: 30%;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.main-navigation li {
-    padding: 0 15px;
-}
-
-.main-navigation a {
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.95rem;
-    white-space: nowrap;
-}
-
-
 .hover-up {
     display: inline-block;
     /* Nécessaire pour que la transformation s'applique correctement */
@@ -679,196 +520,6 @@ h3 {
 .hover-up:hover {
     transform: translateY(-5px);
     /* Déplace l'élément de 5 pixels vers le haut */
-}
-
-@media (max-width: 1024px) {
-    .site-header {
-        padding: 8px 24px;
-    }
-
-    .main-navigation ul {
-        margin-right: 20%;
-        gap: 8px;
-    }
-
-    .main-navigation li {
-        padding: 0 10px;
-    }
-
-    .main-navigation a {
-        font-size: 0.9rem;
-    }
-
-    .social-icons a .dashicons {
-        font-size: 24px !important;
-        width: 24px !important;
-        height: 24px !important;
-    }
-}
-
-@media (max-width: 768px) {
-    .site-header {
-        padding: 10px 16px;
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .main-navigation {
-        width: 100%;
-        order: 2;
-    }
-
-    .main-navigation ul {
-        margin-right: 0;
-        gap: 8px;
-        justify-content: center;
-    }
-
-    .main-navigation li {
-        padding: 0 6px;
-    }
-
-    .main-navigation a {
-        font-size: 0.8rem;
-    }
-
-    .social-icons {
-        order: 3;
-    }
-
-    .social-icons a .dashicons {
-        font-size: 20px !important;
-        width: 20px !important;
-        height: 20px !important;
-    }
-
-    .social-icons li {
-        padding: 0 6px;
-    }
-}
-
-.social-icons {
-    display: flex;
-    align-items: center;
-}
-
-.social-icons a {
-    text-decoration: none;
-    transition: color 0.3s ease;
-
-    /* Définissez la taille de base ici, mais la règle suivante est plus prioritaire */
-    font-size: 24px;
-}
-
-/* CIBLAGE DIRECT DES DASHICONS POUR FORCER LA TAILLE */
-.social-icons a .dashicons {
-    /* Utilisez !important pour forcer la surcharge des styles WordPress par défaut */
-    font-size: 32px !important;
-    /* <--- Augmente la taille de l'icône */
-
-    /* Assure que la boîte de l'icône suit sa taille */
-    width: 32px !important;
-    height: 32px !important;
-    line-height: 32px !important;
-
-    vertical-align: middle;
-}
-
-/* Gérer l'espace entre les icônes */
-.social-icons li {
-    padding: 0 8px;
-}
-
-/* ------------------------------------------------------------- */
-/* 4. STYLES DU BOUTON CTA (.btn-primary)                        */
-/* ------------------------------------------------------------- */
-
-.header-cta {
-    /* Pour s'assurer qu'il est bien aligné */
-    margin-left: 20px;
-}
-
-/* ------------------------------------------------------------- */
-/* 4. STYLES DES BOUTONS (PRIMARY & SECONDARY)                   */
-/* ------------------------------------------------------------- */
-
-.btn-primary,
-.btn-secondary {
-    display: inline-block;
-    /* INDISPENSABLE pour l'animation */
-    padding: 12px 20px;
-    border-width: 1px;
-    border-style: solid;
-    text-decoration: none;
-    cursor: pointer;
-    border-radius: 10px;
-    font-weight: 700;
-    transition: all 0.3s ease-in-out;
-    /* Animation fluide */
-}
-
-/* Bouton Vert (Secondary) */
-.btn-secondary {
-    margin: 16px;
-}
-
-/* EFFET HOVER COMMUN (Le soulèvement) */
-.btn-primary:hover,
-.btn-secondary:hover {
-    opacity: 0.9 !important;
-    transform: translateY(-5px) !important;
-    /* Il monte de 5px */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    /* Optionnel: petite ombre pour l'effet de hauteur */
-}
-
-/* ------------------------------------------------------------- */
-/* 6 . STYLES DU BOUTON CTA (.btn-secondary)                        */
-/* ------------------------------------------------------------- */
-
-.banner {
-    background-color: var(--color-primary);
-    color: #ffffff;
-    text-align: left;
-    font-size: 3.7rem;
-    padding: 60px 40px;
-    font-weight: 700;
-    position: relative;
-    min-height: 60vh;
-}
-
-@media (max-width: 1024px) {
-    .banner {
-        font-size: 3rem;
-        padding: 48px 32px;
-        min-height: 50vh;
-    }
-}
-
-@media (max-width: 768px) {
-    .banner {
-        font-size: 2.2rem;
-        padding: 36px 16px;
-        min-height: 45vh;
-        text-align: center;
-    }
-
-    .accueil-p-1,
-    .accueil-p-2,
-    .accueil-p-3 {
-        text-align: center;
-        display: block;
-    }
-
-    .accueil-p-3 {
-        font-size: 1.1rem !important;
-    }
-
-    .banner .btn-primary {
-        display: block;
-        width: fit-content;
-        margin: 16px auto 0;
-    }
 }
 
 
@@ -901,7 +552,7 @@ h3 {
 }
 
 .home-asso__title {
-    font-family: 'RedsAglonema', cursive;
+    font-family: 'Willond', cursive;
     color: var(--color-primary);
     font-size: 3.4rem;
     line-height: 1.1;
@@ -953,7 +604,7 @@ h3 {
     margin: 0;
     margin-left: 10vw;
     text-align: left;
-    font-family: 'RedsAglonema', cursive;
+    font-family: 'Willond', cursive;
     color: var(--color-secondary);
     font-size: 6rem;
     z-index: 10;
@@ -1146,7 +797,7 @@ h3 {
 }
 
 .association-section-bloc__title {
-    font-family: 'RedsAglonema', cursive;
+    font-family: 'Willond', cursive;
     color: var(--color-secondary);
     font-size: 2rem;
     margin: 0 0 20px 0;
@@ -1218,7 +869,7 @@ h3 {
 }
 
 .association-section-aventure-réseaux>p {
-    font-family: 'RedsAglonema', cursive;
+    font-family: 'Willond', cursive;
     color: var(--color-primary);
     font-size: 2.5rem;
     margin: 0 0 40px 0;
@@ -1404,7 +1055,7 @@ h3 {
 }
 
 .contact-title {
-    font-family: 'RedsAglonema', cursive;
+    font-family: 'Willond', cursive;
     color: var(--color-primary);
     /* VIOLET */
     font-size: 5rem;
@@ -1826,496 +1477,6 @@ h3 {
     }
 }
 
-/* =========================================
-   5. NOUVEAU FOOTER (STYLE COMPLET & CORRIGÉ)
-   ========================================= */
-
-/* --- CONFIGURATION GLOBALE --- */
-.site-footer-wrapper .container {
-
-    margin: 0 auto;
-    padding: 0 50px;
-    position: relative;
-}
-
-/* ---------------------------------------------------------
-   B. SECTION CONTACT (Fond Blanc + Forme Jaune)
---------------------------------------------------------- */
-.footer-contact-section {
-    background-color: #ffffff;
-    padding: 80px 0;
-    position: relative;
-    /* Nécessaire pour la forme jaune */
-    overflow: hidden;
-    /* Coupe la forme jaune si elle dépasse */
-}
-
-@media (max-width: 1024px) {
-    .footer-contact-section {
-        padding: 60px 0;
-    }
-}
-
-@media (max-width: 768px) {
-    .footer-contact-section {
-        padding: 40px 0;
-    }
-}
-
-/* Force le contenu à passer DEVANT la forme jaune */
-.footer-contact-section .container {
-    position: relative;
-    z-index: 10;
-}
-
-/* La boite flexible qui contient Gauche (Titre+Btn) et Droite (Réseaux) */
-.flex-container {
-    display: flex;
-    justify-content: space-between;
-    /* ALIGNEMENT CLÉ : Aligne le bouton et les réseaux en BAS */
-    align-items: flex-end;
-    flex-wrap: wrap;
-    gap: 40px;
-}
-
-@media (max-width: 768px) {
-    .flex-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-    }
-}
-
-/* --- COLONNE GAUCHE --- */
-.contact-left {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.contact-title {
-    font-family: 'RedsAglonema', cursive;
-    color: var(--color-primary);
-    /* VIOLET */
-    font-size: 5rem;
-    line-height: 1.1;
-    margin-bottom: 30px;
-
-    /* ASTUCE : Limite la largeur pour forcer le retour à la ligne 
-       après "Envie de nous" */
-    max-width: 450px;
-}
-
-@media (max-width: 1024px) {
-    .contact-title {
-        font-size: 4rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .contact-title {
-        font-size: 2.8rem;
-        text-align: center;
-        max-width: 100%;
-    }
-}
-
-/* Reset des marges du bouton pour un alignement propre */
-.footer-contact-section .btn-primary {
-    margin: 0;
-    padding: 15px 30px;
-    /* Un peu plus gros */
-}
-
-/* --- COLONNE DROITE (Réseaux) --- */
-.contact-right {
-    display: flex;
-    padding-bottom: 5px;
-    /* Petit ajustement optique */
-}
-
-/* Force la couleur VIOLETTE pour les icônes */
-.social-icons.purple-icons a {
-    color: var(--color-primary) !important;
-    margin-left: 20px;
-    text-decoration: none;
-    transition: transform 0.3s ease;
-}
-
-.social-icons.purple-icons a:hover {
-    transform: translateY(-5px);
-}
-
-.social-icons.purple-icons .dashicons {
-    font-size: 45px !important;
-    width: 45px !important;
-    height: 45px !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* --- FORME JAUNE (SVG) --- */
-.decoration-jaune {
-    position: absolute;
-    /* Position : Coin Haut Droit */
-    top: -350px;
-    right: -200px;
-
-    /* Taille imposante */
-    width: 900px;
-    height: auto;
-
-    z-index: 0;
-    /* Derrière le texte */
-    pointer-events: none;
-    /* Ne gêne pas le clic */
-    transform: rotate(0deg);
-    /* Ajuste la rotation si besoin */
-}
-
-.decoration-verte {
-    z-index: 0;
-    /* Derrière le texte */
-}
-
-/* ---------------------------------------------------------
-   C. BAS DE PAGE (Fond Vert + Menu)
---------------------------------------------------------- */
-.footer-main-section {
-    background-color: var(--color-secondary);
-    /* VERT FLUO */
-    padding: 30px 0 20px 0;
-}
-
-.footer-row-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-    gap: 20px;
-}
-
-@media (max-width: 768px) {
-    .footer-row-top {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-}
-
-/* Logo */
-.footer-logo img {
-    max-height: 70px;
-    width: auto;
-}
-
-/* Menu Horizontal */
-.footer-nav-horizontal {
-    flex-grow: 1;
-    margin: 0 40px;
-}
-
-.menu-horizontal-list {
-    display: flex !important;
-    flex-direction: row !important;
-    /* Force l'horizontale */
-    justify-content: center;
-    gap: 40px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    flex-wrap: wrap;
-}
-
-@media (max-width: 768px) {
-    .menu-horizontal-list {
-        flex-direction: column !important;
-        gap: 15px;
-        margin: 20px 0;
-    }
-}
-
-.menu-horizontal-list li {
-    display: inline-block;
-}
-
-.menu-horizontal-list a {
-    color: var(--color-primary);
-    /* VIOLET */
-    font-weight: 700;
-    text-transform: capitalize;
-    /* Première lettre majuscule */
-    font-size: 1rem;
-    text-decoration: none;
-}
-
-.menu-horizontal-list a:hover {
-    text-decoration: underline;
-}
-
-/* Ligne de séparation */
-.footer-divider {
-    border: 0;
-    height: 2px;
-    background-color: var(--color-primary);
-    opacity: 0.5;
-    margin: 20px 0;
-    width: 100%;
-}
-
-/* Copyright */
-.footer-copyright p {
-    color: var(--color-primary);
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin: 0;
-}
-
-/* =========================================
-   6. GRILLE DES PROJETS (CARDS)
-   ========================================= */
-
-/* Configuration de la grille (Grid Layout) */
-.projects-grid {
-    display: grid;
-    /* Crée des colonnes automatiques de minimum 300px */
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 30px;
-    /* Espace entre les cartes */
-    margin: 0 auto;
-}
-
-/* --- Style de la Carte --- */
-.project-card {
-    display: flex;
-    flex-direction: column;
-    background-color: transparent;
-    border-radius: 0;
-    /* Pas d'arrondi sur la maquette */
-    overflow: hidden;
-    position: relative;
-    /* Ombre légère pour détacher du fond (optionnel) */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    /* Monte un peu au survol */
-}
-
-/* 1. L'image (Moitié Haute) */
-.card-image {
-    height: 250px;
-    /* Hauteur fixe pour l'image */
-    overflow: hidden;
-}
-
-@media (max-width: 768px) {
-    .card-image {
-        height: 200px;
-    }
-}
-
-.card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* L'image remplit la zone sans être déformée */
-    transition: transform 0.5s ease;
-}
-
-.project-card:hover .card-image img {
-    transform: scale(1.05);
-    /* Zoom léger au survol */
-}
-
-/* 2. Le Contenu (Moitié Basse - Bleu Foncé) */
-.card-content {
-    background-color: #2F3642;
-    /* COULEUR BLEU NUIT (identique capture) */
-    color: #ffffff;
-    padding: 30px 30px 60px 30px;
-    /* Padding bottom grand pour laisser place au bouton */
-    flex-grow: 1;
-    /* S'assure que toutes les boîtes ont la même hauteur */
-    position: relative;
-    /* Pour positionner le bouton en absolu */
-}
-
-@media (max-width: 768px) {
-    .card-content {
-        padding: 20px 20px 50px 20px;
-    }
-}
-
-/* Titre du projet */
-.card-title {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    /* Regular */
-    text-transform: uppercase;
-    font-size: 1.4rem;
-    margin: 0 0 15px 0;
-    line-height: 1.3;
-}
-
-@media (max-width: 768px) {
-    .card-title {
-        font-size: 1.1rem;
-    }
-}
-
-.card-title a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-/* Résumé (Excerpt) */
-.card-excerpt {
-    font-size: 0.9rem;
-    color: #d1d5db;
-    /* Blanc gris très clair */
-    line-height: 1.5;
-    font-weight: 300;
-}
-
-.card-excerpt p {
-    margin-bottom: 0;
-}
-
-/* 3. Le Bouton Flèche (Rond Violet) */
-.card-btn-arrow {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-
-    background-color: var(--color-primary);
-    /* VIOLET */
-    color: #ffffff;
-
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    /* Cercle parfait */
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.card-btn-arrow .dashicons {
-    font-size: 20px;
-    line-height: 20px;
-}
-
-.card-btn-arrow:hover {
-    background-color: #ffffff;
-    color: var(--color-primary);
-    /* Inverse les couleurs au survol */
-    transform: scale(1.1);
-}
-
-/* Responsive Mobile */
-@media (max-width: 768px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-        /* Une seule colonne sur mobile */
-        padding: 0 20px;
-    }
-}
-
-/* ---------------------------------------------------------
-   D. RESPONSIVE (Mobile)
---------------------------------------------------------- */
-@media (max-width: 900px) {
-
-    /* Ajustement Titre et Flexbox */
-    .contact-title {
-        font-size: 3.5rem;
-        max-width: 100%;
-        /* Plus de limite de largeur sur mobile */
-        text-align: center;
-    }
-
-    .flex-container {
-        flex-direction: column;
-        align-items: center;
-        /* Tout centré */
-        gap: 40px;
-    }
-
-    .contact-left {
-        align-items: center;
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .contact-right {
-        justify-content: center;
-    }
-
-    /* Forme Jaune Mobile */
-    .decoration-jaune {
-        width: 250px;
-        top: 0;
-        right: -50px;
-        opacity: 0.4;
-        /* Transparence pour lisibilité */
-    }
-
-    /* Menu Vertical sur mobile si besoin, sinon laisser horizontal avec wrap */
-    .footer-row-top {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-    }
-
-    .menu-horizontal-list {
-        flex-wrap: wrap;
-        /* Permet au menu de passer à la ligne sur petit écran */
-        gap: 15px;
-    }
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-
-    .flex-container,
-    .footer-row-top {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .contact-right {
-        margin-top: 30px;
-        justify-content: center;
-    }
-
-    .menu-horizontal-list {
-        flex-direction: column !important;
-        /* Menu vertical sur mobile */
-        gap: 15px;
-        margin: 20px 0;
-    }
-
-    .footer-nav-horizontal {
-        margin: 0;
-    }
-
-    .decoration-jaune {
-        width: 150px;
-        top: 0;
-        right: -30px;
-        opacity: 0.5;
-        /* La rend un peu transparente sur mobile pour lisibilité */
-    }
-}
-
 /* ------------------------------------------------------------- */
 /* 7. SECTION M�C�NAT - POURQUOI REJOINDRE L'AVENTURE           */
 /* ------------------------------------------------------------- */
@@ -2329,7 +1490,7 @@ h3 {
 }
 
 .mecenat-intro-title {
-    font-family: 'RedsAglonema', cursive;
+    font-family: 'Willond', cursive;
     color: #9168f3;
     font-size: clamp(2rem, 5vw, 4.5rem);
     margin: 0 0 30px 0;
@@ -2361,7 +1522,7 @@ h3 {
 }
 
 .mecenat-title {
-    font-family: 'RedsAglonema', cursive;
+    font-family: 'Willond', cursive;
     color: var(--color-secondary);
     font-size: 4.5rem;
     text-align: center;
@@ -2392,7 +1553,7 @@ h3 {
 }
 
 .mecenat-card__title {
-    font-family: 'RedsAglonema', cursive;
+    font-family: 'Willond', cursive;
     color: var(--color-secondary);
     font-size: 2rem;
     margin: 0 0 20px 0;
@@ -2546,7 +1707,7 @@ h3 {
 }
 
 .mecenat-soutien-title {
-    font-family: 'RedsAglonema', cursive;
+    font-family: 'Willond', cursive;
     color: var(--color-secondary);
     font-size: clamp(2rem, 5vw, 4rem);
     text-align: center;
@@ -2604,7 +1765,7 @@ h3 {
 }
 
 .mecenat-soutien-card-title {
-    font-family: 'RedsAglonema', cursive;
+    font-family: 'Willond', cursive;
     color: #9168f3;
     font-size: clamp(1.5rem, 3vw, 2rem);
     margin: 0;
@@ -2671,7 +1832,7 @@ h3 {
 }
 
 .mecenat-partager-title {
-    font-family: 'RedsAglonema', cursive;
+    font-family: 'Willond', cursive;
     color: #9168f3;
     font-size: clamp(2rem, 4vw, 3rem);
     margin: 0 0 20px 0;
@@ -2745,7 +1906,7 @@ h3 {
 }
 
 .mecenat-confiance-title {
-    font-family: 'RedsAglonema', cursive;
+    font-family: 'Willond', cursive;
     color: var(--color-primary);
     font-size: clamp(2rem, 5vw, 4rem);
     margin: 0 0 clamp(20px, 4vw, 40px) 0;
@@ -2763,7 +1924,7 @@ h3 {
 .mecenat-confiance-pill {
     background-color: #9168f3;
     color: var(--color-secondary);
-    font-family: 'RedsAglonema', cursive;
+    font-family: 'Willond', cursive;
     font-size: clamp(1.1rem, 2.4vw, 1.75rem);
     padding: clamp(14px, 2.5vw, 22px) clamp(18px, 3vw, 30px);
     border-radius: 14px;
@@ -2826,7 +1987,7 @@ h3 {
 }
 
 .contact-form-title {
-    font-family: 'RedsAglonema', cursive;
+    font-family: 'Willond', cursive;
     color: var(--color-primary);
     font-size: 2.2rem;
     margin: 0 0 10px 0;
@@ -3131,7 +2292,7 @@ h3 {
 }
 
 .home-latest-projects .section-title {
-    font-family: 'RedsAglonema', sans-serif;
+    font-family: 'Willond', sans-serif;
     font-size: clamp(2rem, 5vw, 3.5rem);
     color: var(--color-primary, #9168F3);
     text-align: left;
@@ -3219,7 +2380,7 @@ h3 {
 }
 
 .filter-btn {
-    font-family: 'RedsAglonema', sans-serif;
+    font-family: 'Willond', sans-serif;
     font-size: 1rem;
     padding: 12px 24px;
     background-color: transparent;
@@ -3529,7 +2690,7 @@ body.page .projects-grid {
     margin: 0;
     margin-left: 10vw;
     text-align: left;
-    font-family: 'RedsAglonema', cursive;
+    font-family: 'Willond', cursive;
     color: var(--color-secondary);
     font-size: 6rem;
     z-index: 10;
@@ -3580,5 +2741,368 @@ body.page .projects-grid {
         right: 20px;
         padding: 10px 18px;
         font-size: 0.9rem;
+    }
+}
+
+/* =========================================
+   ÉVÉNEMENTS - GRILLES ET CARTES
+========================================= */
+
+/* Grille des événements (similaire aux projets) */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+
+@media (max-width: 1024px) {
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* Carte d'événement */
+.event-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Meta informations dans la carte */
+.event-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.event-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.event-meta-item .dashicons {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    color: var(--color-primary, #9168f3);
+}
+
+/* Filtres d'événements */
+.events-filters {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.events-filters .filters-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Badges de statut pour événements */
+.event-status-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: white;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background-color: var(--color-primary, #9168f3);
+}
+
+
+/* =========================================
+   SINGLE ÉVÉNEMENT
+========================================= */
+
+/* Hero de l'événement */
+.event-hero {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.event-hero img {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    display: block;
+}
+
+.event-hero .event-status-badge {
+    top: 30px;
+    right: 30px;
+    padding: 12px 24px;
+    font-size: 1rem;
+}
+
+/* Header violet de l'événement */
+.event-header-purple {
+    background-color: var(--color-primary, #9168f3);
+    padding: 60px 0;
+    color: white;
+    text-align: center;
+}
+
+.page-hero-event__title {
+    margin: 0 0 30px 0;
+    font-family: 'Willond', cursive;
+    color: white;
+    font-size: 4rem;
+    z-index: 10;
+    position: relative;
+}
+
+.event-meta-header {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.event-meta-header .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.event-meta-header .dashicons {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+}
+
+/* Grille avec contenu principal et sidebar */
+.event-info-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    margin: 60px 0;
+}
+
+@media (max-width: 1024px) {
+    .event-info-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+.event-section {
+    margin-bottom: 40px;
+}
+
+/* Sidebar avec informations pratiques */
+.event-sidebar {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
+
+@media (max-width: 1024px) {
+    .event-sidebar {
+        position: relative;
+        top: 0;
+    }
+}
+
+.event-info-card {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 4px solid var(--color-primary, #9168f3);
+}
+
+.event-info-card h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: var(--color-primary, #9168f3);
+    font-size: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.info-item .dashicons {
+    flex-shrink: 0;
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    color: var(--color-primary, #9168f3);
+}
+
+.info-item strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.info-item p {
+    margin: 0;
+    color: #666;
+    line-height: 1.5;
+}
+
+.event-address {
+    font-size: 0.9rem;
+    margin-top: 5px !important;
+    font-style: italic;
+}
+
+/* CTA d'inscription */
+.event-cta-card {
+    margin-top: 30px;
+}
+
+.btn-event-register {
+    display: block;
+    width: 100%;
+    padding: 15px 30px;
+    background-color: var(--color-secondary, #8BC34A);
+    color: white;
+    text-align: center;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-event-register:hover {
+    background-color: var(--color-secondary-hover, #7CB342);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 195, 74, 0.3);
+}
+
+/* Section contact footer */
+.event-contact-footer {
+    text-align: center;
+    padding: 80px 0;
+    margin-top: 60px;
+}
+
+.event-contact-footer .cta-title {
+    font-size: 3rem;
+    color: var(--color-primary, #9168f3);
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+.event-contact-footer .highlight {
+    color: var(--color-secondary, #8BC34A);
+}
+
+/* Navigation entre événements */
+.event-nav-bottom {
+    background-color: #f8f9fa;
+    padding: 30px 0;
+    margin-top: 60px;
+}
+
+.event-nav-bottom .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-link {
+    color: var(--color-primary, #9168f3);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link-center {
+    color: var(--color-primary, #9168f3);
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.nav-link-disabled {
+    width: 150px;
+    /* Pour équilibrer l'espace */
+}
+
+@media (max-width: 768px) {
+    .page-hero-event__title {
+        font-size: 2.5rem;
+    }
+
+    .event-meta-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .event-hero .event-status-badge {
+        top: 20px;
+        right: 20px;
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+
+    .event-contact-footer .cta-title {
+        font-size: 2rem;
+    }
+
+    .event-nav-bottom .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-link-disabled {
+        display: none;
     }
 }

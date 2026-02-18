@@ -3,7 +3,7 @@
 Plugin Name: Projects Plugin
 Description: Ajoute un Custom Post Type "Projets" et une taxonomie "Catégories de Projets".
 Version: 1.0
-Author: Ton Nom
+Author: Polariz
 */
 
 // Sécurité : empêche l'accès direct au fichier
