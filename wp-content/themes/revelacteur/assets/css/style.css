@@ -1248,6 +1248,10 @@ h3 {
     margin: 0 auto;
 }
 
+.project-card-wrapper {
+    height: 100%;
+}
+
 /* --- Style de la Carte --- */
 .project-card {
     display: flex;
@@ -1260,6 +1264,7 @@ h3 {
     /* Ombre légère pour détacher du fond (optionnel) */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
+    height: 100%;
 }
 
 .project-card:hover {
@@ -2089,6 +2094,7 @@ h3 {
     overflow: hidden;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
 }
 
 .project-card:hover {
@@ -2380,7 +2386,7 @@ h3 {
 }
 
 .filter-btn {
-    font-family: 'Willond', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     padding: 12px 24px;
     background-color: transparent;
@@ -2757,6 +2763,10 @@ body.page .projects-grid {
     margin-bottom: 60px;
 }
 
+.event-card-wrapper {
+    height: 100%;
+}
+
 @media (max-width: 1024px) {
     .events-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -2780,6 +2790,7 @@ body.page .projects-grid {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .event-card:hover {
@@ -2812,15 +2823,15 @@ body.page .projects-grid {
 
 /* Filtres d'événements */
 .events-filters {
-    padding: 40px 0;
-    text-align: center;
+    padding: 30px 0;
 }
 
 .events-filters .filters-list {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 /* Badges de statut pour événements */
@@ -3104,5 +3115,94 @@ body.page .projects-grid {
 
     .nav-link-disabled {
         display: none;
+    }
+}
+
+/* =========================================
+   MENTIONS LÉGALES
+========================================= */
+
+.mentions-legales-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 5vw;
+    line-height: 1.8;
+}
+
+.mentions-section {
+    margin-bottom: 50px;
+}
+
+.mentions-section h2 {
+    color: var(--color-primary, #9168F3);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    border-bottom: 2px solid var(--color-secondary, #BDFF5F);
+    padding-bottom: 10px;
+}
+
+.mentions-section h3 {
+    color: var(--color-primary, #9168F3);
+    font-size: 1.3rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.mentions-section p {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.mentions-section ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    list-style: disc;
+}
+
+.mentions-section ul li {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.mentions-section a {
+    color: var(--color-primary, #9168F3);
+    text-decoration: underline;
+    transition: opacity 0.3s ease;
+}
+
+.mentions-section a:hover {
+    opacity: 0.7;
+}
+
+.mentions-section strong {
+    color: #2d2d2d;
+    font-weight: 600;
+}
+
+.mentions-update {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid #e0e0e0;
+}
+
+@media (max-width: 768px) {
+    .mentions-legales-content {
+        padding: 40px 5vw;
+    }
+
+    .mentions-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .mentions-section h3 {
+        font-size: 1.2rem;
+    }
+
+    .mentions-section {
+        margin-bottom: 40px;
     }
 }
