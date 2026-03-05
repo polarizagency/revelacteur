@@ -6,9 +6,9 @@
  * Utilisable partout dans le thème via get_template_part().
  */
 
-// Récupère la première catégorie du post
-$categories = get_the_category();
-$category_name = $categories ? $categories[0]->name : '';
+// Récupère la première catégorie du projet
+$categories = get_the_terms(get_the_ID(), 'categorie_projet');
+$category_name = $categories && !is_wp_error($categories) ? $categories[0]->name : '';
 
 // Récupère le statut du projet
 $project_status = get_post_meta(get_the_ID(), '_project_status', true);
@@ -41,6 +41,11 @@ $status_labels = array(
     <div class="card-green-banner"></div>
 
     <div class="card-content">
+        <?php if ($category_name): ?>
+            <span class="card-badge">
+                <?php echo esc_html(strtoupper($category_name)); ?></span>
+        <?php endif; ?>
+
         <div class="card-body">
             <h3 class="card-title">
                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
@@ -56,11 +61,7 @@ $status_labels = array(
         </div>
 
         <div class="card-footer">
-            <?php if ($category_name): ?>
-                <span class="card-badge"><?php echo esc_html($category_name); ?></span>
-            <?php endif; ?>
-
-            <a href="<?php the_permalink(); ?>" class="card-arrow-btn" aria-label="Lire la suite">
+            <a href=" <?php the_permalink(); ?>" class="card-arrow-btn" aria-label="Lire la suite">
                 <span class="dashicons dashicons-arrow-right-alt2"></span>
             </a>
         </div>
