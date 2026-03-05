@@ -23,13 +23,6 @@ get_header(); ?>
 
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-                <!-- Hero Image -->
-                <?php if (has_post_thumbnail()): ?>
-                    <div class="podcast-hero">
-                        <?php the_post_thumbnail('full'); ?>
-                    </div>
-                <?php endif; ?>
-
                 <!-- Header Section -->
                 <header class="podcast-header-purple">
                     <div class="container">
