@@ -25,7 +25,7 @@ get_header(); ?>
 
                     </div>
                     <div>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/association-image.png" alt="Image de l'association" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/association.jpeg" alt="Image de l'association" />
                     </div>
                     
                 </div>
