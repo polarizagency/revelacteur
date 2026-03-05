@@ -18,34 +18,49 @@ get_header(); ?>
 
             <div class="association-content">
                 <div class="association-intro">
-                    <div>
-                        <p>Fondée en <strong>2006</strong> à Beuvry (Pas-de-Calais), Révél'Acteur est bien plus qu'une association : c'est un <strong>moteur d'engagement local.</strong></p>
-                        <p>Notre mission est claire : <strong>accompagner les jeunes </strong> à chaque étape de leur vie en leur offrant des  <strong>opportunités de création et d'expression </strong>, tout en tissant des liens forts avec les adultes et les habitants du territoire.</p>
-                        <p>Portée par son fondateur <strong>Arnaud Andreotti et une équipe passionnée</strong> , notre action repose sur <strong>4 piliers fondamentaux :</strong></p>
+                    <div class="association-intro__text">
+                        <p>
+                            Révél'acteur est une <strong>association engagée</strong> qui place l'humain, la création et le collectif au cœur de ses actions.
+                        </p>
+                        <p>
+                            Née de la volonté de donner la parole, de révéler les talents et de favoriser la rencontre, Révél'acteur développe des projets artistiques, culturels et participatifs ancrés dans les territoires.
+                        </p>
+                        <p>
+                            Nous croyons que chacun, quel que soit son âge ou son parcours, a quelque chose à transmettre et à construire. À travers nos actions, nous créons des espaces d'expression, de dialogue et de création où les histoires individuelles deviennent une richesse commune.
+                        </p>
+                        <p>
+                            <strong>Intergénérationnalité, mémoire, imagination, engagement citoyen et créativité</strong> sont les piliers de notre démarche. Nos projets relient passé, présent et futur, en valorisant les récits, les savoirs et les imaginaires pour laisser une empreinte durable.
+                        </p>
+                        <p class="association-intro__lead">
+                            Portée par une équipe passionnée, notre action repose sur <strong>quatre piliers fondamentaux :</strong> 
+                        </p>
 
                     </div>
-                    <div>
+                    <div class="association-intro__image">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/association.jpeg" alt="Image de l'association" />
                     </div>
                     
                 </div>
+
                 <div class="association-section-bloc-explication">
                     <div class="association-blocs-grid">
                         <div class="association-section-bloc">
                             <h2 class="association-section-bloc__title">L'Éducation Populaire</h2>
-                            <p class="association-section-bloc__text">Rendre le savoir et la culture accessibles à tous, par tous.</p>
+                            <p class="association-section-bloc__text"> Favoriser l’accès à la culture, au savoir et à l’expression pour toutes et tous, en encourageant l’esprit critique, le partage et l’apprentissage par l’expérience.</p>
                         </div>
                         <div class="association-section-bloc">
                             <h2 class="association-section-bloc__title">La Valorisation de la Jeunesse</h2>
-                            <p class="association-section-bloc__text">Révéler les talents et donner le pouvoir d'agir.</p>
+                            <p class="association-section-bloc__text">Accompagner les jeunes dans leurs parcours, encourager leur créativité et leur engagement, et leur permettre de devenir acteurs de leurs projets et de leur territoire.
+</p>
                         </div>
                         <div class="association-section-bloc">
                             <h2 class="association-section-bloc__title">La Sauvegarde du Patrimoine</h2>
-                            <p class="association-section-bloc__text">Faire vivre l'histoire locale (comme le Manoir de l'Estracelles) pour construire l'avenir.</p>
+                            <p class="association-section-bloc__text"> Préserver, transmettre et réinterpréter les mémoires, les histoires et les savoirs locaux, en les reliant aux enjeux contemporains.</p>
                         </div>
                         <div class="association-section-bloc">
                             <h2 class="association-section-bloc__title">L'Économie Sociale et Solidaire</h2>
-                            <p class="association-section-bloc__text">Privilégier l'humain et l'utilité sociale au cœur de nos projets.</p>
+                            <p class="association-section-bloc__text"> Développer des actions porteuses de sens, fondées sur la coopération, l’utilité sociale et l’ancrage territorial, au service de l’intérêt collectif.
+</p>
                         </div>
                     </div>
                 </div>
