@@ -1491,56 +1491,19 @@ h3 {
 
 .project-card:hover .card-image img {
     transform: scale(1.05);
-    /* Zoom léger au survol */
 }
 
-/* 2. Le Contenu (Moitié Basse - Bleu Foncé) */
-.card-content {
-    background-color: #2F3642;
-    /* COULEUR BLEU NUIT (identique capture) */
-    color: #ffffff;
-    padding: 30px 30px 60px 30px;
-    /* Padding bottom grand pour laisser place au bouton */
-    flex-grow: 1;
-    /* S'assure que toutes les boîtes ont la même hauteur */
-    position: relative;
-    /* Pour positionner le bouton en absolu */
-}
 
-@media (max-width: 1400px) {
-    .card-content {
-        padding: 25px 25px 55px 25px;
-    }
-}
 
-@media (max-width: 1200px) {
-    .card-content {
-        padding: 22px 22px 52px 22px;
-    }
-}
-
-@media (max-width: 1024px) {
-    .card-content {
-        padding: 20px 20px 50px 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .card-content {
-        padding: 20px 20px 50px 20px;
-    }
-}
 
 /* Titre du projet */
 .card-title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    /* Regular */
     text-transform: uppercase;
     font-size: 1.4rem;
     margin: 0 0 15px 0;
     line-height: 1.3;
-    /* Limite à 2 lignes max */
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -2471,13 +2434,13 @@ h3 {
 
 /* 2. Content Section (Dark Blue) */
 .card-content {
-    background-color: #2C3E50 !important;
+    background: #1E2A3A !important;
     color: #ffffff;
     padding: 22px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    position: static !important;
+    position: relative !important;
     min-height: 240px;
 }
 
@@ -2515,6 +2478,7 @@ h3 {
     margin-bottom: 16px;
     display: flex;
     flex-direction: column;
+    margin-top: 30px;
 }
 
 @media (max-width: 1400px) {
@@ -2662,35 +2626,47 @@ h3 {
 
 /* Category Badge */
 .card-badge {
-    display: inline-block;
-    background-color: var(--color-secondary, #BDFF5F);
-    color: #2C3E50;
-    font-size: 0.85rem;
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    background: var(--color-primary);
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
     font-weight: 700;
-    padding: 6px 14px;
-    border-radius: 20px;
+    letter-spacing: 1px;
+    padding: 5px 12px;
+    border-radius: 0;
+    text-transform: uppercase;
+    z-index: 10;
     white-space: nowrap;
     transition: opacity 0.3s ease;
 }
 
 @media (max-width: 1400px) {
     .card-badge {
-        font-size: 0.8rem;
-        padding: 5px 12px;
+        font-size: 9px;
+        padding: 4px 10px;
+        top: 10px;
+        right: 18px;
     }
 }
 
 @media (max-width: 1200px) {
     .card-badge {
-        font-size: 0.75rem;
-        padding: 5px 11px;
+        font-size: 9px;
+        padding: 4px 10px;
+        top: 10px;
+        right: 16px;
     }
 }
 
 @media (max-width: 1024px) {
     .card-badge {
-        font-size: 0.72rem;
-        padding: 4px 10px;
+        font-size: 8px;
+        padding: 4px 8px;
+        top: 10px;
+        right: 16px;
     }
 }
 

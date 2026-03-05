@@ -13,7 +13,7 @@
         $donate_url = get_theme_mod('footer_donate_btn_url', '#');
         ?>
 
-  
+
 
         <div class="container flex-container">
 
@@ -41,22 +41,22 @@
 
                 <ul class="social-icons purple-icons">
                     <?php if ($instagram_url): ?>
-                        <li><a href="<?php echo esc_url($instagram_url); ?>" target="_blank"><span
+                        <li><a class="hover-up" href="<?php echo esc_url($instagram_url); ?>" target="_blank"><span
                                     class="dashicons dashicons-instagram"></span></a></li><?php endif; ?>
                     <?php if ($linkedin_url): ?>
-                        <li><a href="<?php echo esc_url($linkedin_url); ?>" target="_blank"><span
+                        <li><a class="hover-up" href="<?php echo esc_url($linkedin_url); ?>" target="_blank"><span
                                     class="dashicons dashicons-linkedin"></span></a></li><?php endif; ?>
                     <?php if ($youtube_url): ?>
-                        <li><a href="<?php echo esc_url($youtube_url); ?>" target="_blank"><span
+                        <li><a class="hover-up" href="<?php echo esc_url($youtube_url); ?>" target="_blank"><span
                                     class="dashicons dashicons-youtube"></span></a></li><?php endif; ?>
                     <?php if ($facebook_url): ?>
-                        <li><a href="<?php echo esc_url($facebook_url); ?>" target="_blank"><span
+                        <li><a class="hover-up" href="<?php echo esc_url($facebook_url); ?>" target="_blank"><span
                                     class="dashicons dashicons-facebook"></span></a></li><?php endif; ?>
                     <?php if ($twitch_url): ?>
-                        <li><a href="<?php echo esc_url($twitch_url); ?>" target="_blank"><span
+                        <li><a class="hover-up" href="<?php echo esc_url($twitch_url); ?>" target="_blank"><span
                                     class="dashicons dashicons-twitch"></span></a></li><?php endif; ?>
                     <?php if (isset($spotify_url) && $spotify_url): ?>
-                        <li><a href="<?php echo esc_url($spotify_url); ?>" target="_blank"><span
+                        <li><a class="hover-up" href="<?php echo esc_url($spotify_url); ?>" target="_blank"><span
                                     class="dashicons dashicons-format-audio"></span></a></li><?php endif; ?>
                 </ul>
             </div>
