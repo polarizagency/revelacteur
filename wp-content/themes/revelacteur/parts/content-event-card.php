@@ -24,17 +24,24 @@ $status_labels = array(
 // Récupère la première catégorie de l'événement
 $categories = get_the_terms(get_the_ID(), 'categorie_evenement');
 $category_name = $categories && !is_wp_error($categories) ? $categories[0]->name : '';
+
+// Parse la date pour extraire le jour et le mois
+$day_number = '';
+$month_name = '';
+if ($event_date) {
+    $timestamp = strtotime($event_date);
+    $day_number = date_i18n('d', $timestamp);
+    $month_name = strtoupper(date_i18n('F', $timestamp));
+}
 ?>
 
 <article class="event-card">
 
-    <div class="card-image">
+    <div class="event-card__image">
         <?php if (has_post_thumbnail()): ?>
-            <a href="<?php the_permalink(); ?>" class="card-image__link">
-                <?php the_post_thumbnail('large'); ?>
-            </a>
+            <?php the_post_thumbnail('large'); ?>
         <?php else: ?>
-            <div class="card-image__placeholder"></div>
+            <div class="event-card__image-placeholder"></div>
         <?php endif; ?>
 
         <?php if ($event_status && isset($status_labels[$event_status])): ?>
@@ -44,51 +51,38 @@ $category_name = $categories && !is_wp_error($categories) ? $categories[0]->name
         <?php endif; ?>
     </div>
 
-    <div class="card-green-banner"></div>
+    <div class="event-card__content">
+        <?php if ($category_name): ?>
+            <span class="event-card__category"><?php echo esc_html(strtoupper($category_name)); ?></span>
+        <?php endif; ?>
 
-    <div class="card-content">
-        <div class="card-body">
-            <h3 class="card-title">
-                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-            </h3>
+        <div class="event-card__date-location">
+            <?php if ($day_number): ?>
+                <div class="event-card__day"><?php echo esc_html($day_number); ?></div>
+            <?php endif; ?>
 
-            <div class="event-meta">
-                <?php if ($event_date): ?>
-                    <div class="event-meta-item">
-                        <span class="dashicons dashicons-calendar-alt"></span>
-                        <span><?php echo date_i18n('d/m/Y', strtotime($event_date)); ?></span>
-                        <?php if ($event_time): ?>
-                            <span> à <?php echo esc_html($event_time); ?></span>
-                        <?php endif; ?>
-                    </div>
+            <div class="event-card__meta">
+                <?php if ($month_name): ?>
+                    <div class="event-card__month"><?php echo esc_html($month_name); ?></div>
                 <?php endif; ?>
 
                 <?php if ($event_location): ?>
-                    <div class="event-meta-item">
+                    <div class="event-card__location">
                         <span class="dashicons dashicons-location"></span>
-                        <span><?php echo esc_html($event_location); ?></span>
+                        <?php echo esc_html(strtoupper($event_location)); ?>
                     </div>
                 <?php endif; ?>
             </div>
-
-            <p class="card-description">
-                <?php
-                // Affiche le résumé ou les 20 premiers mots du contenu
-                $excerpt = get_the_excerpt();
-                echo wp_trim_words($excerpt, 20, '...');
-                ?>
-            </p>
         </div>
 
-        <div class="card-footer">
-            <?php if ($category_name): ?>
-                <span class="card-badge"><?php echo esc_html($category_name); ?></span>
-            <?php endif; ?>
-
-            <a href="<?php the_permalink(); ?>" class="card-arrow-btn" aria-label="Voir l'événement">
-                <span class="dashicons dashicons-arrow-right-alt2"></span>
-            </a>
+        <div class="event-card__title-section">
+            <h3 class="event-card__title"><?php the_title(); ?></h3>
         </div>
+
+        <a href="<?php the_permalink(); ?>" class="event-card__btn">
+            VOIR DÉTAILS
+            <span class="dashicons dashicons-arrow-right-alt2"></span>
+        </a>
     </div>
 
 </article>

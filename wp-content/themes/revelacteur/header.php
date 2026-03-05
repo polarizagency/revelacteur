@@ -101,15 +101,15 @@
             </ul>
             <?php
             // Récupère les valeurs définies dans l'admin
-            $cta_url = get_theme_mod('header_cta_url', '#');
-            $cta_text = get_theme_mod('header_cta_text', 'Faire un don');
+            // $cta_url = get_theme_mod('header_cta_url', '#');
+            // $cta_text = get_theme_mod('header_cta_text', 'Faire un don');
             ?>
 
-            <div class="header-cta">
+            <!-- <div class="header-cta">
                 <a href="<?php echo esc_url($cta_url); ?>" class="btn btn-primary">
                     <?php echo esc_html($cta_text); ?>
                 </a>
-            </div>
+            </div> -->
 
         </header>
 
@@ -163,11 +163,11 @@
                     <?php endif; ?>
                 </ul>
 
-                <div class="menu-overlay__cta">
+                <!-- <div class="menu-overlay__cta">
                     <a href="<?php echo esc_url($cta_url); ?>" class="btn btn-primary">
                         <?php echo esc_html($cta_text); ?>
                     </a>
-                </div>
+                </div> -->
             </div>
         </div>
 

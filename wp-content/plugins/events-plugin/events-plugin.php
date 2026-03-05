@@ -32,11 +32,28 @@ function register_custom_post_type_evenements()
         'rewrite' => array('slug' => 'evenements'),
         'show_in_rest' => true, // Important pour l'éditeur Gutenberg
         'template' => array(
-            array('core/heading', array('placeholder' => 'Description de l\'événement', 'level' => 2)),
-            array('core/paragraph', array('placeholder' => 'Écrivez ici les détails...')),
-            array('core/image'),
-            array('core/heading', array('content' => 'Programme', 'level' => 3)),
-            array('core/paragraph', array('placeholder' => 'Détails du programme...')),
+            array(
+                'core/columns',
+                array(),
+                array(
+                    // Colonne de Gauche (Texte)
+                    array(
+                        'core/column',
+                        array('width' => '50%'),
+                        array(
+                            array('core/paragraph', array('placeholder' => 'Écrivez ici les détails...')),
+                        )
+                    ),
+                    // Colonne de Droite (Image)
+                    array(
+                        'core/column',
+                        array('width' => '33.33%'),
+                        array(
+                            array('core/image', array()),
+                        )
+                    ),
+                )
+            ),
         ),
     );
 

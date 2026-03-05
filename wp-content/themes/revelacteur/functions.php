@@ -242,6 +242,7 @@ function revelacteur_customizer_css()
             width: fit-content;
             font-family: 'TT Rounds Neue', sans-serif;
             margin-bottom: 20px;
+            font-size: 3rem;
 
         }
 
@@ -256,6 +257,7 @@ function revelacteur_customizer_css()
             width: fit-content;
             font-family: 'TT Rounds Neue', sans-serif;
             margin-bottom:45px;
+            font-size: 3rem;
 
         }
 
@@ -265,7 +267,7 @@ function revelacteur_customizer_css()
             margin-top: 20px;
             padding: 0;
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.7rem;
+            font-size: 1.3rem;
             font-weight: 300;
             line-height: 1.6;
         }
@@ -323,13 +325,15 @@ function revelacteur_customizer_css()
             }
 
             .accueil-p-1,
-            .accueil-p-2,
+            .accueil-p-2 {
+                text-align: center;
+                font-size: 1.5rem;
+                margin-bottom: 12px;
+            }
+            
             .accueil-p-3 {
                 text-align: center;
-            }
-
-            .accueil-p-3 {
-                font-size: 1.3rem;
+                font-size: 0.9rem !important;
             }
 
             .banner .btn-primary {
