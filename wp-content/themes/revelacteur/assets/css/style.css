@@ -758,6 +758,26 @@ h3 {
     gap: 40px;
     font-size: larger;
     margin-bottom: 20px;
+    align-items: flex-start;
+}
+
+.association-intro > div:first-child {
+    flex: 2;
+}
+
+.association-intro > div:last-child {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.association-intro img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+    max-width: 350px;
 }
 
 .association-section-lead {
@@ -785,6 +805,10 @@ h3 {
 
     .association-intro {
         gap: 30px;
+    }
+
+    .association-intro img {
+        max-width: 300px;
     }
 }
 
@@ -815,10 +839,15 @@ h3 {
         margin-bottom: 30px;
     }
 
+    .association-intro > div:first-child,
+    .association-intro > div:last-child {
+        flex: 1;
+    }
+
     .association-intro img {
         width: 100%;
         height: auto;
-        max-width: 400px;
+        max-width: 100%;
         margin: 0 auto;
         display: block;
     }
