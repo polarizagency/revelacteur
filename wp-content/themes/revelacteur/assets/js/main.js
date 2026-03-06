@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	}
 
-	/* --- BANDEAU LOGOS PARTENAIRES (Défilement infini fluide) --- */
+	/* --- BANDEAU LOGOS PARTENAIRES (Défilement infini) --- */
 	var logoTrack = document.querySelector('.partenaires-logos-track');
 	if (logoTrack) {
 		var originals = logoTrack.querySelectorAll('[data-logo-original]');
@@ -111,11 +111,6 @@ document.addEventListener('DOMContentLoaded', function () {
 				wrapper.addEventListener('mouseenter', function () { paused = true; });
 				wrapper.addEventListener('mouseleave', function () { paused = false; });
 			}
-
-			// Respect prefers-reduced-motion
-			var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-			if (prefersReducedMotion.matches) { paused = true; }
-			prefersReducedMotion.addEventListener('change', function (e) { paused = e.matches; });
 		}
 	}
 
