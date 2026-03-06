@@ -14,10 +14,6 @@ get_header(); ?>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/forme_verte.svg" alt=""
                 class="decoration-verte page-hero__shape" />
         </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> 9f214dade5991e894319d0a251a678f67939116c
         <!-- Nos Partenaires Engagés -->
         <section class="partenaires-section">
             <div class="container partenaires-container">
@@ -34,19 +30,6 @@ get_header(); ?>
                 <div class="partenaires-logos-track">
                     <?php
                     $partenaires = new WP_Query(array(
-<<<<<<< HEAD
-                        'post_type'      => 'partenaire',
-                        'posts_per_page' => -1,
-                        'orderby'        => 'menu_order',
-                        'order'          => 'ASC',
-                    ));
-
-                    if ($partenaires->have_posts()) :
-                        while ($partenaires->have_posts()) : $partenaires->the_post();
-                            if (has_post_thumbnail()) : ?>
-                                <div class="partenaires-logo-item" data-logo-original>
-                                    <?php the_post_thumbnail('medium', array('alt' => esc_attr(get_the_title()))); ?>
-=======
                         'post_type' => 'partenaire',
                         'posts_per_page' => -1,
                         'orderby' => 'menu_order',
@@ -60,7 +43,6 @@ get_header(); ?>
                                 <div class="partenaires-logo-item" data-logo-original>
                                     <?php the_post_thumbnail('medium', array('alt' => esc_attr(get_the_title()))); ?>
 
->>>>>>> 9f214dade5991e894319d0a251a678f67939116c
                                 </div>
                             <?php endif;
                         endwhile;
@@ -91,10 +73,6 @@ get_header(); ?>
                         veritatis et quasi architecto beatae vitae
                         dicta sunt explicabo.
                     </p>
-<<<<<<< HEAD
-=======
-
->>>>>>> 9f214dade5991e894319d0a251a678f67939116c
                 </div>
             </div>
         </section>
@@ -102,8 +80,4 @@ get_header(); ?>
     </main>
 </div>
 
-<<<<<<< HEAD
 <?php get_footer(); ?>
-=======
-<?php get_footer(); ?>
->>>>>>> 9f214dade5991e894319d0a251a678f67939116c
