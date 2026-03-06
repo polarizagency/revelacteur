@@ -76,7 +76,7 @@ $category_name = $categories && !is_wp_error($categories) ? $categories[0]->name
 
         <div class="podcast-card__links">
             <?php if ($audio_file): ?>
-                <a href="<?php echo esc_url($audio_file); ?>" class="podcast-link podcast-link--audio" title="Écouter">
+                <a href="<?php the_permalink(); ?>" class="podcast-link podcast-link--audio" title="Écouter">
                     <span class="dashicons dashicons-controls-play"></span>
                     Écouter
                 </a>
