@@ -1192,12 +1192,11 @@ h3 {
    B. SECTION CONTACT (Fond Blanc + Forme Jaune)
 --------------------------------------------------------- */
 .footer-contact-section {
-    background-color: #ffffff;
+    background-color: var(--color-primary);
     padding: 80px 0;
     position: relative;
-    /* Nécessaire pour la forme jaune */
     overflow: hidden;
-    /* Coupe la forme jaune si elle dépasse */
+    margin-top: 80px;
 }
 
 @media (max-width: 1024px) {
@@ -1245,8 +1244,7 @@ h3 {
 
 .contact-title {
     font-family: 'Willond', cursive;
-    color: var(--color-primary);
-    /* VIOLET */
+    color: white;
     font-size: 5rem;
     line-height: 1.1;
     margin-bottom: 30px;
@@ -1271,10 +1269,11 @@ h3 {
 }
 
 /* Reset des marges du bouton pour un alignement propre */
-.footer-contact-section .btn-primary {
+.footer-contact-section .contact-left .btn-primary {
     margin: 0;
     padding: 15px 30px;
-    /* Un peu plus gros */
+    background-color: white;
+    color: var(--color-primary);
 }
 
 /* --- COLONNE DROITE (Réseaux) --- */
@@ -1284,9 +1283,9 @@ h3 {
     /* Petit ajustement optique */
 }
 
-/* Force la couleur VIOLETTE pour les icônes */
+/* Force la couleur VIOLETTE pour les icôn.social-icons.purple-icons .dashicons {es */
 .social-icons.purple-icons a {
-    color: var(--color-primary) !important;
+    color: white !important;
     margin-left: 20px;
     text-decoration: none;
     transition: transform 0.3s ease;
@@ -1303,6 +1302,7 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white !important;
 }
 
 /* --- FORME JAUNE (SVG) --- */
@@ -2635,7 +2635,7 @@ h3 {
 .card-footer {
     display: flex !important;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     gap: 12px;
     position: static !important;
 }
@@ -4993,5 +4993,264 @@ body.page .projects-grid {
 
     .event-info-box__value {
         font-size: 1.2rem;
+    }
+}
+
+
+
+/* ============================================================= */
+/* PAGE PARTENAIRES                                               */
+/* ============================================================= */
+
+/* --- Section Nos Partenaires Engagés --- */
+.partenaires-section {
+    padding: 80px 0 60px;
+    background-color: #fff;
+}
+
+.partenaires-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5vw;
+}
+
+.partenaires-section__title {
+    font-family: 'Willond', cursive;
+    color: var(--color-secondary);
+    font-size: 3.5rem;
+    margin-bottom: 24px;
+    font-weight: 400;
+}
+
+.partenaires-section__description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #333;
+    max-width: 600px;
+    margin-bottom: 60px;
+}
+
+/* --- Bandeau de logos défilant --- */
+.partenaires-logos-wrapper {
+    width: 100%;
+    overflow: hidden;
+    padding: 30px 0;
+    position: relative;
+    mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 8%,
+            black 92%,
+            transparent 100%);
+    -webkit-mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 8%,
+            black 92%,
+            transparent 100%);
+}
+
+.partenaires-logos-track {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    width: max-content;
+    will-change: transform;
+}
+
+.partenaires-logos-track:hover {
+    animation-play-state: paused;
+}
+
+.partenaires-logo-item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    min-width: 120px;
+}
+
+.partenaires-logo-item img {
+    max-height: 70px;
+    max-width: 160px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.partenaires-logo-item img:hover {
+    transform: scale(1.08);
+}
+
+
+/* --- Section catégories de partenaires --- */
+.partenaires-categories {
+    padding: 0;
+}
+
+.partenaires-categories__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.partenaires-cat-card {
+    padding: 60px 50px;
+    position: relative;
+}
+
+.partenaires-cat-card:nth-child(odd) {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.partenaires-cat-card:nth-child(even) {
+    background-color: #fff;
+    color: var(--color-primary);
+    border-top: 4px solid var(--color-primary);
+}
+
+.partenaires-cat-card__title {
+    font-family: 'Willond', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.partenaires-cat-card:nth-child(odd) .partenaires-cat-card__title {
+    color: #fff;
+}
+
+.partenaires-cat-card:nth-child(even) .partenaires-cat-card__title {
+    color: var(--color-primary);
+}
+
+.partenaires-cat-card__text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 480px;
+}
+
+.partenaires-cat-card:nth-child(odd) .partenaires-cat-card__text {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.partenaires-cat-card:nth-child(even) .partenaires-cat-card__text {
+    color: #333;
+}
+
+/* --- RESPONSIVE PARTENAIRES --- */
+
+@media (max-width: 1024px) {
+    .partenaires-section {
+        padding: 60px 0 40px;
+    }
+
+    .partenaires-section__title {
+        font-size: 2.8rem;
+    }
+
+    .partenaires-section__description {
+        margin-bottom: 40px;
+    }
+
+    .partenaires-cat-card {
+        padding: 40px 36px;
+    }
+
+    .partenaires-cat-card__title {
+        font-size: 2rem;
+    }
+
+    .partenaires-logos-track {
+        gap: 40px;
+    }
+
+    .partenaires-logo-item {
+        height: 65px;
+        min-width: 100px;
+    }
+
+    .partenaires-logo-item img {
+        max-height: 55px;
+        max-width: 130px;
+    }
+}
+
+@media (max-width: 768px) {
+    .partenaires-section {
+        padding: 48px 0 30px;
+    }
+
+    .partenaires-section__title {
+        font-size: 2.2rem;
+    }
+
+    .partenaires-section__description {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .partenaires-categories__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .partenaires-cat-card {
+        padding: 36px 24px;
+    }
+
+    .partenaires-cat-card__title {
+        font-size: 1.8rem;
+    }
+
+    .partenaires-logos-track {
+        gap: 30px;
+    }
+
+    .partenaires-logo-item {
+        height: 55px;
+        min-width: 80px;
+    }
+
+    .partenaires-logo-item img {
+        max-height: 45px;
+        max-width: 110px;
+    }
+}
+
+@media (max-width: 480px) {
+    .partenaires-section__title {
+        font-size: 1.8rem;
+    }
+
+    .partenaires-section__description {
+        font-size: 0.9rem;
+    }
+
+    .partenaires-cat-card {
+        padding: 30px 20px;
+    }
+
+    .partenaires-cat-card__title {
+        font-size: 1.5rem;
+    }
+
+    .partenaires-cat-card__text {
+        font-size: 0.85rem;
+    }
+
+    .partenaires-logos-track {
+        gap: 24px;
+    }
+
+    .partenaires-logo-item {
+        height: 45px;
+        min-width: 70px;
+    }
+
+    .partenaires-logo-item img {
+        max-height: 38px;
+        max-width: 90px;
     }
 }

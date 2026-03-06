@@ -47,6 +47,73 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	}
 
+	/* --- BANDEAU LOGOS PARTENAIRES (Défilement infini) --- */
+	var logoTrack = document.querySelector('.partenaires-logos-track');
+	if (logoTrack) {
+		var originals = logoTrack.querySelectorAll('[data-logo-original]');
+		if (originals.length > 0) {
+			// 1. Cloner les logos autant de fois que nécessaire pour remplir 3x l'écran
+			function fillTrack() {
+				// Retirer les anciens clones
+				logoTrack.querySelectorAll('[data-logo-clone]').forEach(function (el) { el.remove(); });
+
+				var gap = parseFloat(getComputedStyle(logoTrack).gap) || 60;
+				var oneSetWidth = 0;
+				originals.forEach(function (item) {
+					oneSetWidth += item.offsetWidth + gap;
+				});
+
+				if (oneSetWidth === 0) return 0;
+
+				// Combien de copies pour couvrir 3x la largeur visible
+				var viewportWidth = window.innerWidth;
+				var copies = Math.ceil((viewportWidth * 3) / oneSetWidth);
+				if (copies < 2) copies = 2;
+
+				for (var c = 0; c < copies; c++) {
+					originals.forEach(function (item) {
+						var clone = item.cloneNode(true);
+						clone.removeAttribute('data-logo-original');
+						clone.setAttribute('data-logo-clone', '');
+						clone.setAttribute('aria-hidden', 'true');
+						logoTrack.appendChild(clone);
+					});
+				}
+
+				return oneSetWidth;
+			}
+
+			var oneSetWidth = fillTrack();
+			var offset = 0;
+			var speed = 0.5;
+			var paused = false;
+
+			window.addEventListener('resize', function () {
+				oneSetWidth = fillTrack();
+				offset = 0;
+			});
+
+			function tick() {
+				if (!paused && oneSetWidth > 0) {
+					offset -= speed;
+					if (Math.abs(offset) >= oneSetWidth) {
+						offset += oneSetWidth;
+					}
+					logoTrack.style.transform = 'translateX(' + offset + 'px)';
+				}
+				requestAnimationFrame(tick);
+			}
+			requestAnimationFrame(tick);
+
+			// Pause au survol
+			var wrapper = document.querySelector('.partenaires-logos-wrapper');
+			if (wrapper) {
+				wrapper.addEventListener('mouseenter', function () { paused = true; });
+				wrapper.addEventListener('mouseleave', function () { paused = false; });
+			}
+		}
+	}
+
 	/* --- FILTRAGE DES PROJET (Nouveau code) --- */
 	var filterBtns = document.querySelectorAll('.filter-btn');
 	var projectCards = document.querySelectorAll('.project-card-wrapper');

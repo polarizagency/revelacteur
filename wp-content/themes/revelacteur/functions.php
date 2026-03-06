@@ -679,6 +679,45 @@ function handle_asso_contact()
 }
 
 // -------------------------------------------------------------------------
+// 7. CUSTOM POST TYPE : PARTENAIRES
+// -------------------------------------------------------------------------
+
+/**
+ * Enregistre le CPT "partenaire" pour gérer les logos partenaires.
+ */
+function revelacteur_register_partenaire_cpt()
+{
+    $labels = array(
+        'name' => 'Partenaires',
+        'singular_name' => 'Partenaire',
+        'menu_name' => 'Partenaires',
+        'add_new' => 'Ajouter un partenaire',
+        'add_new_item' => 'Ajouter un nouveau partenaire',
+        'edit_item' => 'Modifier le partenaire',
+        'new_item' => 'Nouveau partenaire',
+        'view_item' => 'Voir le partenaire',
+        'search_items' => 'Rechercher un partenaire',
+        'not_found' => 'Aucun partenaire trouvé',
+        'not_found_in_trash' => 'Aucun partenaire dans la corbeille',
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => false,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'menu_icon' => 'dashicons-groups',
+        'supports' => array('title', 'thumbnail', 'page-attributes'),
+        'has_archive' => false,
+        'rewrite' => false,
+    );
+
+    register_post_type('partenaire', $args);
+}
+add_action('init', 'revelacteur_register_partenaire_cpt');
+
+
+// -------------------------------------------------------------------------
 // HOOKS D'ACTION CORRECTS POUR LE CUSTOMIZER
 // -------------------------------------------------------------------------
 
