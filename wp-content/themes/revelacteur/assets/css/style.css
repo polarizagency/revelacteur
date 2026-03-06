@@ -748,7 +748,7 @@ h3 {
 }
 
 .association-content {
-    padding: 50px 5vw;
+    padding: 5vw 5vw;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -1192,12 +1192,13 @@ h3 {
    B. SECTION CONTACT (Fond Blanc + Forme Jaune)
 --------------------------------------------------------- */
 .footer-contact-section {
-    background-color: #ffffff;
+    background-color: var(--color-primary);
     padding: 80px 0;
     position: relative;
     /* Nécessaire pour la forme jaune */
     overflow: hidden;
     /* Coupe la forme jaune si elle dépasse */
+    margin-top: 80px;
 }
 
 @media (max-width: 1024px) {
@@ -1245,7 +1246,7 @@ h3 {
 
 .contact-title {
     font-family: 'Willond', cursive;
-    color: var(--color-primary);
+    color: white;
     /* VIOLET */
     font-size: 5rem;
     line-height: 1.1;
@@ -1271,10 +1272,12 @@ h3 {
 }
 
 /* Reset des marges du bouton pour un alignement propre */
-.footer-contact-section .btn-primary {
+.footer-contact-section .contact-left .btn-primary {
     margin: 0;
     padding: 15px 30px;
     /* Un peu plus gros */
+    background-color: white;
+    color: var(--color-primary);
 }
 
 /* --- COLONNE DROITE (Réseaux) --- */
@@ -1286,7 +1289,7 @@ h3 {
 
 /* Force la couleur VIOLETTE pour les icônes */
 .social-icons.purple-icons a {
-    color: var(--color-primary) !important;
+    color: white !important;
     margin-left: 20px;
     text-decoration: none;
     transition: transform 0.3s ease;
@@ -1303,6 +1306,7 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white !important;
 }
 
 /* --- FORME JAUNE (SVG) --- */
@@ -2635,7 +2639,7 @@ h3 {
 .card-footer {
     display: flex !important;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     gap: 12px;
     position: static !important;
 }
@@ -3038,674 +3042,6 @@ h3 {
     .projects-grid {
         grid-template-columns: 1fr;
         padding: 0 20px;
-    }
-}
-
-/* ============================================================= */
-/* PODCAST CARD STYLES */
-/* ============================================================= */
-
-/* Grille des podcasts */
-.podcasts-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: 30px;
-    margin: 50px 0 60px 0;
-}
-
-@media (max-width: 1200px) {
-    .podcasts-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .podcasts-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-}
-
-/* Carte podcast */
-.podcast-card {
-    display: flex;
-    flex-direction: column;
-    background: #1E2A3A;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%;
-}
-
-.podcast-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Image Section */
-.podcast-card__image {
-    position: relative;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    background: #2D3E50;
-}
-
-.podcast-card__image-link {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-.podcast-card__image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-    display: block;
-}
-
-.podcast-card:hover .podcast-card__image img {
-    transform: scale(1.05);
-}
-
-.podcast-card__image-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, var(--color-primary) 0%, #7c4ddb 100%);
-}
-
-.podcast-card__image-placeholder .dashicons {
-    font-size: 80px;
-    width: 80px;
-    height: 80px;
-    color: rgba(255, 255, 255, 0.5);
-}
-
-/* Badge de durée */
-.podcast-duration-badge {
-    position: absolute;
-    bottom: 12px;
-    right: 12px;
-    background: rgba(0, 0, 0, 0.8);
-    color: #FFFFFF;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    z-index: 10;
-}
-
-.podcast-duration-badge .dashicons {
-    font-size: 16px;
-    width: 16px;
-    height: 16px;
-}
-
-/* Content Section */
-.podcast-card__content {
-    padding: 24px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
-/* Category Badge */
-.podcast-card__category {
-    position: absolute;
-    top: 12px;
-    right: 20px;
-    background: var(--color-primary);
-    color: #FFFFFF;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    padding: 5px 12px;
-    border-radius: 0;
-    text-transform: uppercase;
-    z-index: 10;
-}
-
-/* Header (Episode + Date) */
-.podcast-card__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-    margin-top: 35px;
-}
-
-.podcast-card__episode {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--color-secondary);
-    text-transform: uppercase;
-}
-
-.podcast-card__date {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    color: #A0A8B0;
-    text-transform: uppercase;
-}
-
-/* Title */
-.podcast-card__title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    color: #FFFFFF;
-    line-height: 1.3;
-    margin: 0 0 12px 0;
-    text-transform: uppercase;
-}
-
-.podcast-card__title a {
-    color: #FFFFFF;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.podcast-card__title a:hover {
-    color: var(--color-secondary);
-}
-
-/* Excerpt */
-.podcast-card__excerpt {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    color: #C0C5CC;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    flex-grow: 1;
-}
-
-/* Links Section */
-.podcast-card__links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: auto;
-    padding-top: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.podcast-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 16px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-}
-
-.podcast-link .dashicons {
-    font-size: 16px;
-    width: 16px;
-    height: 16px;
-}
-
-.podcast-link--audio {
-    background: var(--color-secondary);
-    color: #1E2A3A;
-}
-
-.podcast-link--audio:hover {
-    background: #a8ff3d;
-    transform: translateY(-2px);
-}
-
-.podcast-link--youtube {
-    background: #FF0000;
-    color: #FFFFFF;
-}
-
-.podcast-link--youtube:hover {
-    background: #cc0000;
-    transform: translateY(-2px);
-}
-
-.podcast-link--spotify {
-    background: #1DB954;
-    color: #FFFFFF;
-}
-
-.podcast-link--spotify:hover {
-    background: #1aa34a;
-    transform: translateY(-2px);
-}
-
-/* Media Queries pour les podcasts */
-@media (max-width: 1024px) {
-    .podcast-card__content {
-        padding: 20px;
-    }
-
-    .podcast-card__title {
-        font-size: 16px;
-    }
-
-    .podcast-card__excerpt {
-        font-size: 13px;
-    }
-}
-
-@media (max-width: 768px) {
-    .podcasts-section {
-        padding: 0 20px;
-    }
-
-    .podcast-card__header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-    }
-
-    .podcast-card__links {
-        flex-direction: column;
-    }
-
-    .podcast-link {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-/* Section Podcasts & Twitch */
-.podcasts-section,
-.twitch-section {
-    margin-bottom: 80px;
-}
-
-@media (max-width: 768px) {
-
-    .podcasts-section,
-    .twitch-section {
-        margin-bottom: 50px;
-    }
-}
-
-/* ============================================================= */
-/* SINGLE PODCAST STYLES */
-/* ============================================================= */
-
-/* Hero Image */
-.podcast-hero {
-    position: relative;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    max-height: 60vh;
-}
-
-.podcast-hero img {
-    width: 100%;
-    height: 60vh;
-    object-fit: cover;
-    display: block;
-}
-
-@media (max-width: 768px) {
-    .podcast-hero img {
-        height: 40vh;
-    }
-}
-
-/* Header violette */
-.podcast-header-purple {
-    background-color: var(--color-primary, #9168f3);
-    color: white;
-    padding: 60px 20px 40px;
-    position: relative;
-}
-
-@media (max-width: 768px) {
-    .podcast-header-purple {
-        padding: 40px 20px 30px;
-    }
-}
-
-.podcast-header-purple .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-}
-
-/* Category Badge */
-.podcast-single-category-badge {
-    display: inline-block;
-    background: var(--color-secondary, #BDFF5F);
-    color: #1E2A3A;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    padding: 8px 16px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-}
-
-/* Title */
-.podcast-single-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 48px;
-    font-weight: 700;
-    color: #FFFFFF;
-    margin: 0 0 30px 0;
-    line-height: 1.2;
-    text-transform: uppercase;
-}
-
-@media (max-width: 1024px) {
-    .podcast-single-title {
-        font-size: 36px;
-    }
-}
-
-@media (max-width: 768px) {
-    .podcast-single-title {
-        font-size: 28px;
-        margin-bottom: 20px;
-    }
-}
-
-/* Metadata */
-.podcast-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    align-items: center;
-}
-
-@media (max-width: 768px) {
-    .podcast-meta {
-        gap: 15px;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
-
-.podcast-meta .meta-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    color: #FFFFFF;
-}
-
-.podcast-meta .meta-item .dashicons {
-    font-size: 20px;
-    width: 20px;
-    height: 20px;
-    color: var(--color-secondary, #BDFF5F);
-}
-
-/* Content Wrapper */
-.podcast-content-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 20px;
-}
-
-@media (max-width: 768px) {
-    .podcast-content-wrapper {
-        padding: 40px 20px;
-    }
-}
-
-/* Section Title */
-.podcast-content-wrapper .section-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--color-primary, #9168f3);
-    margin-bottom: 30px;
-    text-transform: uppercase;
-}
-
-@media (max-width: 768px) {
-    .podcast-content-wrapper .section-title {
-        font-size: 22px;
-        margin-bottom: 20px;
-    }
-}
-
-/* Audio Section */
-.podcast-audio-section {
-    margin-bottom: 60px;
-}
-
-.podcast-audio-player {
-    background: #F5F5F5;
-    padding: 40px;
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@media (max-width: 768px) {
-    .podcast-audio-player {
-        padding: 20px;
-    }
-}
-
-.podcast-audio-player audio {
-    width: 100%;
-    max-width: 800px;
-    height: 54px;
-    outline: none;
-}
-
-/* External Links Section */
-.podcast-links-section {
-    margin-bottom: 60px;
-}
-
-.podcast-external-links {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-@media (max-width: 768px) {
-    .podcast-external-links {
-        flex-direction: column;
-    }
-}
-
-.podcast-platform-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px 32px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    flex: 1;
-    justify-content: center;
-    min-width: 250px;
-}
-
-@media (max-width: 768px) {
-    .podcast-platform-link {
-        width: 100%;
-        min-width: auto;
-    }
-}
-
-.podcast-platform-link .dashicons {
-    font-size: 24px;
-    width: 24px;
-    height: 24px;
-}
-
-.youtube-link {
-    background: #FF0000;
-    color: #FFFFFF;
-}
-
-.youtube-link:hover {
-    background: #cc0000;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.3);
-}
-
-.spotify-link {
-    background: #1DB954;
-    color: #FFFFFF;
-}
-
-.spotify-link:hover {
-    background: #1aa34a;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(29, 185, 84, 0.3);
-}
-
-/* Description Section */
-.podcast-description-section {
-    margin-bottom: 60px;
-}
-
-.podcast-description-content {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    line-height: 1.8;
-    color: #2C3E50;
-}
-
-.podcast-description-content p {
-    margin-bottom: 20px;
-}
-
-.podcast-description-content ul,
-.podcast-description-content ol {
-    margin: 20px 0;
-    padding-left: 30px;
-}
-
-.podcast-description-content li {
-    margin-bottom: 10px;
-}
-
-@media (max-width: 768px) {
-    .podcast-description-content {
-        font-size: 15px;
-    }
-}
-
-/* Navigation Section */
-.podcast-navigation {
-    margin-top: 80px;
-    padding-top: 60px;
-    border-top: 2px solid #E0E0E0;
-}
-
-@media (max-width: 768px) {
-    .podcast-navigation {
-        margin-top: 60px;
-        padding-top: 40px;
-    }
-}
-
-.podcast-nav-links {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-}
-
-@media (max-width: 768px) {
-    .podcast-nav-links {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-}
-
-.podcast-nav-link {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 25px;
-    background: #F5F5F5;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-}
-
-.podcast-nav-link:hover {
-    background: #FFFFFF;
-    border-color: var(--color-primary, #9168f3);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-}
-
-.podcast-nav-link .dashicons {
-    font-size: 32px;
-    width: 32px;
-    height: 32px;
-    color: var(--color-primary, #9168f3);
-    flex-shrink: 0;
-}
-
-.nav-link-content {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.nav-label {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    color: #888888;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.nav-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    color: #2C3E50;
-    line-height: 1.3;
-}
-
-.next-podcast {
-    justify-content: flex-end;
-    text-align: right;
-}
-
-@media (max-width: 768px) {
-    .podcast-nav-link {
-        padding: 20px;
-    }
-
-    .nav-title {
-        font-size: 14px;
     }
 }
 
@@ -4206,30 +3542,18 @@ body.page .projects-grid {
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 600;
-    color: white !important;
+    color: white;
     z-index: 10;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    background-color: var(--color-secondary) !important;
-    color: #1E2A3A !important;
-    font-size: 60% !important;
-}
-
-/* Responsive pour le badge de statut */
-@media (max-width: 1600px) {
-    .project-status-badge {
-        padding: 7px 15px;
-        font-size: 0.82rem;
-        top: 14px;
-        right: 14px;
-    }
+    background-color: var(--color-primary, #9168f3);
 }
 
 @media (max-width: 1400px) {
     .project-status-badge {
         padding: 7px 14px;
-        font-size: 0.8rem;
+        font-size: 60%;
         top: 12px;
         right: 12px;
     }
@@ -4238,29 +3562,9 @@ body.page .projects-grid {
 @media (max-width: 1200px) {
     .project-status-badge {
         padding: 6px 12px;
-        font-size: 0.75rem;
+        font-size: 60%;
         top: 10px;
         right: 10px;
-    }
-}
-
-@media (max-width: 1024px) {
-    .project-status-badge {
-        padding: 5px 10px;
-        font-size: 0.7rem;
-        top: 10px;
-        right: 10px;
-        letter-spacing: 0.3px;
-    }
-}
-
-@media (max-width: 768px) {
-    .project-status-badge {
-        padding: 4px 8px;
-        font-size: 0.65rem;
-        top: 8px;
-        right: 8px;
-        letter-spacing: 0.2px;
     }
 }
 
@@ -4273,7 +3577,15 @@ body.page .projects-grid {
     font-size: 1rem;
 }
 
+/* Responsive pour les badges */
 @media (max-width: 768px) {
+    .project-status-badge {
+        padding: 6px 12px;
+        font-size: 60%;
+        top: 10px;
+        right: 10px;
+    }
+
     .project-hero .project-status-badge {
         top: 20px;
         right: 20px;
