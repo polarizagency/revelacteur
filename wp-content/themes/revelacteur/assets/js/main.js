@@ -47,6 +47,26 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	}
 
+	/* --- BANDEAU LOGOS PARTENAIRES (Défilement infini) --- */
+	var logoTrack = document.querySelector('.partenaires-logos-track');
+	if (logoTrack) {
+		// Ajuste la vitesse en fonction du nombre de logos
+		var items = logoTrack.querySelectorAll('.partenaires-logo-item');
+		var totalItems = items.length;
+		// La moitié sont les originaux, l'autre moitié les clones
+		var speed = Math.max(15, (totalItems / 2) * 4); // ~4s par logo
+		logoTrack.style.animationDuration = speed + 's';
+
+		// Support des préférences de mouvement réduit
+		var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+		if (prefersReducedMotion.matches) {
+			logoTrack.style.animationPlayState = 'paused';
+		}
+		prefersReducedMotion.addEventListener('change', function (e) {
+			logoTrack.style.animationPlayState = e.matches ? 'paused' : 'running';
+		});
+	}
+
 	/* --- FILTRAGE DES PROJET (Nouveau code) --- */
 	var filterBtns = document.querySelectorAll('.filter-btn');
 	var projectCards = document.querySelectorAll('.project-card-wrapper');

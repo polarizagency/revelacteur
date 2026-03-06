@@ -686,3 +686,68 @@ add_action('customize_register', 'revelacteur_couleurs_customize_register');
 add_action('customize_register', 'revelacteur_header_customize_register');
 add_action('customize_register', 'revelacteur_footer_complete_register');
 add_action('customize_register', 'revelacteur_banner_customize_register');
+
+
+// -------------------------------------------------------------------------
+// 7. CUSTOM POST TYPE : PARTENAIRES
+// -------------------------------------------------------------------------
+
+/**
+ * Enregistre le CPT "partenaire" pour gérer les logos partenaires.
+ */
+function revelacteur_register_partenaire_cpt()
+{
+    $labels = array(
+        'name'               => 'Partenaires',
+        'singular_name'      => 'Partenaire',
+        'menu_name'          => 'Partenaires',
+        'add_new'            => 'Ajouter un partenaire',
+        'add_new_item'       => 'Ajouter un nouveau partenaire',
+        'edit_item'          => 'Modifier le partenaire',
+        'new_item'           => 'Nouveau partenaire',
+        'view_item'          => 'Voir le partenaire',
+        'search_items'       => 'Rechercher un partenaire',
+        'not_found'          => 'Aucun partenaire trouvé',
+        'not_found_in_trash' => 'Aucun partenaire dans la corbeille',
+    );
+
+    $args = array(
+        'labels'       => $labels,
+        'public'       => false,
+        'show_ui'      => true,
+        'show_in_menu' => true,
+        'menu_icon'    => 'dashicons-groups',
+        'supports'     => array('title', 'thumbnail', 'page-attributes'),
+        'has_archive'  => false,
+        'rewrite'      => false,
+    );
+
+    register_post_type('partenaire', $args);
+}
+add_action('init', 'revelacteur_register_partenaire_cpt');
+
+/**
+ * Enregistre la taxonomie "type_partenaire" (Institutions, Mécénat privé, etc.)
+ */
+function revelacteur_register_type_partenaire_taxonomy()
+{
+    $labels = array(
+        'name'          => 'Types de partenaire',
+        'singular_name' => 'Type de partenaire',
+        'search_items'  => 'Rechercher un type',
+        'all_items'     => 'Tous les types',
+        'edit_item'     => 'Modifier le type',
+        'add_new_item'  => 'Ajouter un type',
+        'new_item_name' => 'Nouveau type',
+        'menu_name'     => 'Types',
+    );
+
+    register_taxonomy('type_partenaire', 'partenaire', array(
+        'labels'       => $labels,
+        'hierarchical' => true,
+        'show_ui'      => true,
+        'show_in_rest' => true,
+        'rewrite'      => false,
+    ));
+}
+add_action('init', 'revelacteur_register_type_partenaire_taxonomy');
