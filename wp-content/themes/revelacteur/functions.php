@@ -726,28 +726,3 @@ function revelacteur_register_partenaire_cpt()
 }
 add_action('init', 'revelacteur_register_partenaire_cpt');
 
-/**
- * Enregistre la taxonomie "type_partenaire" (Institutions, Mécénat privé, etc.)
- */
-function revelacteur_register_type_partenaire_taxonomy()
-{
-    $labels = array(
-        'name'          => 'Types de partenaire',
-        'singular_name' => 'Type de partenaire',
-        'search_items'  => 'Rechercher un type',
-        'all_items'     => 'Tous les types',
-        'edit_item'     => 'Modifier le type',
-        'add_new_item'  => 'Ajouter un type',
-        'new_item_name' => 'Nouveau type',
-        'menu_name'     => 'Types',
-    );
-
-    register_taxonomy('type_partenaire', 'partenaire', array(
-        'labels'       => $labels,
-        'hierarchical' => true,
-        'show_ui'      => true,
-        'show_in_rest' => true,
-        'rewrite'      => false,
-    ));
-}
-add_action('init', 'revelacteur_register_type_partenaire_taxonomy');

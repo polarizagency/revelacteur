@@ -4369,11 +4369,7 @@ body.page .projects-grid {
     align-items: center;
     gap: 60px;
     width: max-content;
-    animation: partenaires-scroll 25s linear infinite;
-}
-
-.partenaires-logos-track:hover {
-    animation-play-state: paused;
+    will-change: transform;
 }
 
 .partenaires-logo-item {
@@ -4391,21 +4387,11 @@ body.page .projects-grid {
     width: auto;
     height: auto;
     object-fit: contain;
-    filter: grayscale(0%);
-    transition: filter 0.3s ease, transform 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .partenaires-logo-item img:hover {
     transform: scale(1.08);
-}
-
-@keyframes partenaires-scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
 }
 
 /* --- Section catégories de partenaires --- */
@@ -4530,7 +4516,6 @@ body.page .projects-grid {
 
     .partenaires-logos-track {
         gap: 30px;
-        animation-duration: 18s;
     }
 
     .partenaires-logo-item {
@@ -4567,7 +4552,6 @@ body.page .projects-grid {
 
     .partenaires-logos-track {
         gap: 24px;
-        animation-duration: 14s;
     }
 
     .partenaires-logo-item {

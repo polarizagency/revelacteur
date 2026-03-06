@@ -47,24 +47,76 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	}
 
-	/* --- BANDEAU LOGOS PARTENAIRES (Défilement infini) --- */
+	/* --- BANDEAU LOGOS PARTENAIRES (Défilement infini fluide) --- */
 	var logoTrack = document.querySelector('.partenaires-logos-track');
 	if (logoTrack) {
-		// Ajuste la vitesse en fonction du nombre de logos
-		var items = logoTrack.querySelectorAll('.partenaires-logo-item');
-		var totalItems = items.length;
-		// La moitié sont les originaux, l'autre moitié les clones
-		var speed = Math.max(15, (totalItems / 2) * 4); // ~4s par logo
-		logoTrack.style.animationDuration = speed + 's';
+		var originals = logoTrack.querySelectorAll('[data-logo-original]');
+		if (originals.length > 0) {
+			// 1. Cloner les logos autant de fois que nécessaire pour remplir 3x l'écran
+			function fillTrack() {
+				// Retirer les anciens clones
+				logoTrack.querySelectorAll('[data-logo-clone]').forEach(function (el) { el.remove(); });
 
-		// Support des préférences de mouvement réduit
-		var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-		if (prefersReducedMotion.matches) {
-			logoTrack.style.animationPlayState = 'paused';
+				var gap = parseFloat(getComputedStyle(logoTrack).gap) || 60;
+				var oneSetWidth = 0;
+				originals.forEach(function (item) {
+					oneSetWidth += item.offsetWidth + gap;
+				});
+
+				if (oneSetWidth === 0) return 0;
+
+				// Combien de copies pour couvrir 3x la largeur visible
+				var viewportWidth = window.innerWidth;
+				var copies = Math.ceil((viewportWidth * 3) / oneSetWidth);
+				if (copies < 2) copies = 2;
+
+				for (var c = 0; c < copies; c++) {
+					originals.forEach(function (item) {
+						var clone = item.cloneNode(true);
+						clone.removeAttribute('data-logo-original');
+						clone.setAttribute('data-logo-clone', '');
+						clone.setAttribute('aria-hidden', 'true');
+						logoTrack.appendChild(clone);
+					});
+				}
+
+				return oneSetWidth;
+			}
+
+			var oneSetWidth = fillTrack();
+			var offset = 0;
+			var speed = 0.5;
+			var paused = false;
+
+			window.addEventListener('resize', function () {
+				oneSetWidth = fillTrack();
+				offset = 0;
+			});
+
+			function tick() {
+				if (!paused && oneSetWidth > 0) {
+					offset -= speed;
+					if (Math.abs(offset) >= oneSetWidth) {
+						offset += oneSetWidth;
+					}
+					logoTrack.style.transform = 'translateX(' + offset + 'px)';
+				}
+				requestAnimationFrame(tick);
+			}
+			requestAnimationFrame(tick);
+
+			// Pause au survol
+			var wrapper = document.querySelector('.partenaires-logos-wrapper');
+			if (wrapper) {
+				wrapper.addEventListener('mouseenter', function () { paused = true; });
+				wrapper.addEventListener('mouseleave', function () { paused = false; });
+			}
+
+			// Respect prefers-reduced-motion
+			var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+			if (prefersReducedMotion.matches) { paused = true; }
+			prefersReducedMotion.addEventListener('change', function (e) { paused = e.matches; });
 		}
-		prefersReducedMotion.addEventListener('change', function (e) {
-			logoTrack.style.animationPlayState = e.matches ? 'paused' : 'running';
-		});
 	}
 
 	/* --- FILTRAGE DES PROJET (Nouveau code) --- */
