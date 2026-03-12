@@ -26,3 +26,5 @@ debug.log
 /vendor/
 /composer.lock
 
+# Ignorer les sauvegardes du plugin All-in-One WP Migration
+wp-content/ai1wm-backups/
