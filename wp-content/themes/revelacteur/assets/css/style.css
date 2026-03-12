@@ -253,18 +253,53 @@
     transform: translateY(10px);
 }
 
-.menu-overlay--open .menu-overlay__nav li:nth-child(1)  { animation-delay: 0.04s; }
-.menu-overlay--open .menu-overlay__nav li:nth-child(2)  { animation-delay: 0.08s; }
-.menu-overlay--open .menu-overlay__nav li:nth-child(3)  { animation-delay: 0.12s; }
-.menu-overlay--open .menu-overlay__nav li:nth-child(4)  { animation-delay: 0.16s; }
-.menu-overlay--open .menu-overlay__nav li:nth-child(5)  { animation-delay: 0.20s; }
-.menu-overlay--open .menu-overlay__nav li:nth-child(6)  { animation-delay: 0.24s; }
-.menu-overlay--open .menu-overlay__nav li:nth-child(7)  { animation-delay: 0.28s; }
-.menu-overlay--open .menu-overlay__nav li:nth-child(8)  { animation-delay: 0.32s; }
-.menu-overlay--open .menu-overlay__nav li:nth-child(9)  { animation-delay: 0.36s; }
-.menu-overlay--open .menu-overlay__nav li:nth-child(10) { animation-delay: 0.40s; }
-.menu-overlay--open .menu-overlay__nav li:nth-child(11) { animation-delay: 0.44s; }
-.menu-overlay--open .menu-overlay__nav li:nth-child(12) { animation-delay: 0.48s; }
+.menu-overlay--open .menu-overlay__nav li:nth-child(1) {
+    animation-delay: 0.04s;
+}
+
+.menu-overlay--open .menu-overlay__nav li:nth-child(2) {
+    animation-delay: 0.08s;
+}
+
+.menu-overlay--open .menu-overlay__nav li:nth-child(3) {
+    animation-delay: 0.12s;
+}
+
+.menu-overlay--open .menu-overlay__nav li:nth-child(4) {
+    animation-delay: 0.16s;
+}
+
+.menu-overlay--open .menu-overlay__nav li:nth-child(5) {
+    animation-delay: 0.20s;
+}
+
+.menu-overlay--open .menu-overlay__nav li:nth-child(6) {
+    animation-delay: 0.24s;
+}
+
+.menu-overlay--open .menu-overlay__nav li:nth-child(7) {
+    animation-delay: 0.28s;
+}
+
+.menu-overlay--open .menu-overlay__nav li:nth-child(8) {
+    animation-delay: 0.32s;
+}
+
+.menu-overlay--open .menu-overlay__nav li:nth-child(9) {
+    animation-delay: 0.36s;
+}
+
+.menu-overlay--open .menu-overlay__nav li:nth-child(10) {
+    animation-delay: 0.40s;
+}
+
+.menu-overlay--open .menu-overlay__nav li:nth-child(11) {
+    animation-delay: 0.44s;
+}
+
+.menu-overlay--open .menu-overlay__nav li:nth-child(12) {
+    animation-delay: 0.48s;
+}
 
 /* Animation stagger pour les icônes sociales */
 .menu-overlay--open .menu-overlay__social li {
@@ -273,11 +308,25 @@
     transform: translateY(10px);
 }
 
-.menu-overlay--open .menu-overlay__social li:nth-child(1) { animation-delay: 0.52s; }
-.menu-overlay--open .menu-overlay__social li:nth-child(2) { animation-delay: 0.56s; }
-.menu-overlay--open .menu-overlay__social li:nth-child(3) { animation-delay: 0.60s; }
-.menu-overlay--open .menu-overlay__social li:nth-child(4) { animation-delay: 0.64s; }
-.menu-overlay--open .menu-overlay__social li:nth-child(5) { animation-delay: 0.68s; }
+.menu-overlay--open .menu-overlay__social li:nth-child(1) {
+    animation-delay: 0.52s;
+}
+
+.menu-overlay--open .menu-overlay__social li:nth-child(2) {
+    animation-delay: 0.56s;
+}
+
+.menu-overlay--open .menu-overlay__social li:nth-child(3) {
+    animation-delay: 0.60s;
+}
+
+.menu-overlay--open .menu-overlay__social li:nth-child(4) {
+    animation-delay: 0.64s;
+}
+
+.menu-overlay--open .menu-overlay__social li:nth-child(5) {
+    animation-delay: 0.68s;
+}
 
 @keyframes menuFadeIn {
     to {
