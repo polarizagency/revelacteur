@@ -180,8 +180,7 @@
     pointer-events: none;
     transition: opacity 0.3s ease, visibility 0.3s ease;
     z-index: 9999;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow: hidden;
 }
 
 .menu-overlay--open {
@@ -192,14 +191,16 @@
 
 /* --- Contenu de l'overlay --- */
 .menu-overlay__inner {
-    min-height: 100%;
+    height: 100vh;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 40px;
-    padding: 80px 32px 48px;
+    gap: clamp(12px, 2.5vh, 24px);
+    padding: 16px 32px;
     text-align: center;
+    box-sizing: border-box;
 }
 
 .menu-overlay__nav {
@@ -226,9 +227,9 @@
 
 .menu-overlay__nav a {
     display: block;
-    padding: 15px 8px;
+    padding: clamp(6px, 1.2vh, 15px) 8px;
     font-family: 'Willond', cursive;
-    font-size: clamp(1.3rem, 4vw, 2rem);
+    font-size: clamp(1rem, 2.8vh, 2rem);
     font-weight: 700;
     color: var(--color-primary, #9168f3);
     text-decoration: none;
@@ -346,8 +347,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 46px;
-    height: 46px;
+    width: clamp(36px, 5.5vh, 46px);
+    height: clamp(36px, 5.5vh, 46px);
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
     text-decoration: none;
@@ -448,12 +449,12 @@ body.menu-open {
     }
 
     .menu-overlay__inner {
-        padding: 80px 32px 40px;
+        padding: 80px 32px 24px;
     }
 
     .menu-overlay__nav a {
-        font-size: clamp(1.2rem, 4vw, 1.8rem);
-        padding: 14px 8px;
+        font-size: clamp(1rem, 2.5vh, 1.8rem);
+        padding: clamp(5px, 1.1vh, 14px) 8px;
     }
 }
 
@@ -479,25 +480,25 @@ body.menu-open {
     }
 
     .menu-overlay__inner {
-        padding: 66px 20px 32px;
-        gap: 20px;
+        padding: 66px 20px 16px;
+        gap: clamp(8px, 2vh, 16px);
     }
 
     .menu-overlay__nav a {
-        font-size: clamp(1.1rem, 4vw, 1.5rem);
-        padding: 12px 8px;
+        font-size: clamp(0.95rem, 2.5vh, 1.5rem);
+        padding: clamp(4px, 1vh, 12px) 8px;
     }
 
     .menu-overlay__social a {
-        width: 42px;
-        height: 42px;
+        width: clamp(32px, 5vh, 42px);
+        height: clamp(32px, 5vh, 42px);
     }
 
     .menu-overlay__social .dashicons {
-        font-size: 24px !important;
-        width: 24px !important;
-        height: 24px !important;
-        line-height: 24px !important;
+        font-size: clamp(18px, 2.5vh, 24px) !important;
+        width: clamp(18px, 2.5vh, 24px) !important;
+        height: clamp(18px, 2.5vh, 24px) !important;
+        line-height: clamp(18px, 2.5vh, 24px) !important;
     }
 }
 
