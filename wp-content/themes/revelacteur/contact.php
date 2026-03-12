@@ -4,6 +4,11 @@ Template Name: Page Contact
 */
 
 get_header(); ?>
+<div class="page-hero mbottom-banniere">
+    <h1 class="page-title page-hero__title">Nous Contacter</h1>
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/forme_verte.svg" alt=""
+        class="decoration-verte page-hero__shape" />
+</div>
 
 <section class="contact-form-section">
     <div class="contact-form-wrapper">

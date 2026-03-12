@@ -1248,9 +1248,6 @@ h3 {
     font-size: 5rem;
     line-height: 1.1;
     margin-bottom: 30px;
-
-    /* ASTUCE : Limite la largeur pour forcer le retour à la ligne 
-       après "Envie de nous" */
     max-width: 450px;
 }
 
