@@ -2251,7 +2251,7 @@ h3 {
 .contact-form-wrapper {
     max-width: 900px;
     margin: 0 auto;
-    background-color: var(--color-secondary);
+
     padding: 10px 20px 30px;
     border-radius: 6px;
 }
@@ -2264,9 +2264,20 @@ h3 {
 }
 
 .contact-form-subtitle {
-    margin: 0 0 25px 0;
+    margin: 0 0 10px 0;
     color: #2d2d2d;
     font-size: 0.95rem;
+}
+
+.contact-form-legend {
+    margin: 0 0 25px 0;
+    color: #666;
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+.contact-form-legend .required {
+    color: var(--color-primary);
 }
 
 .contact-form {
@@ -2281,6 +2292,10 @@ h3 {
     gap: 18px 24px;
 }
 
+.contact-form-field--phone {
+    grid-column: 1 / -1;
+}
+
 .contact-form-field {
     display: flex;
     flex-direction: column;
@@ -2288,24 +2303,36 @@ h3 {
 }
 
 .contact-form-field label {
-    font-weight: 600;
+    font-family: 'Willond', cursive;
+    font-weight: 400;
     color: #2d2d2d;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
+}
+
+.contact-form-field label .required {
+    color: var(--color-primary);
 }
 
 .contact-form-field input,
 .contact-form-field textarea {
     background-color: #ffffff;
-    border: none;
+    border: 2px solid var(--color-primary);
     border-radius: 8px;
     padding: 12px 14px;
     font-size: 0.95rem;
-    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.2s ease;
+}
+
+.contact-form-field input:focus,
+.contact-form-field textarea:focus {
+    outline: none;
+    border-color: var(--color-secondary);
 }
 
 .contact-form-field textarea {
     min-height: 160px;
     resize: vertical;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .contact-form-field--full {

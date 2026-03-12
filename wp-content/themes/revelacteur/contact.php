@@ -13,8 +13,10 @@ get_header(); ?>
 <section class="contact-form-section">
     <div class="contact-form-wrapper">
         <h1 class="contact-form-title">Informations de contact</h1>
-        <p class="contact-form-subtitle">Remplissez le formulaire ci-dessous, nous vous répondrons dans les meilleurs
+        <p class="contact-form-subtitle"><strong>Remplissez</strong> le formulaire ci-dessous, nous vous répondrons dans
+            les meilleurs
             délais.</p>
+        <p class="contact-form-legend"><span class="required"><strong>*</strong></span> Champs obligatoires</p>
 
         <form class="contact-form" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="post">
             <input type="hidden" name="action" value="submit_association_contact">
@@ -23,33 +25,33 @@ get_header(); ?>
 
             <div class="contact-form-grid">
                 <div class="contact-form-field">
-                    <label for="user_last_name">Nom *</label>
+                    <label for="user_last_name">Nom <span class="required">*</span></label>
                     <input type="text" name="user_last_name" id="user_last_name" placeholder="Nom" required>
                 </div>
 
                 <div class="contact-form-field">
-                    <label for="user_first_name">Prénom *</label>
+                    <label for="user_first_name">Prénom <span class="required">*</span></label>
                     <input type="text" name="user_first_name" id="user_first_name" placeholder="Prénom" required>
                 </div>
 
-                <div class="contact-form-field">
-                    <label for="user_phone">Téléphone *</label>
+                <div class="contact-form-field contact-form-field--phone">
+                    <label for="user_phone">Téléphone <span class="required">*</span></label>
                     <input type="tel" name="user_phone" id="user_phone" placeholder="+33 0 00 00 00 00" required>
                 </div>
 
                 <div class="contact-form-field">
-                    <label for="user_email">Email *</label>
+                    <label for="user_email">Email <span class="required">*</span></label>
                     <input type="email" name="user_email" id="user_email" placeholder="Email" required>
                 </div>
 
                 <div class="contact-form-field">
-                    <label for="user_email_confirm">Confirmation Email *</label>
+                    <label for="user_email_confirm">Confirmation Email <span class="required">*</span></label>
                     <input type="email" name="user_email_confirm" id="user_email_confirm" placeholder="Email" required>
                 </div>
             </div>
 
             <div class="contact-form-field contact-form-field--full">
-                <label for="user_message">Votre message *</label>
+                <label for="user_message">Votre message <span class="required">*</span></label>
                 <textarea name="user_message" id="user_message" required></textarea>
             </div>
 
