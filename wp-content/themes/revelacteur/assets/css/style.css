@@ -440,13 +440,19 @@ body.menu-open {
         display: none !important;
     }
 
-    /* padding-top = logo 45px + padding 12px*2 + box-shadow marge */
+    /* padding-top = logo 45px + padding 12px*2 + box-shadow 8px + marge */
     body {
-        padding-top: 70px;
+        padding-top: 80px;
+    }
+
+    .page-hero,
+    .banner {
+        margin-top: -80px;
+        padding-top: 80px;
     }
 
     .menu-overlay__inner {
-        padding: 70px 32px 40px;
+        padding: 80px 32px 40px;
     }
 
     .menu-overlay__nav a {
@@ -465,13 +471,19 @@ body.menu-open {
         max-height: 38px;
     }
 
-    /* padding-top = logo 38px + padding 8px*2 + marge */
+    /* padding-top = logo 38px + padding 8px*2 + box-shadow 8px + marge */
     body {
-        padding-top: 56px;
+        padding-top: 66px;
+    }
+
+    .page-hero,
+    .banner {
+        margin-top: -66px;
+        padding-top: 66px;
     }
 
     .menu-overlay__inner {
-        padding: 56px 20px 32px;
+        padding: 66px 20px 32px;
         gap: 20px;
     }
 
@@ -595,8 +607,9 @@ body.menu-open {
 body {
     line-height: 1.6;
     margin: 0;
-    padding: 0;
-
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
 }
 
 ul {
@@ -3480,6 +3493,10 @@ h3 {
 
 @media (max-width: 768px) {
     .podcasts-section {
+        padding: 0;
+    }
+
+    .podcasts-section > .container {
         padding: 0 20px;
     }
 
