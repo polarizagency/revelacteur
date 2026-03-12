@@ -38,7 +38,7 @@
                 <span class="dashicons dashicons-no icon-close" aria-hidden="true"></span>
             </button>
 
-            <nav id="site-navigation" class="  main-navigation">
+            <nav id="site-navigation" class="main-navigation">
                 <?php
                 // Affiche le menu assigné à l'emplacement 'primary' (défini dans functions.php)
                 wp_nav_menu(array(

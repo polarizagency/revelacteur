@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-	/* --- GESTION DU MENU (Ton code existant) --- */
+	/* --- GESTION DU MENU --- */
 	var toggleButton = document.querySelector('.menu-toggle');
 	var overlay = document.querySelector('.menu-overlay');
 
@@ -27,12 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
 				closeMenu();
 			} else {
 				openMenu();
-			}
-		});
-
-		overlay.addEventListener('click', function (event) {
-			if (event.target === overlay) {
-				closeMenu();
 			}
 		});
 
