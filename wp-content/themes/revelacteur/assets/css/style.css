@@ -906,11 +906,15 @@ h3 {
 }
 
 .page-template-nos-projets .page-hero__title {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 32px;
-    box-sizing: border-box;
+    margin: 0;
+    margin-left: 0px;
+    margin-left: 10vw;
+    text-align: left;
+    font-family: 'Willond', cursive;
+    color: var(--color-secondary);
+    font-size: 6rem;
+    z-index: 10;
+    position: relative;
 }
 
 .page-hero__shape {
@@ -1093,7 +1097,7 @@ h3 {
         font-size: 3rem;
     }
 
-  
+
 }
 
 @media (max-width: 768px) {
