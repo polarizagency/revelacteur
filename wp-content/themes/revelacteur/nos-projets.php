@@ -7,7 +7,7 @@ get_header(); ?>
 <div id="primary" class="content-area">
     <main id="main" class="site-main">
         <div class="page-hero">
-            <h1 class="page-title page-hero__title">Nos Projets </h1>
+            <h1 class="page-title page-hero__title">Nos Projets</h1>
 
             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/forme_verte.svg" alt=""
                 class="decoration-verte page-hero__shape" />
