@@ -635,11 +635,40 @@ function revelacteur_banner_customize_register($wp_customize)
 add_action('admin_post_nopriv_submit_association_contact', 'handle_asso_contact');
 add_action('admin_post_submit_association_contact', 'handle_asso_contact');
 
+/**
+ * Retourne une URL de redirection sure pour le formulaire de contact.
+ *
+ * @return string
+ */
+function revelacteur_get_contact_form_redirect_url()
+{
+    $fallback_url = home_url('/');
+
+    if (isset($_POST['redirect_to'])) {
+        $redirect_to = esc_url_raw(wp_unslash($_POST['redirect_to']));
+
+        if (!empty($redirect_to)) {
+            return wp_validate_redirect($redirect_to, $fallback_url);
+        }
+    }
+
+    $referer = wp_get_referer();
+
+    if (!empty($referer)) {
+        return wp_validate_redirect($referer, $fallback_url);
+    }
+
+    return $fallback_url;
+}
+
 function handle_asso_contact()
 {
+    $redirect_url = revelacteur_get_contact_form_redirect_url();
+
     // 1. Vérification de sécurité
     if (!isset($_POST['asso_contact_nonce']) || !wp_verify_nonce($_POST['asso_contact_nonce'], 'asso_contact_form')) {
-        wp_die('Action non autorisée');
+        wp_safe_redirect(add_query_arg('contact_status', 'nonce_error', $redirect_url));
+        exit;
     }
 
     // 2. Nettoyage des données
@@ -650,10 +679,11 @@ function handle_asso_contact()
     $email = isset($_POST['user_email']) ? sanitize_email($_POST['user_email']) : '';
     $email_confirm = isset($_POST['user_email_confirm']) ? sanitize_email($_POST['user_email_confirm']) : '';
     $message = isset($_POST['user_message']) ? sanitize_textarea_field($_POST['user_message']) : '';
-    $admin_email = get_option('admin_email');
+    $admin_email = 'contact@revelacteur.fr';
 
     if (empty($email) || $email !== $email_confirm) {
-        wp_die('Les emails ne correspondent pas.');
+        wp_safe_redirect(add_query_arg('contact_status', 'email_mismatch', $redirect_url));
+        exit;
     }
 
     // 3. Envoi à l'association
@@ -665,16 +695,17 @@ function handle_asso_contact()
         . "<p><strong>Email:</strong> $email</p>"
         . "<p><strong>Message:</strong><br>$message</p>";
 
-    wp_mail($admin_email, $subject_asso, $body_asso, $headers_asso);
+    $mail_sent_to_asso = wp_mail($admin_email, $subject_asso, $body_asso, $headers_asso);
 
     // 4. Envoi de la confirmation à l'utilisateur
     $subject_confirm = "Confirmation de réception - " . get_bloginfo('name');
     $body_confirm = "Bonjour $name,<br><br>Nous avons bien reçu votre message et nous reviendrons vers vous rapidement.<br><br>L'équipe de l'association.";
 
-    wp_mail($email, $subject_confirm, $body_confirm, ['Content-Type: text/html; charset=UTF-8']);
+    $mail_sent_to_user = wp_mail($email, $subject_confirm, $body_confirm, ['Content-Type: text/html; charset=UTF-8']);
 
     // 5. Redirection après envoi
-    wp_redirect(home_url('/merci/'));
+    $status = ($mail_sent_to_asso && $mail_sent_to_user) ? 'success' : 'send_error';
+    wp_safe_redirect(add_query_arg('contact_status', $status, $redirect_url));
     exit;
 }
 
