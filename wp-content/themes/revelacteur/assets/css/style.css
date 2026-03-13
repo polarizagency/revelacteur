@@ -1317,6 +1317,11 @@ h3 {
         gap: 20px;
     }
 
+    .social-networks-grid .social-network-item:last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+
     .social-network-item a {
         width: 65px;
         height: 65px;
