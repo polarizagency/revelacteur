@@ -280,25 +280,12 @@ function revelacteur_customizer_css()
             display: inline-block;
         }
 
-        @media (min-width: 769px) {
-            .banner .container {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 6px;
-            }
-        }
-
         @media (max-width: 1024px) {
             .banner {
-                padding: 48px 32px;
+                padding: 48px 0;
                 font-size: 3rem;
                 min-height: clamp(360px, 55vh, 620px);
                 background-position: center top;
-            }
-
-            .banner .container {
-                gap: 8px;
             }
 
             .banner .btn-primary {
@@ -312,16 +299,11 @@ function revelacteur_customizer_css()
 
         @media (max-width: 768px) {
             .banner {
-                padding: 36px 24px;
+                padding: 36px 0;
                 font-size: 2.4rem;
                 text-align: center;
                 min-height: clamp(300px, 45vh, 520px);
                 background-position: center top;
-            }
-
-            .banner .container {
-                align-items: center;
-                gap: 10px;
             }
 
             .accueil-p-1,

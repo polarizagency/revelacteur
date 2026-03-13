@@ -448,6 +448,11 @@ body.menu-open {
         padding-top: 80px;
     }
 
+    .page-hero__shape,
+    .home-asso__shape {
+        display: none;
+    }
+
     .menu-overlay__inner {
         padding: 80px 32px 24px;
     }
@@ -561,16 +566,23 @@ body.menu-open {
     color: #ffffff;
     text-align: left;
     font-size: 3.7rem;
-    padding: 60px 40px;
+    padding: 60px 0;
     font-weight: 700;
     position: relative;
     min-height: 60vh;
 }
 
+.accueil-p-1,
+.accueil-p-2,
+.accueil-p-3 {
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+
 @media (max-width: 1024px) {
     .banner {
         font-size: 3rem;
-        padding: 48px 32px;
+        padding: 48px 0;
         min-height: 50vh;
     }
 }
@@ -578,7 +590,7 @@ body.menu-open {
 @media (max-width: 768px) {
     .banner {
         font-size: 2.2rem;
-        padding: 36px 16px;
+        padding: 36px 0;
         min-height: 45vh;
         text-align: center;
     }
@@ -636,6 +648,7 @@ h3 {
 /* Container générique */
 .container {
     max-width: 1200px;
+    margin: 0 auto;
     padding: 0 32px;
 }
 
@@ -693,7 +706,7 @@ h3 {
     display: flex;
     gap: 60px;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .home-section-deux__image-wrapper {
@@ -862,9 +875,9 @@ h3 {
 
 .home-asso__shape .decoration-verte {
     position: absolute;
-    left: -28%;
-    top: -99%;
-    width: 159%;
+    left: -60%;
+    bottom: -120%;
+    width: 250%;
     height: auto;
     max-width: none;
     pointer-events: none;
@@ -893,6 +906,14 @@ h3 {
     font-size: 6rem;
     z-index: 10;
     position: relative;
+}
+
+.page-template-nos-projets .page-hero__title {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+    box-sizing: border-box;
 }
 
 .page-hero__shape {
@@ -967,6 +988,11 @@ h3 {
         font-size: 4.5rem;
     }
 
+    .page-template-nos-projets .page-hero__title {
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
     .page-hero__shape {
         height: 180%;
     }
@@ -1002,6 +1028,12 @@ h3 {
         margin-right: 5vw;
         font-size: 2.5rem;
         text-align: center;
+    }
+
+    .page-template-nos-projets .page-hero__title {
+        margin: 0 auto;
+        padding: 0 16px;
+        text-align: left;
     }
 
     .page-hero__shape {
@@ -1064,12 +1096,7 @@ h3 {
         font-size: 3rem;
     }
 
-    .home-asso__shape .decoration-verte {
-        right: -80px;
-        top: -80px;
-        width: 200%;
-        height: auto;
-    }
+  
 }
 
 @media (max-width: 768px) {
@@ -1595,7 +1622,8 @@ h3 {
     gap: 40px;
     /* Espace entre les cartes */
     margin: 0 auto;
-    max-width: 95%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 @media (max-width: 1400px) {
@@ -1819,7 +1847,7 @@ h3 {
     .projects-grid {
         grid-template-columns: 1fr;
         /* Une seule colonne sur mobile */
-        padding: 0 20px;
+        padding: 0;
     }
 }
 
@@ -3224,7 +3252,7 @@ h3 {
 @media (max-width: 768px) {
     .projects-grid {
         grid-template-columns: 1fr;
-        padding: 0 20px;
+        padding: 0;
     }
 }
 
@@ -3916,9 +3944,21 @@ h3 {
 }
 
 .home-latest-events .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 32px;
+}
+
+@media (max-width: 1024px) {
+    .home-latest-events .container {
+        padding: 0 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-latest-events .container {
+        padding: 0 16px;
+    }
 }
 
 
@@ -3948,9 +3988,21 @@ h3 {
 }
 
 .home-latest-projects .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 32px;
+}
+
+@media (max-width: 1024px) {
+    .home-latest-projects .container {
+        padding: 0 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-latest-projects .container {
+        padding: 0 16px;
+    }
 }
 
 
@@ -3980,10 +4032,8 @@ h3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
-    margin-bottom: 50px;
-    max-width: 95%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 50px auto;
+    width: 100%;
 }
 
 @media (max-width: 1300px) {
@@ -3996,7 +4046,7 @@ h3 {
     .projects-grid--home {
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
-        max-width: 90%;
+        width: 100%;
     }
 }
 
@@ -4004,7 +4054,7 @@ h3 {
     .projects-grid--home {
         grid-template-columns: repeat(2, 1fr);
         gap: 25px;
-        max-width: 95%;
+        width: 100%;
     }
 }
 
@@ -4012,7 +4062,7 @@ h3 {
     .projects-grid--home {
         grid-template-columns: 1fr;
         gap: 20px;
-        padding: 0 20px;
+        width: 100%;
         margin-bottom: 35px;
     }
 }
@@ -4103,35 +4153,18 @@ h3 {
 /* ========================================
    Alignement containers page Nos Projets
 ======================================== */
-.page-template-nos-projets .container,
-body.page .container {
-    margin-left: 10vw;
-    margin-right: 10vw;
-    max-width: none;
-    padding: 0;
-}
 
-@media (max-width: 768px) {
-
-    .page-template-nos-projets .container,
-    body.page .container {
-        margin-left: 5vw;
-        margin-right: 5vw;
-    }
-}
 
 /* ========================================
    Grille de projets - Page Nos Projets
 ======================================== */
-.page-template-nos-projets .projects-grid,
-body.page .projects-grid {
+.page-template-nos-projets .projects-grid {
     padding: 60px 0;
 }
 
 @media (max-width: 768px) {
 
-    .page-template-nos-projets .projects-grid,
-    body.page .projects-grid {
+    .page-template-nos-projets .projects-grid {
         padding: 40px 0;
     }
 }
